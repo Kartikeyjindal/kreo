@@ -62,8 +62,13 @@ function Login() {
   };
 
   return (
+    <div className="login-page">
     <div className="login-container">
-      <h2>{isRegistering ? "Register" : "Login"} to SmartStocks</h2>
+      <div className="login-brand">
+        <div className="login-brand-icon">📈</div>
+        <span className="login-brand-name">SmartStocks</span>
+      </div>
+      <h2>{isRegistering ? "Create Account" : "Welcome Back"}</h2>
 
       {isRegistering && (
         <input
@@ -115,6 +120,7 @@ function Login() {
           {isRegistering ? "Login here" : "Register here"}
         </span>
       </p>
+    </div>
     </div>
   );
 }

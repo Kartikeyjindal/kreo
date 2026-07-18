@@ -1,116 +1,80 @@
-# 📈 SmartStocks
+# SmartStocks 📈
 
-**SmartStocks** is a stock recommendation web app designed to assist retail investors in making smarter decisions. It evaluates companies based on financial fundamentals and offers verdicts like _Strong Buy_, _Buy_, _Hold_, _Sell_ etc. Users can log in securely, maintain custom watchlists, and explore detailed metrics — all through a sleek React frontend and a FastAPI backend.
+A full-stack stock recommendation app using fundamental analysis, scoring logic, and verdict tiers.
 
-As a personal project, SmartStocks uses data scraped from [Ticker by Finology](https://ticker.finology.in) to simulate how a basic recommendation engine might function in real-world investing tools.
+## Tech Stack
 
----
-## 🌐 Live Demo
-
-Check out the app live here:  
-[https://smart-stocks.vercel.app](https://smart-stocks.vercel.app)
-
-
-## 🚀 Features
-
-- 🔐 Google OAuth-based secure login  
-- 📊 Tiered verdicts derived from:
-  - PE, PB, Dividend Yield, ROCE, ROE, etc.
-- ⭐ Watchlist management:
-  - Create, rename, delete multiple lists
-  - Add/remove stocks dynamically
-- 🔍 Search bar with autocomplete and recent suggestions
-- ⚙️ Serverless backend with auto-reconnecting MongoDB
-- 💻 React-based responsive UI
+- **Frontend**: React 19 + Vite + React Router
+- **Backend**: Python FastAPI + MongoDB
+- **Auth**: JWT + Google OAuth
 
 ---
 
-## 🧠 Recommendation Logic
+## Running Locally
 
-Stocks are scored using a custom formula that combines multiple valuation and return metrics. Verdicts are derived by comparing total scores against predefined cutoffs. You plan to enhance this with more statistical/ML logic later.
-
----
-
-## 🛠 Tech Stack
-
-| Layer     | Tech                          |
-|-----------|-------------------------------|
-| Frontend  | React (Vite), TailwindCSS     |
-| Backend   | FastAPI (Python)              |
-| Auth      | Google OAuth + JWT            |
-| Database  | MongoDB                       |
-| Deploy    | Render (backend), Vercel (frontend) |
-
----
-
-## 📂 Folder Structure
-
-```
-/frontend         # React frontend
-/backend          # FastAPI backend
-/frontend/.env    # Frontend env config
-/backend/.env     # Backend env config
-```
-
----
-
-## 🔧 Environment Setup
-
-### 📁 `backend/.env.sample`
-
-```env
-GOOGLE_CLIENT_ID=your-google-client-id
-MONGO_URI=your-mongodb-uri
-FRONTEND_URL=http://localhost:3000
-JWT_SECRET=your-jwt-secret
-```
-
-### 📁 `frontend/.env.sample`
-
-```env
-VITE_API_BASE=http://localhost:8000
-VITE_GOOGLE_CLIENT_ID=your-google-client-id
-```
-
----
-
-## 🧪 Installation
-
-### Backend
+### 1. Backend Setup
 
 ```bash
 cd backend
+
+# Create & activate a virtual environment
+python3 -m venv venv
+source venv/bin/activate       # On Windows: venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
-uvicorn main:app --reload
+
+# Create a .env file with these keys:
+# MONGO_URI=<your MongoDB connection string>
+# JWT_SECRET=<any random secret string>
+# GOOGLE_CLIENT_ID=<your Google OAuth client ID>
+# FRONTEND_URL=http://localhost:5173
+
+# Start the server
+uvicorn main:app --reload --port 8000
 ```
 
-### Frontend
+### 2. Frontend Setup
 
 ```bash
 cd frontend
+
+# Install dependencies
 npm install
+
+# The .env file is already configured:
+# VITE_API_BASE=http://localhost:8000
+
+# Start the dev server
 npm run dev
 ```
 
----
-
-## 🛣️ Roadmap
-
-- ✅ Basic scoring and recommendation  
-- ✅ Watchlists and Google login  
-- ✅ Search optimization  
-- 🟡 Add historical performance insights  
-- 🟡 UI polish and animations  
-- 🟡 Backend tests and CI  
+The app will open at **http://localhost:5173**
 
 ---
 
-## 🤝 Contributions
+## Environment Variables
 
-Open to PRs — whether it's improving financial logic, optimizing UI, or refining backend structure. Great place to explore full-stack development on a practical use case.
+### Backend (`backend/.env`)
+| Variable | Description |
+|----------|-------------|
+| `MONGO_URI` | MongoDB connection URI (e.g. MongoDB Atlas) |
+| `JWT_SECRET` | Secret key for JWT signing |
+| `GOOGLE_CLIENT_ID` | Google OAuth 2.0 Client ID |
+| `FRONTEND_URL` | URL of the frontend (`http://localhost:5173` for local) |
+
+### Frontend (`frontend/.env`)
+| Variable | Description |
+|----------|-------------|
+| `VITE_API_BASE` | URL of the backend (`http://localhost:8000` for local) |
 
 ---
 
-## 📜 License
+## Features
 
-MIT
+- 🔍 Smart stock search with fuzzy matching
+- 📊 Fundamental analysis (PE, PB, ROE, ROCE, EPS, etc.)
+- 🏆 Verdict tiers: Strong Buy / Buy / Hold / Sell / Strong Sell
+- 📋 Watchlists with create/rename/delete
+- 🔐 Email + Google OAuth login
+- 🌙 Dark mode

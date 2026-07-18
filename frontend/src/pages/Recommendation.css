@@ -1,42 +1,45 @@
-/* PAGE CONTAINER */
+/* Recommendation.css — Premium Dark Design */
+
+/* ─── Page Container ─── */
 .recommend-page {
-  background: #ecf0f5;
-  min-height: 100vh;
-  padding: 1rem 0 3rem;
-  animation: fadeIn 0.3s ease;
+  background: var(--bg-primary);
+  min-height: calc(100vh - 64px);
+  padding: 2rem 1rem 4rem;
+  animation: fadeIn 0.35s ease;
 }
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.subheading {
-  margin-top: 0px;
-  margin-bottom: 24px;
-  font-size: 0.95rem;
-  color: #6b7280; /* gray-500 */
-  text-align: center;
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-
-/* HEADING */
+/* ─── Heading ─── */
 .recommend-page .page-heading {
-  max-width: 700px;
-  margin: 1rem auto 1.5rem;
-  padding: 0 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
   text-align: center;
+  background: linear-gradient(135deg, var(--text-primary) 0%, #a5b4fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 auto 0.5rem;
+  max-width: 700px;
 }
 
-/* SEARCH BAR + SUGGESTIONS */
+.subheading {
+  margin: 0 auto 2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 500px;
+}
+
+/* ─── Search Bar ─── */
 .recommend-page .search-wrapper {
   position: relative;
-  max-width: 700px;
-  margin: 0 auto 1.5rem;
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
   padding: 0 1rem;
   display: flex;
   justify-content: center;
@@ -44,87 +47,122 @@
 
 .recommend-page .search-input {
   width: 100%;
-  max-width: 700px;
-  padding: 0.75rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+  max-width: 640px;
+  padding: 14px 18px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  transition: border-color var(--transition), box-shadow var(--transition);
   display: block;
 }
 
+.recommend-page .search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.recommend-page .search-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.18);
+  outline: none;
+  background: rgba(22, 25, 34, 0.95);
+}
+
+/* ─── Suggestions ─── */
 .recommend-page .suggestions-list {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 6px);
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 700px;
-  background: #fff;
-  border: 1px solid #cbd5e0;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 640px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
   list-style: none;
   margin: 0;
-  padding: 0;
-  z-index: 10;
-  max-height: 240px;
+  padding: 6px;
+  z-index: 50;
+  max-height: 260px;
   overflow-y: auto;
 }
 
 .recommend-page .suggestions-list li {
   display: flex;
   justify-content: space-between;
-  padding: 0.6rem 1rem;
+  align-items: center;
+  padding: 10px 14px;
   cursor: pointer;
-  transition: background-color 0.15s;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition);
 }
 
 .recommend-page .suggestions-list li:hover {
-  background: #f1f5f9;
+  background: rgba(99, 102, 241, 0.1);
 }
 
-.recommend-page .suggestions-list .s-name {
+.recommend-page .suggestions-list .stock-name {
   font-weight: 500;
-  color: #2c3e50;
-}
-
-.recommend-page .suggestions-list .s-symbol {
   font-size: 0.9rem;
-  color: #6b7280;
+  color: var(--text-primary);
 }
 
-/* BUTTON */
+.recommend-page .suggestions-list .stock-symbol {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(99, 102, 241, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* ─── Button Container ─── */
 .recommend-page .button-container {
   display: grid;
   place-items: center;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
   padding: 0 1rem;
 }
 
 .recommend-page .search-button {
-  margin-top:1rem;
-  display: inline-block;
-  padding: 0.65rem 1.6rem;
-  font-size: 1rem;
-  background-color: #3498db;
+  margin-top: 1rem;
+  padding: 12px 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.02em;
 }
 
 .recommend-page .search-button:hover {
-  background-color: #2980b9;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.5);
+  background: linear-gradient(135deg, #818cf8, #a78bfa);
 }
 
 .recommend-page .search-button:active {
   transform: translateY(0);
 }
 
+.recommend-page .search-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Constraints for inner elements ─── */
 .recommend-page .page-heading,
 .recommend-page .search-wrapper,
 .recommend-page .button-container,
@@ -132,239 +170,246 @@
 .recommend-page .result-header,
 .recommend-page .result-grid {
   width: 90%;
-  max-width: 900px;
-  margin: 0 auto; /* keep centering */
-  padding: 0 1rem;
-}
-
-/* RESULT BOX */
-.recommend-page .result-box {
-  width: 95%;
-  max-width: 1000px;
-  margin: 2rem auto;
-  padding: 1.5rem 2rem;
-  background: #f9fafb;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-/* RESULT HEADER (Heading + Verdict) */
-.recommend-page .result-header {
-  width:100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.recommend-page .result-name {
-  font-size: 1.8rem;
-  color: #2c3e50;
-  margin: 0;
-  text-align: left;
-  flex: 1;
-}
-
-
-/* VERDICT BADGE */
-.recommend-page .recommendation-box {
-  padding: 0.5rem 1.2rem;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  min-width: 180px;
-  text-align: center;
-  height: fit-content;
-}
-
-.recommend-page .recommendation-box.strong-buy {
-  background: #e6f4ea;
-  color: #1f553f;
-}
-
-.recommend-page .recommendation-box.buy {
-  background: #f0f8f1;
-  color: #236b45;
-}
-
-.recommend-page .recommendation-box.hold {
-  background: #fffafb;
-  color: #6a5a1d;
-}
-
-.recommend-page .recommendation-box.sell {
-  background: #fff5f5;
-  color: #8b1c1c;
-}
-
-.recommend-page .recommendation-box.strong-sell {
-  background: #fdecea;
-  color: #7a1818;
-}
-
-.recommend-page .recommendation-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.recommend-page .recommendation-box:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
-.recommend-page .fundamentals-heading {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 2rem 0 1rem;
-  padding: 0 4rem;
-  text-align: left;
-  max-width: 1000px;
+  max-width: 960px;
   margin-left: auto;
   margin-right: auto;
 }
 
-
-/* FUNDAMENTALS GRID */
-.recommend-page .result-grid {
+/* ─── Result Container ─── */
+.result-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-}
-
-
-.recommend-page .result-grid > div {
-  flex: 1 1 calc(33.33% - 1rem);
-  min-width: 200px;
-  padding: 0.6rem 1rem;
-  background: none;
-  border: 1px solid #e5e7eb;
-  border-radius: 6px;
-  box-shadow: none;
-  font-size: 0.95rem;
-  color: #1f2937;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-
-.recommend-page .result-grid > div strong {
-  font-weight: 500;
-  color: #374151;
-  margin-bottom: 4px;
-  font-size: 0.87rem;
-}
-
-.recommend-page .result-grid > div span {
-  font-weight: 600;
-  font-size: 0.95rem;
-  color: #111827;
-}
-
-
-@media (max-width: 768px) {
-  .recommend-page .result-grid {
-    grid-template-columns: 1fr;
-  }
+  justify-content: center;
+  align-items: flex-start;
 }
 
 @media (min-width: 768px) {
   .result-container {
-    align-items: center;   /* true vertical center on wider viewports */
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 260px);
   }
 }
-/* ERROR MESSAGE */
-.recommend-page .error-text {
-  color: #d9534f;
-  font-weight: bold;
-  text-align: center;
-  margin: 1rem 0;
+
+/* ─── Result Box ─── */
+.result-box {
+  position: relative;
+  width: 95%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 2.5rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  min-height: 300px;
+  overflow: hidden;
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Result Header ─── */
+.recommend-page .result-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+}
+
+.recommend-page .result-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+  flex: 1;
+}
+
+/* ─── Verdict Badge ─── */
+.recommend-page .recommendation-box {
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  min-width: 160px;
+  text-align: center;
+  height: fit-content;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.recommend-page .recommendation-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.recommend-page .recommendation-box.strong-buy {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.1);
+}
+
+.recommend-page .recommendation-box.buy {
+  background: rgba(52, 211, 153, 0.1);
+  color: #6ee7b7;
+  border: 1px solid rgba(52, 211, 153, 0.25);
+}
+
+.recommend-page .recommendation-box.hold {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.recommend-page .recommendation-box.sell {
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.recommend-page .recommendation-box.strong-sell {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.1);
+}
+
+/* ─── Fundamentals Heading ─── */
+.recommend-page .fundamentals-heading {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 1.5rem auto 1rem;
+  padding: 0;
+  text-align: left;
+  max-width: 960px;
+}
+
+/* ─── Fundamentals Grid ─── */
+.recommend-page .result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.recommend-page .result-grid > div {
+  padding: 0.9rem 1.1rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.recommend-page .result-grid > div:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--border-medium);
+}
+
+.recommend-page .result-grid > div strong {
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.825rem;
+}
+
+.recommend-page .result-grid > div span {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.recommend-page .result-grid > div .na {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* ─── Error Message ─── */
+.recommend-page .error-text {
+  color: #f87171;
+  font-weight: 500;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 10px 16px;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Loader ─── */
 .loader {
-  border: 3px solid #e5e7eb;
-  border-top: 3px solid #2980b9;
+  border: 2.5px solid rgba(255, 255, 255, 0.1);
+  border-top: 2.5px solid var(--accent-secondary);
   border-radius: 50%;
   width: 16px;
   height: 16px;
-  animation: spin 0.7s linear infinite;
+  animation: spin 0.65s linear infinite;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 8px;
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-
-/* 1. Always keep the outer box visible */
-.result-container {
-  /* push it down a bit, center on larger screens */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  /* padding: 40px 0; */
-}
-
-/* 2. Your existing result-box styling stays, e.g.: */
-.result-box {
-  position: relative;
-  background: #fff;
-  border-radius: 12px;
-  padding: 36px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  min-height: 280px; /* so it doesn’t collapse */
-  overflow: hidden;   /* for the overlay */
-}
-
-/* 3. When it’s “empty”, show the overlay */
+/* ─── Empty State ─── */
 .result-box.empty .empty-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);   /* a touch more opaque */
-  backdrop-filter: blur(6px);             /* stronger blur */
-  animation: fadeInOverlay 0.3s ease-out;
+  background: var(--bg-card);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-@keyframes fadeInOverlay {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  animation: fadeIn 0.3s ease-out;
 }
 
-
-/* 4. Style the empty-state content */
 .empty-content svg {
   width: 56px;
   height: 56px;
   margin-bottom: 20px;
-  stroke: #9CA3AF;       /* gray-400 */
+  stroke: var(--text-muted);
 }
 
 .empty-content h2 {
-  font-size: 1.5rem;
-  color: #111827;        /* gray-900 */
-  margin-bottom: 6px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
 }
 
 .empty-content p {
-  color: #6B7280;        /* gray-500 */
-  font-size: 1rem;
-  padding: auto 1rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
+@media (max-width: 640px) {
+  .recommend-page .result-grid {
+    grid-template-columns: 1fr;
+  }
 
+  .recommend-page .result-name {
+    font-size: 1.3rem;
+  }
 
+  .result-box {
+    padding: 1.5rem 1.25rem;
+  }
+}
