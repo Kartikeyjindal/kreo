@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../context/AuthContext";
 import { GoogleLogin } from "@react-oauth/google";
+import DarkModeToggle from "../components/DarkModeToggle";
 import "./Login.css";
 
 function Login() {
@@ -12,7 +13,7 @@ function Login() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    document.title = "Login | SmartStocks";
+    document.title = "Login | Kreo";
   }, []);
 
   const handleLogin = async () => {
@@ -63,10 +64,18 @@ function Login() {
 
   return (
     <div className="login-page">
-    <div className="login-container">
+      <div className="login-header-toggle">
+        <DarkModeToggle />
+      </div>
+      <div className="login-container">
       <div className="login-brand">
-        <div className="login-brand-icon">📈</div>
-        <span className="login-brand-name">SmartStocks</span>
+        <div className="login-brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+            <polyline points="17 6 23 6 23 12" />
+          </svg>
+        </div>
+        <span className="login-brand-name">Kreo</span>
       </div>
       <h2>{isRegistering ? "Create Account" : "Welcome Back"}</h2>
 

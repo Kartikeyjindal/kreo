@@ -1,0 +1,28 @@
+.watchlist-star-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+  z-index: 2;
+}
+
+.watchlist-star-btn:hover {
+  transform: scale(1.15);
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+}
+
+.watchlist-star-btn.active {
+  color: #f59e0b;
+}
+
+.watchlist-star-btn.active:hover {
+  transform: scale(1.15);
+  background: rgba(245, 158, 11, 0.2);
+}

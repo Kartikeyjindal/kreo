@@ -1,7 +1,5 @@
-# db.py (serverless-safe version)
+# db.py — uses real MongoDB if MONGO_URI is set, else in-memory mongomock for local dev
 import os
-
-from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -9,5 +7,12 @@ load_dotenv()
 MONGO_URI = os.getenv("MONGO_URI")
 
 def get_db():
-    client = AsyncIOMotorClient(MONGO_URI)
+    if MONGO_URI:
+        from motor.motor_asyncio import AsyncIOMotorClient
+        client = AsyncIOMotorClient(MONGO_URI)
+    else:
+        # In-memory MongoDB for local development (no MongoDB install needed)
+        from mongomock_motor import AsyncMongoMockClient
+        client = AsyncMongoMockClient()
+
     return client["smartstocks"]

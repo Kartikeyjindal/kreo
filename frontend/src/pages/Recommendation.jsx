@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Fuse from "fuse.js";
 import stockList from "../companies.js";
+import WatchlistStar from "../components/WatchlistStar";
 import "./Recommendation.css";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
@@ -139,15 +140,28 @@ export default function Recommendation() {
               <p className="error-text">{result.error}</p>
             ) : (
               <>
-                {/* 1) Header Row: title + verdict */}
+                {/* 1) Header Row: title + (price + verdict) */}
                 <div className="result-header">
-                  <h2 className="result-name">{result.name}</h2>
-                  <div
-                    className={`recommendation-box ${result.verdict
-                      .toLowerCase()
-                      .replace(/\s/g, "-")}`}
-                  >
-                    Recommendation: {result.verdict}
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                    <h2 className="result-name">{result.name}</h2>
+                    <WatchlistStar symbol={result.symbol || selectedStock?.symbol} name={result.name} size={22} />
+                  </div>
+                  <div className="result-verdict-group">
+                    {result.price != null && (
+                      <span className="result-price">
+                        ₹{result.price}
+                        <span className={`price-change ${(result.change || 0) >= 0 ? "positive" : "negative"}`}>
+                          {(result.change || 0) >= 0 ? "+" : ""}{result.change?.toFixed(2)}%
+                        </span>
+                      </span>
+                    )}
+                    <div
+                      className={`recommendation-box ${result.verdict
+                        .toLowerCase()
+                        .replace(/\s/g, "-")}`}
+                    >
+                      Recommendation: {result.verdict}
+                    </div>
                   </div>
                 </div>
                 <h3 className="fundamentals-heading">Fundamentals:</h3>

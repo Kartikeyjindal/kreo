@@ -1,0 +1,175 @@
+/* TrendChart.css — Sleek Premium Glassmorphic Chart styling */
+
+.trend-chart-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  margin: 1.5rem auto;
+  width: 100%;
+  max-width: 960px;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chart-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.chart-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  border-radius: 99px;
+  padding: 3px;
+}
+
+html:not(.dark) .chart-tabs {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.chart-tab {
+  background: transparent;
+  border: none;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  border-radius: 99px;
+  transition: all var(--transition);
+}
+
+.chart-tab:hover {
+  color: var(--text-primary);
+}
+
+.chart-tab.active {
+  background: var(--accent-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
+}
+
+.chart-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.chart-body {
+  position: relative;
+  width: 100%;
+}
+
+.chart-svg-container {
+  position: relative;
+  width: 100%;
+}
+
+.trend-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.grid-line {
+  stroke: var(--border-subtle);
+  stroke-width: 1;
+  stroke-dasharray: 4, 4;
+}
+
+.hover-tracker-line {
+  stroke: var(--text-muted);
+  stroke-width: 1.5;
+  stroke-dasharray: 3, 3;
+  pointer-events: none;
+}
+
+.chart-point-circle {
+  fill: var(--bg-secondary);
+  stroke: var(--accent-primary);
+  stroke-width: 2.5;
+  transition: r 0.2s, fill 0.2s, stroke-width 0.2s;
+}
+
+.chart-point-circle.hovered {
+  fill: var(--accent-primary);
+  stroke: #ffffff;
+  stroke-width: 2;
+  filter: drop-shadow(0 0 4px var(--accent-primary));
+}
+
+.axis-label-x {
+  fill: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.axis-label-y {
+  fill: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 500;
+}
+
+/* Tooltip overlay styling */
+.chart-tooltip {
+  position: absolute;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  padding: 6px 12px;
+  box-shadow: var(--shadow-md), 0 0 12px rgba(99, 102, 241, 0.1);
+  pointer-events: none;
+  z-index: 10;
+  white-space: nowrap;
+  animation: tooltipFade 0.15s ease-out;
+}
+
+@keyframes tooltipFade {
+  from { opacity: 0; transform: translate(-50%, 4px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.tooltip-year {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.tooltip-value {
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+.tooltip-value strong {
+  color: var(--accent-secondary);
+}
+
+/* Print Specific */
+@media print {
+  .trend-chart-card {
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+  }
+  .chart-tabs {
+    display: none !important;
+  }
+}

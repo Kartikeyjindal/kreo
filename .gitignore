@@ -1,1 +1,21 @@
+# Virtual environments & Dependencies
+venv/
+venv_mac/
+.venv/
+env/
+node_modules/
+dist/
+dist-ssr/
+
+# Environment variables
+.env
 **/.env
+.env.local
+
+# Database / Cache / Temporary
+mongodb/
+*.log
+backend/scraped_ipo_table.html
+.DS_Store
+.idea/
+.vscode/

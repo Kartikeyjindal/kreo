@@ -1,6485 +1,8104 @@
 const stockList = [
   {
     "symbol": "360ONE",
-    "name": "360 One Wam Ltd."
+    "name": "360 One Wam Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "3MINDIA",
-    "name": "3M India Ltd."
+    "name": "3M India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "ABB",
-    "name": "ABB India Ltd."
+    "name": "ABB India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "ABBOTINDIA",
-    "name": "Abbott India Ltd."
+    "name": "Abbott India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "ACC",
-    "name": "ACC Ltd."
+    "name": "ACC Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ADANIENSOL",
-    "name": "Adani Energy Solutions Ltd."
+    "name": "Adani Energy Solutions Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ADANIENT",
-    "name": "Adani Enterprises Ltd."
+    "name": "Adani Enterprises Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ADANIGREEN",
-    "name": "Adani Green Energy Ltd."
+    "name": "Adani Green Energy Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ADANIPORTS",
-    "name": "Adani Ports and Special Economic Zone Ltd."
+    "name": "Adani Ports and Special Economic Zone Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ADANIPOWER",
-    "name": "Adani Power Ltd."
+    "name": "Adani Power Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ATGL",
-    "name": "Adani Total Gas Ltd."
+    "name": "Adani Total Gas Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "ABCAPITAL",
-    "name": "Aditya Birla Capital Ltd."
+    "name": "Aditya Birla Capital Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "AIAENG",
-    "name": "AIA Engineering Ltd."
+    "name": "AIA Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AJANTPHARM",
-    "name": "Ajanta Pharma Ltd."
+    "name": "Ajanta Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "ALKEM",
-    "name": "Alkem Laboratories Ltd."
+    "name": "Alkem Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "AMBUJACEM",
-    "name": "Ambuja Cements Ltd."
+    "name": "Ambuja Cements Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "APARINDS",
-    "name": "Apar Industries Ltd."
+    "name": "Apar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APLAPOLLO",
-    "name": "APL Apollo Tubes Ltd."
+    "name": "APL Apollo Tubes Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "APOLLOHOSP",
-    "name": "Apollo Hospitals Enterprise Ltd."
+    "name": "Apollo Hospitals Enterprise Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "ASHOKLEY",
-    "name": "Ashok Leyland Ltd."
+    "name": "Ashok Leyland Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ASIANPAINT",
-    "name": "Asian Paints Ltd."
+    "name": "Asian Paints Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "ASTRAL",
-    "name": "Astral Ltd."
+    "name": "Astral Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "AUBANK",
-    "name": "AU Small Finance Bank Ltd."
+    "name": "AU Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "AUROPHARMA",
-    "name": "Aurobindo Pharma Ltd."
+    "name": "Aurobindo Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "AIIL",
-    "name": "Authum Investment & Infrastructure Ltd."
+    "name": "Authum Investment & Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DMART",
-    "name": "Avenue Supermarts Ltd."
+    "name": "Avenue Supermarts Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "AWL",
-    "name": "AWL Agri Business Ltd."
+    "name": "AWL Agri Business Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AXISBANK",
-    "name": "Axis Bank Ltd."
+    "name": "Axis Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "BAJAJ-AUTO",
-    "name": "Bajaj Auto Ltd."
+    "name": "Bajaj Auto Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "BAJFINANCE",
-    "name": "Bajaj Finance Ltd."
+    "name": "Bajaj Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "BAJAJFINSV",
-    "name": "Bajaj Finserv Ltd."
+    "name": "Bajaj Finserv Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "BAJAJHLDNG",
-    "name": "Bajaj Holdings & Investment Ltd."
+    "name": "Bajaj Holdings & Investment Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "BAJAJHFL",
-    "name": "Bajaj Housing Finance Ltd."
+    "name": "Bajaj Housing Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BALKRISIND",
-    "name": "Balkrishna Industries Ltd."
+    "name": "Balkrishna Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "BANKBARODA",
-    "name": "Bank Of Baroda"
+    "name": "Bank Of Baroda",
+    "sector": "BANKING"
   },
   {
     "symbol": "BANKINDIA",
-    "name": "Bank Of India"
+    "name": "Bank Of India",
+    "sector": "BANKING"
   },
   {
     "symbol": "MAHABANK",
-    "name": "Bank Of Maharashtra"
+    "name": "Bank Of Maharashtra",
+    "sector": "BANKING"
   },
   {
     "symbol": "BERGEPAINT",
-    "name": "Berger Paints India Ltd."
+    "name": "Berger Paints India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BDL",
-    "name": "Bharat Dynamics Ltd."
+    "name": "Bharat Dynamics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BEL",
-    "name": "Bharat Electronics Ltd."
+    "name": "Bharat Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHARATFORG",
-    "name": "Bharat Forge Ltd."
+    "name": "Bharat Forge Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHEL",
-    "name": "Bharat Heavy Electricals Ltd."
+    "name": "Bharat Heavy Electricals Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "BPCL",
-    "name": "Bharat Petroleum Corporation Ltd."
+    "name": "Bharat Petroleum Corporation Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "BHARTIARTL",
-    "name": "Bharti Airtel Ltd."
+    "name": "Bharti Airtel Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "BHARTIHEXA",
-    "name": "Bharti Hexacom Ltd."
+    "name": "Bharti Hexacom Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "BIOCON",
-    "name": "Biocon Ltd."
+    "name": "Biocon Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "BLUESTARCO",
-    "name": "Blue Star Ltd."
+    "name": "Blue Star Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "BOSCHLTD",
-    "name": "Bosch Ltd."
+    "name": "Bosch Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BRIGADE",
-    "name": "Brigade Enterprises Ltd."
+    "name": "Brigade Enterprises Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "BRITANNIA",
-    "name": "Britannia Industries Ltd."
+    "name": "Britannia Industries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "BSE",
-    "name": "BSE Ltd."
+    "name": "BSE Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CANBK",
-    "name": "Canara Bank"
+    "name": "Canara Bank",
+    "sector": "BANKING"
   },
   {
     "symbol": "CENTRALBK",
-    "name": "Central Bank Of India"
+    "name": "Central Bank Of India",
+    "sector": "OTHER"
   },
   {
     "symbol": "CDSL",
-    "name": "Central Depository Services (India) Ltd."
+    "name": "Central Depository Services (India) Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CGPOWER",
-    "name": "CG Power and Industrial Solutions Ltd."
+    "name": "CG Power and Industrial Solutions Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "CHOLAHLDNG",
-    "name": "Cholamandalam Financial Holdings Ltd."
+    "name": "Cholamandalam Financial Holdings Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CHOLAFIN",
-    "name": "Cholamandalam Investment and Finance Company Ltd."
+    "name": "Cholamandalam Investment and Finance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CIPLA",
-    "name": "Cipla Ltd."
+    "name": "Cipla Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "COALINDIA",
-    "name": "Coal India Ltd."
+    "name": "Coal India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "COCHINSHIP",
-    "name": "Cochin Shipyard Ltd."
+    "name": "Cochin Shipyard Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "COFORGE",
-    "name": "Coforge Ltd."
+    "name": "Coforge Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "COHANCE",
-    "name": "Cohance Lifesciences Ltd."
+    "name": "Cohance Lifesciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "COLPAL",
-    "name": "Colgate-Palmolive (India) Ltd."
+    "name": "Colgate-Palmolive (India) Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "CONCOR",
-    "name": "Container Corporation Of India Ltd."
+    "name": "Container Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "COROMANDEL",
-    "name": "Coromandel International Ltd."
+    "name": "Coromandel International Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "CRISIL",
-    "name": "CRISIL Ltd."
+    "name": "CRISIL Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "CUMMINSIND",
-    "name": "Cummins India Ltd."
+    "name": "Cummins India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "DABUR",
-    "name": "Dabur India Ltd."
+    "name": "Dabur India Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "DALBHARAT",
-    "name": "Dalmia Bharat Ltd."
+    "name": "Dalmia Bharat Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "DIVISLAB",
-    "name": "Divi''s Laboratories Ltd."
+    "name": "Divi''s Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "DIXON",
-    "name": "Dixon Technologies (India) Ltd."
+    "name": "Dixon Technologies (India) Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "DLF",
-    "name": "DLF Ltd."
+    "name": "DLF Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "DRREDDY",
-    "name": "Dr. Reddy''s Laboratories Ltd."
+    "name": "Dr. Reddy''s Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "EICHERMOT",
-    "name": "Eicher Motors Ltd."
+    "name": "Eicher Motors Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ENDURANCE",
-    "name": "Endurance Technologies Ltd."
+    "name": "Endurance Technologies Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ESCORTS",
-    "name": "Escorts Kubota Ltd."
+    "name": "Escorts Kubota Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ETERNAL",
-    "name": "Eternal Ltd."
+    "name": "Eternal Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EXIDEIND",
-    "name": "Exide Industries Ltd."
+    "name": "Exide Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "FORTIS",
-    "name": "Fortis Healthcare Ltd."
+    "name": "Fortis Healthcare Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "NYKAA",
-    "name": "FSN E-Commerce Ventures Ltd."
+    "name": "FSN E-Commerce Ventures Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "GAIL",
-    "name": "GAIL (India) Ltd."
+    "name": "GAIL (India) Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "GRSE",
-    "name": "Garden Reach Shipbuilders & Engineers Ltd."
+    "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-122275",
-    "name": "GE Vernova T&D India Ltd."
+    "name": "GE Vernova T&D India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GICRE",
-    "name": "General Insurance Corporation of India"
+    "name": "General Insurance Corporation of India",
+    "sector": "BANKING"
   },
   {
     "symbol": "GILLETTE",
-    "name": "Gillette India Ltd."
+    "name": "Gillette India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GLAXO",
-    "name": "Glaxosmithkline Pharmaceuticals Ltd."
+    "name": "Glaxosmithkline Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "GLENMARK",
-    "name": "Glenmark Pharmaceuticals Ltd."
+    "name": "Glenmark Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "MEDANTA",
-    "name": "Global Health Ltd."
+    "name": "Global Health Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "GMRAIRPORT",
-    "name": "GMR Airports Ltd."
+    "name": "GMR Airports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GODIGIT",
-    "name": "Go Digit General Insurance Ltd."
+    "name": "Go Digit General Insurance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GODFRYPHLP",
-    "name": "Godfrey Phillips India Ltd."
+    "name": "Godfrey Phillips India Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "GODREJCP",
-    "name": "Godrej Consumer Products Ltd."
+    "name": "Godrej Consumer Products Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "GODREJIND",
-    "name": "Godrej Industries Ltd."
+    "name": "Godrej Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GODREJPROP",
-    "name": "Godrej Properties Ltd."
+    "name": "Godrej Properties Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "GRASIM",
-    "name": "Grasim Industries Ltd."
+    "name": "Grasim Industries Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "FLUOROCHEM",
-    "name": "Gujarat Fluorochemicals Ltd."
+    "name": "Gujarat Fluorochemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GUJGASLTD",
-    "name": "Gujarat Gas Ltd."
+    "name": "Gujarat Gas Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "HAVELLS",
-    "name": "Havells India Ltd."
+    "name": "Havells India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "HCLTECH",
-    "name": "HCL Technologies Ltd."
+    "name": "HCL Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "HDFCAMC",
-    "name": "HDFC Asset Management Company Ltd."
+    "name": "HDFC Asset Management Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "HDFCBANK",
-    "name": "HDFC Bank Ltd."
+    "name": "HDFC Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "HDFCLIFE",
-    "name": "HDFC Life Insurance Company Ltd."
+    "name": "HDFC Life Insurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "HEROMOTOCO",
-    "name": "Hero MotoCorp Ltd."
+    "name": "Hero MotoCorp Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "HEXT",
-    "name": "Hexaware Technologies Ltd."
+    "name": "Hexaware Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "HINDALCO",
-    "name": "Hindalco Industries Ltd."
+    "name": "Hindalco Industries Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "HAL",
-    "name": "Hindustan Aeronautics Ltd."
+    "name": "Hindustan Aeronautics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HINDPETRO",
-    "name": "Hindustan Petroleum Corporation Ltd."
+    "name": "Hindustan Petroleum Corporation Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "HINDUNILVR",
-    "name": "Hindustan Unilever Ltd."
+    "name": "Hindustan Unilever Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "HINDZINC",
-    "name": "Hindustan Zinc Ltd."
+    "name": "Hindustan Zinc Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "POWERINDIA",
-    "name": "Hitachi Energy India Ltd."
+    "name": "Hitachi Energy India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "HONAUT",
-    "name": "Honeywell Automation India Ltd."
+    "name": "Honeywell Automation India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "HUDCO",
-    "name": "Housing & Urban Development Corporation Ltd."
+    "name": "Housing & Urban Development Corporation Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "HYUNDAI",
-    "name": "Hyundai Motor India Ltd."
+    "name": "Hyundai Motor India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ICICIBANK",
-    "name": "ICICI Bank Ltd."
+    "name": "ICICI Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ICICIGI",
-    "name": "ICICI Lombard General Insurance Company Ltd."
+    "name": "ICICI Lombard General Insurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ICICIPRULI",
-    "name": "ICICI Prudential Life Insurance Company Ltd."
+    "name": "ICICI Prudential Life Insurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IDBI",
-    "name": "IDBI Bank Ltd."
+    "name": "IDBI Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IDFCFIRSTB",
-    "name": "IDFC First Bank Ltd."
+    "name": "IDFC First Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "INDIANB",
-    "name": "Indian Bank"
+    "name": "Indian Bank",
+    "sector": "BANKING"
   },
   {
     "symbol": "IOC",
-    "name": "Indian Oil Corporation Ltd."
+    "name": "Indian Oil Corporation Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "IOB",
-    "name": "Indian Overseas Bank"
+    "name": "Indian Overseas Bank",
+    "sector": "BANKING"
   },
   {
     "symbol": "IRCTC",
-    "name": "Indian Railway Catering And Tourism Corporation Ltd."
+    "name": "Indian Railway Catering And Tourism Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IRFC",
-    "name": "Indian Railway Finance Corporation Ltd."
+    "name": "Indian Railway Finance Corporation Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IREDA",
-    "name": "Indian Renewable Energy Development Agency Ltd."
+    "name": "Indian Renewable Energy Development Agency Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "INDUSTOWER",
-    "name": "Indus Towers Ltd."
+    "name": "Indus Towers Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "INDUSINDBK",
-    "name": "IndusInd Bank Ltd."
+    "name": "IndusInd Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "NAUKRI",
-    "name": "Info Edge (India) Ltd."
+    "name": "Info Edge (India) Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "INFY",
-    "name": "Infosys Ltd."
+    "name": "Infosys Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "INDIGO",
-    "name": "Interglobe Aviation Ltd."
+    "name": "Interglobe Aviation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IPCALAB",
-    "name": "Ipca Laboratories Ltd."
+    "name": "Ipca Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "IRB",
-    "name": "IRB Infrastructure Developers Ltd."
+    "name": "IRB Infrastructure Developers Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ITCHOTELS",
-    "name": "ITC Hotels Ltd."
+    "name": "ITC Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ITC",
-    "name": "ITC Ltd."
+    "name": "ITC Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "ITI",
-    "name": "ITI Ltd."
+    "name": "ITI Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "JSL",
-    "name": "Jindal Stainless Ltd."
+    "name": "Jindal Stainless Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "JINDALSTEL",
-    "name": "Jindal Steel & Power Ltd."
+    "name": "Jindal Steel & Power Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "JIOFIN",
-    "name": "JIO Financial Services Ltd."
+    "name": "JIO Financial Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "JKCEMENT",
-    "name": "JK Cement Ltd."
+    "name": "JK Cement Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "JSWENERGY",
-    "name": "JSW Energy Ltd."
+    "name": "JSW Energy Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "JSWINFRA",
-    "name": "JSW Infrastructure Ltd."
+    "name": "JSW Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JSWSTEEL",
-    "name": "JSW Steel Ltd."
+    "name": "JSW Steel Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "JUBLFOOD",
-    "name": "Jubilant FoodWorks Ltd."
+    "name": "Jubilant FoodWorks Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "KPRMILL",
-    "name": "K.P.R. Mill Ltd."
+    "name": "K.P.R. Mill Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KALYANKJIL",
-    "name": "Kalyan Jewellers India Ltd."
+    "name": "Kalyan Jewellers India Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "KAYNES",
-    "name": "Kaynes Technology India Ltd."
+    "name": "Kaynes Technology India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "KEI",
-    "name": "KEI Industries Ltd."
+    "name": "KEI Industries Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "KOTAKBANK",
-    "name": "Kotak Mahindra Bank Ltd."
+    "name": "Kotak Mahindra Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "KPITTECH",
-    "name": "KPIT Technologies Ltd."
+    "name": "KPIT Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "LTF",
-    "name": "L&T Finance Ltd."
+    "name": "L&T Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "LTTS",
-    "name": "L&T Technology Services Ltd."
+    "name": "L&T Technology Services Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "LT",
-    "name": "Larsen & Toubro Ltd."
+    "name": "Larsen & Toubro Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "LAURUSLABS",
-    "name": "Laurus Labs Ltd."
+    "name": "Laurus Labs Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "LICHSGFIN",
-    "name": "LIC Housing Finance Ltd."
+    "name": "LIC Housing Finance Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "LICI",
-    "name": "Life Insurance Corporation of India"
+    "name": "Life Insurance Corporation of India",
+    "sector": "BANKING"
   },
   {
     "symbol": "LINDEINDIA",
-    "name": "Linde India Ltd."
+    "name": "Linde India Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "LLOYDSME",
-    "name": "Lloyds Metals & Energy Ltd."
+    "name": "Lloyds Metals & Energy Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "LTIM",
-    "name": "LTIMindtree Ltd."
+    "name": "LTIMindtree Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "LUPIN",
-    "name": "Lupin Ltd."
+    "name": "Lupin Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "LODHA",
-    "name": "Macrotech Developers Ltd."
+    "name": "Macrotech Developers Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "SCRIP-132720",
-    "name": "Mahindra & Mahindra Financial Services Ltd."
+    "name": "Mahindra & Mahindra Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-100520",
-    "name": "Mahindra & Mahindra Ltd."
+    "name": "Mahindra & Mahindra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANKIND",
-    "name": "Mankind Pharma Ltd."
+    "name": "Mankind Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "MARICO",
-    "name": "Marico Ltd."
+    "name": "Marico Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "MARUTI",
-    "name": "Maruti Suzuki India Ltd."
+    "name": "Maruti Suzuki India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MFSL",
-    "name": "Max Financial Services Ltd."
+    "name": "Max Financial Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "MAXHEALTH",
-    "name": "Max Healthcare Institute Ltd."
+    "name": "Max Healthcare Institute Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "MAZDOCK",
-    "name": "Mazagon Dock Shipbuilders Ltd."
+    "name": "Mazagon Dock Shipbuilders Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "METROBRAND",
-    "name": "Metro Brands Ltd."
+    "name": "Metro Brands Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "MOTILALOFS",
-    "name": "Motilal Oswal Financial Services Ltd."
+    "name": "Motilal Oswal Financial Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "MPHASIS",
-    "name": "Mphasis Ltd."
+    "name": "Mphasis Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "MRF",
-    "name": "MRF Ltd."
+    "name": "MRF Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MCX",
-    "name": "Multi Commodity Exchange Of India Ltd."
+    "name": "Multi Commodity Exchange Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MUTHOOTFIN",
-    "name": "Muthoot Finance Ltd."
+    "name": "Muthoot Finance Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "NH",
-    "name": "Narayana Hrudayalaya Ltd."
+    "name": "Narayana Hrudayalaya Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "NATIONALUM",
-    "name": "National Aluminium Company Ltd."
+    "name": "National Aluminium Company Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "NBCC",
-    "name": "NBCC (India) Ltd."
+    "name": "NBCC (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NESTLEIND",
-    "name": "Nestle India Ltd."
+    "name": "Nestle India Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "NHPC",
-    "name": "NHPC Ltd."
+    "name": "NHPC Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "NAM-INDIA",
-    "name": "Nippon Life India Asset Management Ltd."
+    "name": "Nippon Life India Asset Management Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NLCINDIA",
-    "name": "NLC India Ltd."
+    "name": "NLC India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "NMDC",
-    "name": "NMDC Ltd."
+    "name": "NMDC Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "NTPCGREEN",
-    "name": "NTPC Green Energy Ltd."
+    "name": "NTPC Green Energy Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "NTPC",
-    "name": "NTPC Ltd."
+    "name": "NTPC Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "OBEROIRLTY",
-    "name": "Oberoi Realty Ltd."
+    "name": "Oberoi Realty Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "ONGC",
-    "name": "Oil & Natural Gas Corporation Ltd."
+    "name": "Oil & Natural Gas Corporation Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "OIL",
-    "name": "Oil India Ltd."
+    "name": "Oil India Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "PAYTM",
-    "name": "One97 Communications Ltd."
+    "name": "One97 Communications Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "OFSS",
-    "name": "Oracle Financial Services Software Ltd."
+    "name": "Oracle Financial Services Software Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "PAGEIND",
-    "name": "Page Industries Ltd."
+    "name": "Page Industries Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "PATANJALI",
-    "name": "Patanjali Foods Ltd."
+    "name": "Patanjali Foods Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "POLICYBZR",
-    "name": "PB Fintech Ltd."
+    "name": "PB Fintech Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "PERSISTENT",
-    "name": "Persistent Systems Ltd."
+    "name": "Persistent Systems Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "PETRONET",
-    "name": "Petronet LNG Ltd."
+    "name": "Petronet LNG Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "PIIND",
-    "name": "PI Industries Ltd."
+    "name": "PI Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "PIDILITIND",
-    "name": "Pidilite Industries Ltd."
+    "name": "Pidilite Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "POLYCAB",
-    "name": "Polycab India Ltd."
+    "name": "Polycab India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "POONAWALLA",
-    "name": "Poonawalla Fincorp Ltd."
+    "name": "Poonawalla Fincorp Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "PFC",
-    "name": "Power Finance Corporation Ltd."
+    "name": "Power Finance Corporation Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "POWERGRID",
-    "name": "Power Grid Corporation Of India Ltd."
+    "name": "Power Grid Corporation Of India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "PREMIERENE",
-    "name": "Premier Energies Ltd."
+    "name": "Premier Energies Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "PRESTIGE",
-    "name": "Prestige Estates Projects Ltd."
+    "name": "Prestige Estates Projects Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "PGHH",
-    "name": "Procter & Gamble Hygiene and Health Care Ltd."
+    "name": "Procter & Gamble Hygiene and Health Care Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PNB",
-    "name": "Punjab National Bank"
+    "name": "Punjab National Bank",
+    "sector": "BANKING"
   },
   {
     "symbol": "RADICO",
-    "name": "Radico Khaitan Ltd."
+    "name": "Radico Khaitan Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "RVNL",
-    "name": "Rail Vikas Nigam Ltd."
+    "name": "Rail Vikas Nigam Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "RECLTD",
-    "name": "REC Ltd."
+    "name": "REC Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "RELIANCE",
-    "name": "Reliance Industries Ltd."
+    "name": "Reliance Industries Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "MOTHERSON",
-    "name": "Samvardhana Motherson International Ltd."
+    "name": "Samvardhana Motherson International Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SBICARD",
-    "name": "SBI Cards And Payment Services Ltd."
+    "name": "SBI Cards And Payment Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SBILIFE",
-    "name": "SBI Life Insurance Company Ltd."
+    "name": "SBI Life Insurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SCHAEFFLER",
-    "name": "Schaeffler India Ltd."
+    "name": "Schaeffler India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SHREECEM",
-    "name": "Shree Cement Ltd."
+    "name": "Shree Cement Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SHRIRAMFIN",
-    "name": "Shriram Finance Ltd."
+    "name": "Shriram Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SIEMENS",
-    "name": "Siemens Ltd."
+    "name": "Siemens Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SJVN",
-    "name": "SJVN Ltd."
+    "name": "SJVN Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SOLARINDS",
-    "name": "Solar Industries India Ltd."
+    "name": "Solar Industries India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SONACOMS",
-    "name": "Sona BLW Precision Forgings Ltd."
+    "name": "Sona BLW Precision Forgings Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SRF",
-    "name": "SRF Ltd."
+    "name": "SRF Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SBIN",
-    "name": "State Bank Of India"
+    "name": "State Bank Of India",
+    "sector": "BANKING"
   },
   {
     "symbol": "SAIL",
-    "name": "Steel Authority Of India Ltd."
+    "name": "Steel Authority Of India Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SUNPHARMA",
-    "name": "Sun Pharmaceutical Industries Ltd."
+    "name": "Sun Pharmaceutical Industries Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SUNDARMFIN",
-    "name": "Sundaram Finance Ltd."
+    "name": "Sundaram Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SUPREMEIND",
-    "name": "Supreme Industries Ltd."
+    "name": "Supreme Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SUZLON",
-    "name": "Suzlon Energy Ltd."
+    "name": "Suzlon Energy Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SWIGGY",
-    "name": "Swiggy Ltd."
+    "name": "Swiggy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TATACOMM",
-    "name": "Tata Communications Ltd."
+    "name": "Tata Communications Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TCS",
-    "name": "Tata Consultancy Services Ltd."
+    "name": "Tata Consultancy Services Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "TATACONSUM",
-    "name": "Tata Consumer Products Ltd."
+    "name": "Tata Consumer Products Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATAELXSI",
-    "name": "Tata Elxsi Ltd."
+    "name": "Tata Elxsi Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATAINVEST",
-    "name": "Tata Investment Corporation Ltd."
+    "name": "Tata Investment Corporation Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATAMOTORS",
-    "name": "Tata Motors Ltd."
+    "name": "Tata Motors Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATAPOWER",
-    "name": "Tata Power Company Ltd."
+    "name": "Tata Power Company Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATASTEEL",
-    "name": "Tata Steel Ltd."
+    "name": "Tata Steel Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "TATATECH",
-    "name": "Tata Technologies Ltd."
+    "name": "Tata Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "TECHM",
-    "name": "Tech Mahindra Ltd."
+    "name": "Tech Mahindra Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "FEDERALBNK",
-    "name": "The Federal Bank Ltd."
+    "name": "The Federal Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "FACT",
-    "name": "The Fertilisers And Chemicals Travancore Ltd."
+    "name": "The Fertilisers And Chemicals Travancore Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "INDHOTEL",
-    "name": "The Indian Hotels Company Ltd."
+    "name": "The Indian Hotels Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NIACL",
-    "name": "The New India Assurance Company Ltd."
+    "name": "The New India Assurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "PHOENIXLTD",
-    "name": "The Phoenix Mills Ltd."
+    "name": "The Phoenix Mills Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "THERMAX",
-    "name": "Thermax Ltd."
+    "name": "Thermax Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "TITAN",
-    "name": "Titan Company Ltd."
+    "name": "Titan Company Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "TORNTPHARM",
-    "name": "Torrent Pharmaceuticals Ltd."
+    "name": "Torrent Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "TORNTPOWER",
-    "name": "Torrent Power Ltd."
+    "name": "Torrent Power Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "TRENT",
-    "name": "Trent Ltd."
+    "name": "Trent Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "TIINDIA",
-    "name": "Tube Investments of India Ltd."
+    "name": "Tube Investments of India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "TVSMOTOR",
-    "name": "TVS Motor Company Ltd."
+    "name": "TVS Motor Company Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "UCOBANK",
-    "name": "UCO Bank"
+    "name": "UCO Bank",
+    "sector": "BANKING"
   },
   {
     "symbol": "ULTRACEMCO",
-    "name": "Ultratech Cement Ltd."
+    "name": "Ultratech Cement Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "UNIONBANK",
-    "name": "Union Bank Of India"
+    "name": "Union Bank Of India",
+    "sector": "BANKING"
   },
   {
     "symbol": "UBL",
-    "name": "United Breweries Ltd."
+    "name": "United Breweries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "UNITDSPR",
-    "name": "United Spirits Ltd."
+    "name": "United Spirits Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "UNOMINDA",
-    "name": "UNO Minda Ltd."
+    "name": "UNO Minda Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "UPL",
-    "name": "UPL Ltd."
+    "name": "UPL Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "VBL",
-    "name": "Varun Beverages Ltd."
+    "name": "Varun Beverages Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "VEDL",
-    "name": "Vedanta Ltd."
+    "name": "Vedanta Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "VMM",
-    "name": "Vishal Mega Mart Ltd."
+    "name": "Vishal Mega Mart Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IDEA",
-    "name": "Vodafone Idea Ltd."
+    "name": "Vodafone Idea Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "VOLTAS",
-    "name": "Voltas Ltd."
+    "name": "Voltas Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "WAAREEENER",
-    "name": "Waaree Energies Ltd."
+    "name": "Waaree Energies Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "WIPRO",
-    "name": "Wipro Ltd."
+    "name": "Wipro Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "YESBANK",
-    "name": "Yes Bank Ltd."
+    "name": "Yes Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ZYDUSLIFE",
-    "name": "Zydus Lifesciences Ltd."
+    "name": "Zydus Lifesciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "AADHARHFC",
-    "name": "Aadhar Housing Finance Ltd."
+    "name": "Aadhar Housing Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "AARTIDRUGS",
-    "name": "Aarti Drugs Ltd."
+    "name": "Aarti Drugs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AARTIIND",
-    "name": "Aarti Industries Ltd."
+    "name": "Aarti Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "AARTIPHARM",
-    "name": "Aarti Pharmalabs Ltd."
+    "name": "Aarti Pharmalabs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AAVAS",
-    "name": "Aavas Financiers Ltd."
+    "name": "Aavas Financiers Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ACMESOLAR",
-    "name": "Acme Solar Holdings Ltd."
+    "name": "Acme Solar Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ACE",
-    "name": "Action Construction Equipment Ltd."
+    "name": "Action Construction Equipment Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ACUTAAS",
-    "name": "Acutaas Chemicals Ltd."
+    "name": "Acutaas Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ABFRL",
-    "name": "Aditya Birla Fashion and Retail Ltd."
+    "name": "Aditya Birla Fashion and Retail Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "ABREL",
-    "name": "Aditya Birla Real Estate Ltd."
+    "name": "Aditya Birla Real Estate Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ABSLAMC",
-    "name": "Aditya Birla Sun Life AMC Ltd."
+    "name": "Aditya Birla Sun Life AMC Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "AVL",
-    "name": "Aditya Vision Ltd."
+    "name": "Aditya Vision Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AEGISLOG",
-    "name": "Aegis Logistics Ltd."
+    "name": "Aegis Logistics Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "AEGISVOPAK",
-    "name": "Aegis Vopak Terminals Ltd."
+    "name": "Aegis Vopak Terminals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AETHER",
-    "name": "Aether Industries Ltd."
+    "name": "Aether Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "AFCONS",
-    "name": "Afcons Infrastructure Ltd."
+    "name": "Afcons Infrastructure Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "AFFLE",
-    "name": "Affle 3i Ltd."
+    "name": "Affle 3i Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "AGI",
-    "name": "AGI Greenpac Ltd."
+    "name": "AGI Greenpac Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "AHLUCONT",
-    "name": "Ahluwalia Contracts (India) Ltd."
+    "name": "Ahluwalia Contracts (India) Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "AJAXENGG",
-    "name": "Ajax Engineering Ltd."
+    "name": "Ajax Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AKUMS",
-    "name": "Akums Drugs & Pharmaceuticals Ltd."
+    "name": "Akums Drugs & Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "AKZOINDIA",
-    "name": "Akzo Nobel India Ltd."
+    "name": "Akzo Nobel India Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "APLLTD",
-    "name": "Alembic Pharmaceuticals Ltd."
+    "name": "Alembic Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "ALIVUS",
-    "name": "Alivus Life Sciences Ltd."
+    "name": "Alivus Life Sciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALKYLAMINE",
-    "name": "Alkyl Amines Chemicals Ltd."
+    "name": "Alkyl Amines Chemicals Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "ABDL",
-    "name": "Allied Blenders And Distillers Ltd."
+    "name": "Allied Blenders And Distillers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALOKINDS",
-    "name": "Alok Industries Ltd."
+    "name": "Alok Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-100008",
-    "name": "Amara Raja Energy & Mobility Ltd."
+    "name": "Amara Raja Energy & Mobility Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AMBER",
-    "name": "Amber Enterprises India Ltd."
+    "name": "Amber Enterprises India Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "ANANDRATHI",
-    "name": "Anand Rathi Wealth Ltd."
+    "name": "Anand Rathi Wealth Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ANANTRAJ",
-    "name": "Anant Raj Ltd."
+    "name": "Anant Raj Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "ANGELONE",
-    "name": "Angel One Ltd."
+    "name": "Angel One Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ANURAS",
-    "name": "Anupam Rasayan India Ltd."
+    "name": "Anupam Rasayan India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APOLLO",
-    "name": "Apollo Micro Systems Ltd."
+    "name": "Apollo Micro Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APOLLOTYRE",
-    "name": "Apollo Tyres Ltd."
+    "name": "Apollo Tyres Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "APTUS",
-    "name": "Aptus Value Housing Finance India Ltd."
+    "name": "Aptus Value Housing Finance India Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ACI",
-    "name": "Archean Chemical Industries Ltd."
+    "name": "Archean Chemical Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARVINDFASN",
-    "name": "Arvind Fashions Ltd."
+    "name": "Arvind Fashions Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "ARVIND",
-    "name": "Arvind Ltd."
+    "name": "Arvind Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASAHIINDIA",
-    "name": "Asahi India Glass Ltd."
+    "name": "Asahi India Glass Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASHOKA",
-    "name": "Ashoka Buildcon Ltd."
+    "name": "Ashoka Buildcon Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ASKAUTOLTD",
-    "name": "ASK Automotive Ltd."
+    "name": "ASK Automotive Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASTERDM",
-    "name": "Aster DM Healthcare Ltd."
+    "name": "Aster DM Healthcare Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "ASTRAMICRO",
-    "name": "Astra Microwave Products Ltd."
+    "name": "Astra Microwave Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASTRAZEN",
-    "name": "Astrazeneca Pharma India Ltd."
+    "name": "Astrazeneca Pharma India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ATHERENERG",
-    "name": "Ather Energy Ltd."
+    "name": "Ather Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ATUL",
-    "name": "Atul Ltd."
+    "name": "Atul Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "AURIONPRO",
-    "name": "Aurionpro Solutions Ltd."
+    "name": "Aurionpro Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AVALON",
-    "name": "Avalon Technologies Ltd."
+    "name": "Avalon Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AVANTEL",
-    "name": "Avantel Ltd."
+    "name": "Avantel Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AVANTIFEED",
-    "name": "Avanti Feeds Ltd."
+    "name": "Avanti Feeds Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "AWFIS",
-    "name": "Awfis Space Solutions Ltd."
+    "name": "Awfis Space Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AXISCADES",
-    "name": "Axiscades Technologies Ltd."
+    "name": "Axiscades Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AZAD",
-    "name": "Azad Engineering Ltd."
+    "name": "Azad Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BAJAJELEC",
-    "name": "Bajaj Electricals Ltd."
+    "name": "Bajaj Electricals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BALAMINES",
-    "name": "Balaji Amines Ltd."
+    "name": "Balaji Amines Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BALRAMCHIN",
-    "name": "Balrampur Chini Mills Ltd."
+    "name": "Balrampur Chini Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BALUFORGE",
-    "name": "Balu Forge Industries Ltd."
+    "name": "Balu Forge Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BANCOINDIA",
-    "name": "Banco Products (India) Ltd."
+    "name": "Banco Products (India) Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "BANDHANBNK",
-    "name": "Bandhan Bank Ltd."
+    "name": "Bandhan Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "BANARISUG",
-    "name": "Bannari Amman Sugars Ltd."
+    "name": "Bannari Amman Sugars Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BANSALWIRE",
-    "name": "Bansal Wire Industries Ltd."
+    "name": "Bansal Wire Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BASF",
-    "name": "BASF India Ltd."
+    "name": "BASF India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BATAINDIA",
-    "name": "Bata India Ltd."
+    "name": "Bata India Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "BAYERCROP",
-    "name": "Bayer CropScience Ltd."
+    "name": "Bayer CropScience Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BELRISE",
-    "name": "Belrise Industries Ltd."
+    "name": "Belrise Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BEML",
-    "name": "BEML Ltd."
+    "name": "BEML Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-219234",
-    "name": "Bengal & Assam Company Ltd."
+    "name": "Bengal & Assam Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BIKAJI",
-    "name": "Bikaji Foods International Ltd."
+    "name": "Bikaji Foods International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BIRLACORPN",
-    "name": "Birla Corporation Ltd."
+    "name": "Birla Corporation Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "BSOFT",
-    "name": "Birlasoft Ltd."
+    "name": "Birlasoft Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "BBOX",
-    "name": "Black Box Ltd."
+    "name": "Black Box Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLS",
-    "name": "BLS International Services Ltd."
+    "name": "BLS International Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLUEDART",
-    "name": "Blue Dart Express Ltd."
+    "name": "Blue Dart Express Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLUEJET",
-    "name": "Blue Jet Healthcare Ltd."
+    "name": "Blue Jet Healthcare Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "BBTC",
-    "name": "Bombay Burmah Trading Corporation Ltd."
+    "name": "Bombay Burmah Trading Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-311155",
-    "name": "Bondada Engineering Ltd."
+    "name": "Bondada Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BOROLTD",
-    "name": "Borosil Ltd."
+    "name": "Borosil Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BORORENEW",
-    "name": "Borosil Renewables Ltd."
+    "name": "Borosil Renewables Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FIRSTCRY",
-    "name": "Brainbees Solutions Ltd."
+    "name": "Brainbees Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CAMLINFINE",
-    "name": "Camlin Fine Sciences Ltd."
+    "name": "Camlin Fine Sciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CAMPUS",
-    "name": "Campus Activewear Ltd."
+    "name": "Campus Activewear Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "CANFINHOME",
-    "name": "Can Fin Homes Ltd."
+    "name": "Can Fin Homes Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CAPLIPOINT",
-    "name": "Caplin Point Laboratories Ltd."
+    "name": "Caplin Point Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "CGCL",
-    "name": "Capri Global Capital Ltd."
+    "name": "Capri Global Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CARBORUNIV",
-    "name": "Carborundum Universal Ltd."
+    "name": "Carborundum Universal Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CARERATING",
-    "name": "Care Ratings Ltd."
+    "name": "Care Ratings Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CARTRADE",
-    "name": "CarTrade Tech Ltd."
+    "name": "CarTrade Tech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CASTROLIND",
-    "name": "Castrol India Ltd."
+    "name": "Castrol India Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "CCL",
-    "name": "CCL Products (India) Ltd."
+    "name": "CCL Products (India) Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "MAPMYINDIA",
-    "name": "CE Info Systems Ltd."
+    "name": "CE Info Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CEATLTD",
-    "name": "Ceat Ltd."
+    "name": "Ceat Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "CEIGALL",
-    "name": "Ceigall India Ltd."
+    "name": "Ceigall India Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "CELLO",
-    "name": "Cello World Ltd."
+    "name": "Cello World Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CENTURYPLY",
-    "name": "Century Plyboards (India) Ltd."
+    "name": "Century Plyboards (India) Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "CERA",
-    "name": "Cera Sanitaryware Ltd."
+    "name": "Cera Sanitaryware Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CESC",
-    "name": "CESC Ltd."
+    "name": "CESC Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "CHALET",
-    "name": "Chalet Hotels Ltd."
+    "name": "Chalet Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CHAMBLFERT",
-    "name": "Chambal Fertilisers and Chemicals Ltd."
+    "name": "Chambal Fertilisers and Chemicals Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "CHEMPLASTS",
-    "name": "Chemplast Sanmar Ltd."
+    "name": "Chemplast Sanmar Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CHENNPETRO",
-    "name": "Chennai Petroleum Corporation Ltd."
+    "name": "Chennai Petroleum Corporation Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "CHOICEIN",
-    "name": "Choice International Ltd."
+    "name": "Choice International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CIEINDIA",
-    "name": "CIE Automotive India Ltd."
+    "name": "CIE Automotive India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "CIGNITITEC",
-    "name": "Cigniti Technologies Ltd."
+    "name": "Cigniti Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "CUB",
-    "name": "City Union Bank Ltd."
+    "name": "City Union Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CLEAN",
-    "name": "Clean Science And Technology Ltd."
+    "name": "Clean Science And Technology Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "CMSINFO",
-    "name": "CMS Info Systems Ltd."
+    "name": "CMS Info Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CAMS",
-    "name": "Computer Age Management Services Ltd."
+    "name": "Computer Age Management Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CONCORDBIO",
-    "name": "Concord Biotech Ltd."
+    "name": "Concord Biotech Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "CRAFTSMAN",
-    "name": "Craftsman Automation Ltd."
+    "name": "Craftsman Automation Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "CREDITACC",
-    "name": "CreditAccess Grameen Ltd."
+    "name": "CreditAccess Grameen Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CROMPTON",
-    "name": "Crompton Greaves Consumer Electricals Ltd."
+    "name": "Crompton Greaves Consumer Electricals Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "CSBBANK",
-    "name": "CSB Bank Ltd."
+    "name": "CSB Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CYIENT",
-    "name": "Cyient Ltd."
+    "name": "Cyient Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "DBCORP",
-    "name": "D.B. Corp Ltd."
+    "name": "D.B. Corp Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "DATAPATTNS",
-    "name": "Data Patterns (India) Ltd."
+    "name": "Data Patterns (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DCBBANK",
-    "name": "DCB Bank Ltd."
+    "name": "DCB Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "DCMSHRIRAM",
-    "name": "DCM Shriram Ltd."
+    "name": "DCM Shriram Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "DEEPAKFERT",
-    "name": "Deepak Fertilisers And Petrochemicals Corporation Ltd."
+    "name": "Deepak Fertilisers And Petrochemicals Corporation Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "DEEPAKNTR",
-    "name": "Deepak Nitrite Ltd."
+    "name": "Deepak Nitrite Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "DELHIVERY",
-    "name": "Delhivery Ltd."
+    "name": "Delhivery Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DEVYANI",
-    "name": "Devyani International Ltd."
+    "name": "Devyani International Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "DHANUKA",
-    "name": "Dhanuka Agritech Ltd."
+    "name": "Dhanuka Agritech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DIACABS",
-    "name": "Diamond Power Infrastructure Ltd."
+    "name": "Diamond Power Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DBL",
-    "name": "Dilip Buildcon Ltd."
+    "name": "Dilip Buildcon Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "DCAL",
-    "name": "Dishman Carbogen Amcis Ltd."
+    "name": "Dishman Carbogen Amcis Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "DODLA",
-    "name": "Dodla Dairy Ltd"
+    "name": "Dodla Dairy Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "DOMS",
-    "name": "DOMS Industries Ltd."
+    "name": "DOMS Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AGARWALEYE",
-    "name": "Dr. Agarwal''s Health Care Ltd."
+    "name": "Dr. Agarwal''s Health Care Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LALPATHLAB",
-    "name": "Dr. Lal Pathlabs Ltd."
+    "name": "Dr. Lal Pathlabs Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "DYNAMATECH",
-    "name": "Dynamatic Technologies Ltd."
+    "name": "Dynamatic Technologies Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "EIDPARRY",
-    "name": "E.I.D. - Parry (India) Ltd."
+    "name": "E.I.D. - Parry (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "E2E",
-    "name": "E2E Networks Ltd."
+    "name": "E2E Networks Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EASEMYTRIP",
-    "name": "Easy Trip Planners Ltd."
+    "name": "Easy Trip Planners Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "ECLERX",
-    "name": "eClerx Services Ltd."
+    "name": "eClerx Services Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "EDELWEISS",
-    "name": "Edelweiss Financial Services Ltd."
+    "name": "Edelweiss Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EIHOTEL",
-    "name": "EIH Ltd."
+    "name": "EIH Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DRBECK",
-    "name": "Elantas Beck India Ltd."
+    "name": "Elantas Beck India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ELECON",
-    "name": "Elecon Engineering Company Ltd."
+    "name": "Elecon Engineering Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EMIL",
-    "name": "Electronics Mart India Ltd."
+    "name": "Electronics Mart India Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ELECTCAST",
-    "name": "Electrosteel Castings Ltd."
+    "name": "Electrosteel Castings Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "ELGIEQUIP",
-    "name": "Elgi Equipments Ltd."
+    "name": "Elgi Equipments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-278126",
-    "name": "Elitecon International Ltd."
+    "name": "Elitecon International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EMAMILTD",
-    "name": "Emami Ltd."
+    "name": "Emami Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "EMBDL",
-    "name": "Embassy Developments Ltd."
+    "name": "Embassy Developments Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "EMCURE",
-    "name": "Emcure Pharmaceuticals Ltd."
+    "name": "Emcure Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "EMUDHRA",
-    "name": "eMudhra Ltd."
+    "name": "eMudhra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ENGINERSIN",
-    "name": "Engineers India Ltd."
+    "name": "Engineers India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ENTERO",
-    "name": "Entero Healthcare Solutions Ltd."
+    "name": "Entero Healthcare Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EPIGRAL",
-    "name": "Epigral Ltd."
+    "name": "Epigral Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EPL",
-    "name": "EPL Ltd."
+    "name": "EPL Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EQUITASBNK",
-    "name": "Equitas Small Finance Bank Ltd."
+    "name": "Equitas Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ERIS",
-    "name": "Eris Lifesciences Ltd."
+    "name": "Eris Lifesciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "ESABINDIA",
-    "name": "Esab India Ltd."
+    "name": "Esab India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ETHOSLTD",
-    "name": "Ethos Ltd."
+    "name": "Ethos Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "EUREKAFORB",
-    "name": "Eureka Forbes Ltd."
+    "name": "Eureka Forbes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FDC",
-    "name": "FDC Ltd."
+    "name": "FDC Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "FIEMIND",
-    "name": "Fiem Industries Ltd."
+    "name": "Fiem Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "FINEORG",
-    "name": "Fine Organic Industries Ltd."
+    "name": "Fine Organic Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FINCABLES",
-    "name": "Finolex Cables Ltd."
+    "name": "Finolex Cables Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FINPIPE",
-    "name": "Finolex Industries Ltd."
+    "name": "Finolex Industries Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "FSL",
-    "name": "Firstsource Solutions Ltd."
+    "name": "Firstsource Solutions Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "SCRIP-124743",
-    "name": "Fischer Medical Ventures Ltd."
+    "name": "Fischer Medical Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FIVESTAR",
-    "name": "Five-Star Business Finance Ltd."
+    "name": "Five-Star Business Finance Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "FORCEMOT",
-    "name": "Force Motors Ltd."
+    "name": "Force Motors Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GABRIEL",
-    "name": "Gabriel India Ltd."
+    "name": "Gabriel India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "GALAXYSURF",
-    "name": "Galaxy Surfactants Ltd."
+    "name": "Galaxy Surfactants Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GALLANTT",
-    "name": "Gallantt Ispat Ltd."
+    "name": "Gallantt Ispat Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "GANESHHOUC",
-    "name": "Ganesh Housing Corporation Ltd."
+    "name": "Ganesh Housing Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GRWRHITECH",
-    "name": "Garware Hi-Tech Films Ltd."
+    "name": "Garware Hi-Tech Films Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GARFIBRES",
-    "name": "Garware Technical Fibres Ltd."
+    "name": "Garware Technical Fibres Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GENUSPOWER",
-    "name": "Genus Power Infrastructures Ltd."
+    "name": "Genus Power Infrastructures Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "GHCL",
-    "name": "GHCL Ltd."
+    "name": "GHCL Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "GLAND",
-    "name": "Gland Pharma Ltd."
+    "name": "Gland Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "GMMPFAUDLR",
-    "name": "GMM Pfaudler Ltd."
+    "name": "GMM Pfaudler Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-305653",
-    "name": "GMR Power and Urban Infra Ltd."
+    "name": "GMR Power and Urban Infra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GOCOLORS",
-    "name": "Go Fashion (India) Ltd."
+    "name": "Go Fashion (India) Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "GPIL",
-    "name": "Godawari Power And Ispat Ltd."
+    "name": "Godawari Power And Ispat Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "GODREJAGRO",
-    "name": "Godrej Agrovet Ltd."
+    "name": "Godrej Agrovet Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "GOKEX",
-    "name": "Gokaldas Exports Ltd."
+    "name": "Gokaldas Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GOKULAGRO",
-    "name": "Gokul Agro Resources Ltd."
+    "name": "Gokul Agro Resources Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GOPAL",
-    "name": "Gopal Snacks Ltd."
+    "name": "Gopal Snacks Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GRINFRA",
-    "name": "GR Infraprojects Ltd."
+    "name": "GR Infraprojects Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "GRANULES",
-    "name": "Granules India Ltd."
+    "name": "Granules India Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "GRAPHITE",
-    "name": "Graphite India Ltd."
+    "name": "Graphite India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GRAVITA",
-    "name": "Gravita India Ltd."
+    "name": "Gravita India Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "GREAVESCOT",
-    "name": "Greaves Cotton Ltd."
+    "name": "Greaves Cotton Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GREENLAM",
-    "name": "Greenlam Industries Ltd."
+    "name": "Greenlam Industries Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "GRINDWELL",
-    "name": "Grindwell Norton Ltd."
+    "name": "Grindwell Norton Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GUJALKALI",
-    "name": "Gujarat Alkalies And Chemicals Ltd."
+    "name": "Gujarat Alkalies And Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GAEL",
-    "name": "Gujarat Ambuja Exports Ltd."
+    "name": "Gujarat Ambuja Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GMDCLTD",
-    "name": "Gujarat Mineral Development Corporation Ltd."
+    "name": "Gujarat Mineral Development Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GNFC",
-    "name": "Gujarat Narmada Valley Fertilizers & Chemicals Ltd."
+    "name": "Gujarat Narmada Valley Fertilizers & Chemicals Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "GPPL",
-    "name": "Gujarat Pipavav Port Ltd."
+    "name": "Gujarat Pipavav Port Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "GSFC",
-    "name": "Gujarat State Fertilizers & Chemicals Ltd."
+    "name": "Gujarat State Fertilizers & Chemicals Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "GSPL",
-    "name": "Gujarat State Petronet Ltd."
+    "name": "Gujarat State Petronet Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "GULFOILLUB",
-    "name": "Gulf Oil Lubricants India Ltd."
+    "name": "Gulf Oil Lubricants India Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "HGINFRA",
-    "name": "H.G. Infra Engineering Ltd."
+    "name": "H.G. Infra Engineering Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "HAPPSTMNDS",
-    "name": "Happiest Minds Technologies Ltd."
+    "name": "Happiest Minds Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "HAPPYFORGE",
-    "name": "Happy Forgings Ltd."
+    "name": "Happy Forgings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HATSUN",
-    "name": "Hatsun Agro Product Ltd."
+    "name": "Hatsun Agro Product Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "HAWKINCOOK",
-    "name": "Hawkins Cookers Ltd."
+    "name": "Hawkins Cookers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HBLENGINE",
-    "name": "HBL Engineering Ltd."
+    "name": "HBL Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HCG",
-    "name": "Healthcare Global Enterprises Ltd."
+    "name": "Healthcare Global Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HEG",
-    "name": "HEG Ltd."
+    "name": "HEG Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HEIDELBERG",
-    "name": "Heidelberg Cement India Ltd."
+    "name": "Heidelberg Cement India Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "HEMIPROP",
-    "name": "Hemisphere Properties India Ltd."
+    "name": "Hemisphere Properties India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HERITGFOOD",
-    "name": "Heritage Foods Ltd."
+    "name": "Heritage Foods Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "HFCL",
-    "name": "HFCL Ltd."
+    "name": "HFCL Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "HIKAL",
-    "name": "Hikal Ltd."
+    "name": "Hikal Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HSCL",
-    "name": "Himadri Speciality Chemical Ltd."
+    "name": "Himadri Speciality Chemical Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HCC",
-    "name": "Hindustan Construction Company Ltd."
+    "name": "Hindustan Construction Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HINDCOPPER",
-    "name": "Hindustan Copper Ltd."
+    "name": "Hindustan Copper Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "HNDFDS",
-    "name": "Hindustan Foods Ltd."
+    "name": "Hindustan Foods Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HMT",
-    "name": "HMT Ltd."
+    "name": "HMT Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HOMEFIRST",
-    "name": "Home First Finance Company India Ltd."
+    "name": "Home First Finance Company India Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "HONASA",
-    "name": "Honasa Consumer Ltd."
+    "name": "Honasa Consumer Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ISEC",
-    "name": "ICICI Securities Ltd."
+    "name": "ICICI Securities Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ICRA",
-    "name": "ICRA Ltd."
+    "name": "ICRA Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IFBIND",
-    "name": "IFB Industries Ltd."
+    "name": "IFB Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IFCI",
-    "name": "IFCI Ltd."
+    "name": "IFCI Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IIFLCAPS",
-    "name": "IIFL Capital Services Ltd."
+    "name": "IIFL Capital Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IIFL",
-    "name": "IIFL Finance Ltd."
+    "name": "IIFL Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "IMAGICAA",
-    "name": "Imagicaaworld Entertainment Ltd."
+    "name": "Imagicaaworld Entertainment Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "INDGN",
-    "name": "Indegene Ltd."
+    "name": "Indegene Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "INDIAGLYCO",
-    "name": "India Glycols Ltd."
+    "name": "India Glycols Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDIASHLTR",
-    "name": "India Shelter Finance Corporation Ltd."
+    "name": "India Shelter Finance Corporation Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ITDC",
-    "name": "India Tourism Development Corporation Ltd."
+    "name": "India Tourism Development Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDIAMART",
-    "name": "Indiamart Intermesh Ltd."
+    "name": "Indiamart Intermesh Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IEX",
-    "name": "Indian Energy Exchange Ltd."
+    "name": "Indian Energy Exchange Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDIGOPNTS",
-    "name": "Indigo Paints Ltd."
+    "name": "Indigo Paints Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ICIL",
-    "name": "Indo Count Industries Ltd."
+    "name": "Indo Count Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOSTAR",
-    "name": "Indostar Capital Finance Ltd."
+    "name": "Indostar Capital Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IGL",
-    "name": "Indraprastha Gas Ltd."
+    "name": "Indraprastha Gas Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "INFIBEAM",
-    "name": "Infibeam Avenues Ltd."
+    "name": "Infibeam Avenues Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "INGERRAND",
-    "name": "Ingersoll-Rand (India) Ltd."
+    "name": "Ingersoll-Rand (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INNOVACAP",
-    "name": "Innova Captab Ltd."
+    "name": "Innova Captab Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INOXGREEN",
-    "name": "Inox Green Energy Services Ltd."
+    "name": "Inox Green Energy Services Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "INOXINDIA",
-    "name": "Inox India Ltd."
+    "name": "Inox India Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "IWEL",
-    "name": "Inox Wind Energy Ltd."
+    "name": "Inox Wind Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INOXWIND",
-    "name": "Inox Wind Ltd."
+    "name": "Inox Wind Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SCRIP-306788",
-    "name": "Insolation Energy Ltd."
+    "name": "Insolation Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INTELLECT",
-    "name": "Intellect Design Arena Ltd."
+    "name": "Intellect Design Arena Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "IGIL",
-    "name": "International Gemmological Institute (India) Ltd."
+    "name": "International Gemmological Institute (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IKS",
-    "name": "Inventurus Knowledge Solutions Ltd."
+    "name": "Inventurus Knowledge Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IONEXCHANG",
-    "name": "Ion Exchange (India) Ltd."
+    "name": "Ion Exchange (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IRCON",
-    "name": "Ircon International Ltd."
+    "name": "Ircon International Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ISGEC",
-    "name": "ISGEC Heavy Engineering Ltd."
+    "name": "ISGEC Heavy Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ITDCEM",
-    "name": "ITD Cementation India Ltd."
+    "name": "ITD Cementation India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JKIL",
-    "name": "J Kumar Infraprojects Ltd."
+    "name": "J Kumar Infraprojects Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "JAIBALAJI",
-    "name": "Jai Balaji Industries Ltd."
+    "name": "Jai Balaji Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JISLJALEQS",
-    "name": "Jain Irrigation Systems Ltd."
+    "name": "Jain Irrigation Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JPPOWER",
-    "name": "Jaiprakash Power Ventures Ltd."
+    "name": "Jaiprakash Power Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JSFB",
-    "name": "Jana Small Finance Bank Ltd."
+    "name": "Jana Small Finance Bank Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JBCHEPHARM",
-    "name": "JB Chemicals & Pharmaceuticals Ltd."
+    "name": "JB Chemicals & Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "JBMA",
-    "name": "JBM Auto Ltd."
+    "name": "JBM Auto Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JSLL",
-    "name": "Jeena Sikho Lifecare Ltd."
+    "name": "Jeena Sikho Lifecare Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JINDALSAW",
-    "name": "Jindal Saw Ltd."
+    "name": "Jindal Saw Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "JINDWORLD",
-    "name": "Jindal Worldwide Ltd."
+    "name": "Jindal Worldwide Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JKLAKSHMI",
-    "name": "JK Lakshmi Cement Ltd."
+    "name": "JK Lakshmi Cement Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "JKPAPER",
-    "name": "JK Paper Ltd."
+    "name": "JK Paper Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JKTYRE",
-    "name": "JK Tyre & Industries Ltd."
+    "name": "JK Tyre & Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "JMFINANCIL",
-    "name": "JM Financial Ltd."
+    "name": "JM Financial Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JCHAC",
-    "name": "Johnson Controls - Hitachi Air Conditioning India Ltd."
+    "name": "Johnson Controls - Hitachi Air Conditioning India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JSWHL",
-    "name": "JSW Holdings Ltd."
+    "name": "JSW Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JUBLINGREA",
-    "name": "Jubilant Ingrevia Ltd."
+    "name": "Jubilant Ingrevia Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JUBLPHARMA",
-    "name": "Jubilant Pharmova Ltd."
+    "name": "Jubilant Pharmova Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "JUNIPER",
-    "name": "Juniper Hotels Ltd."
+    "name": "Juniper Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JLHL",
-    "name": "Jupiter Life Line Hospitals Ltd."
+    "name": "Jupiter Life Line Hospitals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JWL",
-    "name": "Jupiter Wagons Ltd."
+    "name": "Jupiter Wagons Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "JUSTDIAL",
-    "name": "Just Dial Ltd."
+    "name": "Just Dial Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "JYOTHYLAB",
-    "name": "Jyothy Labs Ltd."
+    "name": "Jyothy Labs Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "JYOTICNC",
-    "name": "Jyoti CNC Automation Ltd."
+    "name": "Jyoti CNC Automation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KAJARIACER",
-    "name": "Kajaria Ceramics Ltd."
+    "name": "Kajaria Ceramics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KPIL",
-    "name": "Kalpataru Projects International Ltd."
+    "name": "Kalpataru Projects International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCRIP-132468",
-    "name": "Kama Holdings Ltd."
+    "name": "Kama Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KANSAINER",
-    "name": "Kansai Nerolac Paints Ltd."
+    "name": "Kansai Nerolac Paints Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "KARURVYSYA",
-    "name": "Karur Vysya Bank Ltd."
+    "name": "Karur Vysya Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "KSCL",
-    "name": "Kaveri Seed Company Ltd."
+    "name": "Kaveri Seed Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KEC",
-    "name": "KEC International Ltd."
+    "name": "KEC International Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "KENNAMET",
-    "name": "Kennametal India Ltd."
+    "name": "Kennametal India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RUSTOMJEE",
-    "name": "Keystone Realtors Ltd"
+    "name": "Keystone Realtors Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "KFINTECH",
-    "name": "KFin Technologies Ltd."
+    "name": "KFin Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIOCL",
-    "name": "KIOCL Ltd."
+    "name": "KIOCL Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRLOSBROS",
-    "name": "Kirloskar Brothers Ltd."
+    "name": "Kirloskar Brothers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRLFER",
-    "name": "Kirloskar Ferrous Industries Ltd."
+    "name": "Kirloskar Ferrous Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRLOSIND",
-    "name": "Kirloskar Industries Ltd."
+    "name": "Kirloskar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRLOSENG",
-    "name": "Kirloskar Oil Engines Ltd."
+    "name": "Kirloskar Oil Engines Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRLPNU",
-    "name": "Kirloskar Pneumatic Company Ltd."
+    "name": "Kirloskar Pneumatic Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KITEX",
-    "name": "Kitex Garments Ltd."
+    "name": "Kitex Garments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KNRCON",
-    "name": "KNR Constructions Ltd."
+    "name": "KNR Constructions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KPIGREEN",
-    "name": "KPI Green Energy Ltd."
+    "name": "KPI Green Energy Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "KRBL",
-    "name": "KRBL Ltd."
+    "name": "KRBL Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "KIMS",
-    "name": "Krishna Institute of Medical Sciences Ltd"
+    "name": "Krishna Institute of Medical Sciences Ltd",
+    "sector": "RETAIL"
   },
   {
     "symbol": "KRN",
-    "name": "KRN Heat Exchanger And Refrigeration Ltd."
+    "name": "KRN Heat Exchanger And Refrigeration Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KSB",
-    "name": "KSB Ltd."
+    "name": "KSB Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LATENTVIEW",
-    "name": "Latent View Analytics Ltd."
+    "name": "Latent View Analytics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LXCHEM",
-    "name": "Laxmi Organic Industries Ltd."
+    "name": "Laxmi Organic Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IXIGO",
-    "name": "Le Travenues Technology Ltd."
+    "name": "Le Travenues Technology Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LEMONTREE",
-    "name": "Lemon Tree Hotels Ltd."
+    "name": "Lemon Tree Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LGBBROSLTD",
-    "name": "LG Balakrishnan & Bros Ltd."
+    "name": "LG Balakrishnan & Bros Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "LLOYDSENGG",
-    "name": "Lloyds Engineering Works Ltd."
+    "name": "Lloyds Engineering Works Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LLOYDSENT",
-    "name": "Lloyds Enterprises Ltd."
+    "name": "Lloyds Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LMW",
-    "name": "LMW Ltd."
+    "name": "LMW Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LTFOODS",
-    "name": "LT Foods Ltd."
+    "name": "LT Foods Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LUMAXTECH",
-    "name": "Lumax Auto Technologies Ltd."
+    "name": "Lumax Auto Technologies Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "LUXIND",
-    "name": "Lux Industries Ltd."
+    "name": "Lux Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MCLOUD",
-    "name": "Magellanic Cloud Ltd."
+    "name": "Magellanic Cloud Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MGL",
-    "name": "Mahanagar Gas Ltd."
+    "name": "Mahanagar Gas Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "MAHSCOOTER",
-    "name": "Maharashtra Scooters Ltd."
+    "name": "Maharashtra Scooters Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MAHSEAMLES",
-    "name": "Maharashtra Seamless Ltd."
+    "name": "Maharashtra Seamless Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MHRIL",
-    "name": "Mahindra Holidays & Resorts India Ltd."
+    "name": "Mahindra Holidays & Resorts India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MAHLIFE",
-    "name": "Mahindra Lifespace Developers Ltd."
+    "name": "Mahindra Lifespace Developers Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "MANINFRA",
-    "name": "Man InfraConstruction Ltd."
+    "name": "Man InfraConstruction Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "MANAPPURAM",
-    "name": "Manappuram Finance Ltd."
+    "name": "Manappuram Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "MRPL",
-    "name": "Mangalore Refinery And Petrochemicals Ltd."
+    "name": "Mangalore Refinery And Petrochemicals Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "MANORAMA",
-    "name": "Manorama Industries Ltd."
+    "name": "Manorama Industries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "MARKSANS",
-    "name": "Marksans Pharma Ltd."
+    "name": "Marksans Pharma Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "MASFIN",
-    "name": "MAS Financial Services Ltd."
+    "name": "MAS Financial Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "MASTEK",
-    "name": "Mastek Ltd."
+    "name": "Mastek Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "MAXESTATES",
-    "name": "Max Estates Ltd."
+    "name": "Max Estates Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "MEDPLUS",
-    "name": "Medplus Health Services Ltd."
+    "name": "Medplus Health Services Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "METROPOLIS",
-    "name": "Metropolis Healthcare Ltd."
+    "name": "Metropolis Healthcare Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "MINDACORP",
-    "name": "Minda Corporation Ltd."
+    "name": "Minda Corporation Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MIDHANI",
-    "name": "Mishra Dhatu Nigam Ltd."
+    "name": "Mishra Dhatu Nigam Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MMTC",
-    "name": "MMTC Ltd."
+    "name": "MMTC Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MOIL",
-    "name": "MOIL Ltd."
+    "name": "MOIL Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MSUMI",
-    "name": "Motherson Sumi Wiring India Ltd."
+    "name": "Motherson Sumi Wiring India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MPSLTD",
-    "name": "MPS Ltd."
+    "name": "MPS Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BECTORFOOD",
-    "name": "Mrs. Bectors Food Specialities Ltd."
+    "name": "Mrs. Bectors Food Specialities Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "MTARTECH",
-    "name": "MTAR Technologies Ltd."
+    "name": "MTAR Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NATCOPHARM",
-    "name": "Natco Pharma Ltd."
+    "name": "Natco Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "NFL",
-    "name": "National Fertilizers Ltd."
+    "name": "National Fertilizers Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SCRIP-104882",
-    "name": "National Standard (India) Ltd."
+    "name": "National Standard (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAVA",
-    "name": "Nava Ltd."
+    "name": "Nava Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAVINFLUOR",
-    "name": "Navin Fluorine International Ltd."
+    "name": "Navin Fluorine International Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "NAZARA",
-    "name": "Nazara Technologies Ltd."
+    "name": "Nazara Technologies Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "NCC",
-    "name": "NCC Ltd."
+    "name": "NCC Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "NEOGEN",
-    "name": "Neogen Chemicals Ltd."
+    "name": "Neogen Chemicals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "NESCO",
-    "name": "Nesco Ltd."
+    "name": "Nesco Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NETWEB",
-    "name": "Netweb Technologies India Ltd."
+    "name": "Netweb Technologies India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NETWORK18",
-    "name": "Network 18 Media & Investments Ltd."
+    "name": "Network 18 Media & Investments Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "NPST",
-    "name": "Network People Services Technologies Ltd."
+    "name": "Network People Services Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NEULANDLAB",
-    "name": "Neuland Laboratories Ltd."
+    "name": "Neuland Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "NEWGEN",
-    "name": "Newgen Software Technologies Ltd."
+    "name": "Newgen Software Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "NIITMTS",
-    "name": "NIIT Learning Systems Ltd."
+    "name": "NIIT Learning Systems Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "NIRLON",
-    "name": "Nirlon Ltd."
+    "name": "Nirlon Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NIVABUPA",
-    "name": "Niva Bupa Health Insurance Company Ltd."
+    "name": "Niva Bupa Health Insurance Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NSLNISP",
-    "name": "NMDC Steel Ltd."
+    "name": "NMDC Steel Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "NUVAMA",
-    "name": "Nuvama Wealth Management Ltd."
+    "name": "Nuvama Wealth Management Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "NUVOCO",
-    "name": "Nuvoco Vistas Corporation Ltd."
+    "name": "Nuvoco Vistas Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OLAELEC",
-    "name": "OLA Electric Mobility Ltd."
+    "name": "OLA Electric Mobility Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OLECTRA",
-    "name": "Olectra Greentech Ltd."
+    "name": "Olectra Greentech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ONESOURCE",
-    "name": "Onesource Specialty Pharma Ltd."
+    "name": "Onesource Specialty Pharma Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OPTIEMUS",
-    "name": "Optiemus Infracom Ltd."
+    "name": "Optiemus Infracom Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORIANA",
-    "name": "Oriana Power Ltd."
+    "name": "Oriana Power Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORIENTCEM",
-    "name": "Orient Cement Ltd."
+    "name": "Orient Cement Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORIENTELEC",
-    "name": "Orient Electric Ltd."
+    "name": "Orient Electric Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "PARADEEP",
-    "name": "Paradeep Phosphates Ltd."
+    "name": "Paradeep Phosphates Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PARAS",
-    "name": "Paras Defence And Space Technologies Ltd."
+    "name": "Paras Defence And Space Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PCJEWELLER",
-    "name": "PC Jeweller Ltd."
+    "name": "PC Jeweller Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "PCBL",
-    "name": "PCBL Chemical Ltd."
+    "name": "PCBL Chemical Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PDSL",
-    "name": "PDS Ltd."
+    "name": "PDS Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PGIL",
-    "name": "Pearl Global Industries Ltd."
+    "name": "Pearl Global Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PFIZER",
-    "name": "Pfizer Ltd."
+    "name": "Pfizer Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "PGEL",
-    "name": "PG Electroplast Ltd."
+    "name": "PG Electroplast Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SCRIP-130305",
-    "name": "Piccadily Agro Industries Ltd."
+    "name": "Piccadily Agro Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PILANIINVS",
-    "name": "Pilani Investment And Industries Corporation Ltd."
+    "name": "Pilani Investment And Industries Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PEL",
-    "name": "Piramal Enterprises Ltd."
+    "name": "Piramal Enterprises Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "PPLPHARMA",
-    "name": "Piramal Pharma Ltd."
+    "name": "Piramal Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "PNGJL",
-    "name": "PN Gadgil Jewellers Ltd."
+    "name": "PN Gadgil Jewellers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PNBHOUSING",
-    "name": "PNB Housing Finance Ltd."
+    "name": "PNB Housing Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "PNCINFRA",
-    "name": "PNC Infratech Ltd."
+    "name": "PNC Infratech Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "POLYMED",
-    "name": "Poly Medicure Ltd."
+    "name": "Poly Medicure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "POLYPLEX",
-    "name": "Polyplex Corporation Ltd."
+    "name": "Polyplex Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "POWERMECH",
-    "name": "Power Mech Projects Ltd."
+    "name": "Power Mech Projects Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "PRAJIND",
-    "name": "Praj Industries Ltd."
+    "name": "Praj Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "PRICOLLTD",
-    "name": "Pricol Ltd."
+    "name": "Pricol Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "PRSMJOHNSN",
-    "name": "Prism Johnson Ltd."
+    "name": "Prism Johnson Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRIVISCL",
-    "name": "Privi Speciality Chemicals Ltd."
+    "name": "Privi Speciality Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PGHL",
-    "name": "Procter & Gamble Health Ltd."
+    "name": "Procter & Gamble Health Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "PRUDENT",
-    "name": "Prudent Corporate Advisory Services Ltd."
+    "name": "Prudent Corporate Advisory Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PTC",
-    "name": "PTC India Ltd."
+    "name": "PTC India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PTCIL",
-    "name": "PTC Industries Ltd."
+    "name": "PTC Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PSB",
-    "name": "Punjab & Sind Bank"
+    "name": "Punjab & Sind Bank",
+    "sector": "OTHER"
   },
   {
     "symbol": "PURVA",
-    "name": "Puravankara Ltd."
+    "name": "Puravankara Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "PVRINOX",
-    "name": "PVR Inox Ltd."
+    "name": "PVR Inox Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "QUESS",
-    "name": "Quess Corp Ltd."
+    "name": "Quess Corp Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "RSYSTEMS",
-    "name": "R Systems International Ltd."
+    "name": "R Systems International Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "RAILTEL",
-    "name": "Railtel Corporation Of India Ltd."
+    "name": "Railtel Corporation Of India Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "RAIN",
-    "name": "Rain Industries Ltd."
+    "name": "Rain Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAINBOW",
-    "name": "Rainbow Children''s Medicare Ltd."
+    "name": "Rainbow Children''s Medicare Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "RAJESHEXPO",
-    "name": "Rajesh Exports Ltd."
+    "name": "Rajesh Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RALLIS",
-    "name": "Rallis India Ltd."
+    "name": "Rallis India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RKFORGE",
-    "name": "Ramkrishna Forgings Ltd."
+    "name": "Ramkrishna Forgings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RCF",
-    "name": "Rashtriya Chemicals and Fertilizers Ltd."
+    "name": "Rashtriya Chemicals and Fertilizers Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "RATEGAIN",
-    "name": "RateGain Travel Technologies Ltd."
+    "name": "RateGain Travel Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "RATNAMANI",
-    "name": "Ratnamani Metals & Tubes Ltd."
+    "name": "Ratnamani Metals & Tubes Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "RTNINDIA",
-    "name": "RattanIndia Enterprises Ltd."
+    "name": "RattanIndia Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RTNPOWER",
-    "name": "RattanIndia Power Ltd."
+    "name": "RattanIndia Power Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAYMONDLSL",
-    "name": "Raymond Lifestyle Ltd."
+    "name": "Raymond Lifestyle Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAYMOND",
-    "name": "Raymond Ltd."
+    "name": "Raymond Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RBLBANK",
-    "name": "RBL Bank Ltd."
+    "name": "RBL Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "REDINGTON",
-    "name": "Redington Ltd."
+    "name": "Redington Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "REDTAPE",
-    "name": "Redtape Ltd."
+    "name": "Redtape Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "REFEX",
-    "name": "Refex Industries Ltd."
+    "name": "Refex Industries Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "RELAXO",
-    "name": "Relaxo Footwears Ltd."
+    "name": "Relaxo Footwears Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "RELINFRA",
-    "name": "Reliance Infrastructure Ltd."
+    "name": "Reliance Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RPOWER",
-    "name": "Reliance Power Ltd."
+    "name": "Reliance Power Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RELIGARE",
-    "name": "Religare Enterprises Ltd."
+    "name": "Religare Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RESPONIND",
-    "name": "Responsive Industries Ltd."
+    "name": "Responsive Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RBA",
-    "name": "Restaurant Brands Asia Ltd."
+    "name": "Restaurant Brands Asia Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RHIM",
-    "name": "RHI Magnesita India Ltd."
+    "name": "RHI Magnesita India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RITES",
-    "name": "Rites Ltd."
+    "name": "Rites Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "ROLEXRINGS",
-    "name": "Rolex Rings Ltd"
+    "name": "Rolex Rings Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "ROUTE",
-    "name": "Route Mobile Ltd."
+    "name": "Route Mobile Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RRKABEL",
-    "name": "RR Kabel Ltd."
+    "name": "RR Kabel Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAFARI",
-    "name": "Safari Industries (India) Ltd."
+    "name": "Safari Industries (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAGILITY",
-    "name": "Sagility India Ltd."
+    "name": "Sagility India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAILIFE",
-    "name": "Sai Life Sciences Ltd."
+    "name": "Sai Life Sciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SAMHI",
-    "name": "Samhi Hotels Ltd."
+    "name": "Samhi Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAMMAANCAP",
-    "name": "Sammaan Capital Ltd."
+    "name": "Sammaan Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANDUMA",
-    "name": "Sandur Manganese & Iron Ores Ltd."
+    "name": "Sandur Manganese & Iron Ores Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SANOFICONR",
-    "name": "Sanofi Consumer Healthcare India Ltd."
+    "name": "Sanofi Consumer Healthcare India Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SANOFI",
-    "name": "Sanofi India Ltd."
+    "name": "Sanofi India Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SANSERA",
-    "name": "Sansera Engineering Ltd."
+    "name": "Sansera Engineering Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SAPPHIRE",
-    "name": "Sapphire Foods India Ltd."
+    "name": "Sapphire Foods India Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "SARDAEN",
-    "name": "Sarda Energy & Minerals Ltd."
+    "name": "Sarda Energy & Minerals Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SAREGAMA",
-    "name": "Saregama India Ltd."
+    "name": "Saregama India Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "SBFC",
-    "name": "SBFC Finance Ltd."
+    "name": "SBFC Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "THELEELA",
-    "name": "Schloss Bangalore Ltd."
+    "name": "Schloss Bangalore Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCHNEIDER",
-    "name": "Schneider Electric Infrastructure Ltd."
+    "name": "Schneider Electric Infrastructure Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SENCO",
-    "name": "Senco Gold Ltd."
+    "name": "Senco Gold Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "SEQUENT",
-    "name": "Sequent Scientific Ltd."
+    "name": "Sequent Scientific Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SCRIP-112329",
-    "name": "SG Mart Ltd."
+    "name": "SG Mart Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHAILY",
-    "name": "Shaily Engineering Plastics Ltd."
+    "name": "Shaily Engineering Plastics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHAKTIPUMP",
-    "name": "Shakti Pumps (India) Ltd."
+    "name": "Shakti Pumps (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHARDACROP",
-    "name": "Sharda Cropchem Ltd."
+    "name": "Sharda Cropchem Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SHARDAMOTR",
-    "name": "Sharda Motor Industries Ltd."
+    "name": "Sharda Motor Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SFL",
-    "name": "Sheela Foam Ltd."
+    "name": "Sheela Foam Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "SCRIP-131201",
-    "name": "Shilchar Technologies Ltd."
+    "name": "Shilchar Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHILPAMED",
-    "name": "Shilpa Medicare Ltd."
+    "name": "Shilpa Medicare Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SCI",
-    "name": "Shipping Corporation Of India Ltd."
+    "name": "Shipping Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHOPERSTOP",
-    "name": "Shoppers Stop Ltd."
+    "name": "Shoppers Stop Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "RENUKA",
-    "name": "Shree Renuka Sugars Ltd."
+    "name": "Shree Renuka Sugars Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHRIPISTON",
-    "name": "Shriram Pistons & Rings Ltd"
+    "name": "Shriram Pistons & Rings Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHYAMMETL",
-    "name": "Shyam Metalics And Energy Ltd."
+    "name": "Shyam Metalics And Energy Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SIGNATURE",
-    "name": "Signatureglobal (India) Ltd."
+    "name": "Signatureglobal (India) Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "SIS",
-    "name": "SIS Ltd."
+    "name": "SIS Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SKFINDIA",
-    "name": "SKF India Ltd."
+    "name": "SKF India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SKIPPER",
-    "name": "Skipper Ltd."
+    "name": "Skipper Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SKYGOLD",
-    "name": "Sky Gold and Diamonds Ltd."
+    "name": "Sky Gold and Diamonds Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SOBHA",
-    "name": "Sobha Ltd."
+    "name": "Sobha Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "SONATSOFTW",
-    "name": "Sonata Software Ltd."
+    "name": "Sonata Software Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "SPICEJET",
-    "name": "SpiceJet Ltd."
+    "name": "SpiceJet Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STARCEMENT",
-    "name": "Star Cement Ltd."
+    "name": "Star Cement Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STARHEALTH",
-    "name": "Star Health and Allied Insurance Company Ltd."
+    "name": "Star Health and Allied Insurance Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SWSOLAR",
-    "name": "Sterling and Wilson Renewable Energy Ltd."
+    "name": "Sterling and Wilson Renewable Energy Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "STAR",
-    "name": "Strides Pharma Science Ltd."
+    "name": "Strides Pharma Science Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "STYRENIX",
-    "name": "Styrenix Performance Materials Ltd."
+    "name": "Styrenix Performance Materials Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUBROS",
-    "name": "Subros Ltd."
+    "name": "Subros Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SUDARSCHEM",
-    "name": "Sudarshan Chemical Industries Ltd."
+    "name": "Sudarshan Chemical Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUMICHEM",
-    "name": "Sumitomo Chemical India Ltd."
+    "name": "Sumitomo Chemical India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SPARC",
-    "name": "Sun Pharma Advanced Research Company Ltd."
+    "name": "Sun Pharma Advanced Research Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUNTV",
-    "name": "Sun TV Network Ltd."
+    "name": "Sun TV Network Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "SUNDARMHLD",
-    "name": "Sundaram Finance Holdings Ltd."
+    "name": "Sundaram Finance Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUNCLAY",
-    "name": "Sundaram-Clayton Ltd."
+    "name": "Sundaram-Clayton Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUNDRMFAST",
-    "name": "Sundram Fasteners Ltd."
+    "name": "Sundram Fasteners Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUNFLAG",
-    "name": "Sunflag Iron And Steel Company Ltd."
+    "name": "Sunflag Iron And Steel Company Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SUNTECK",
-    "name": "Sunteck Realty Ltd."
+    "name": "Sunteck Realty Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "SUPRAJIT",
-    "name": "Suprajit Engineering Ltd."
+    "name": "Suprajit Engineering Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SPLPETRO",
-    "name": "Supreme Petrochem Ltd."
+    "name": "Supreme Petrochem Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUPRIYA",
-    "name": "Supriya Lifescience Ltd."
+    "name": "Supriya Lifescience Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SURYAROSNI",
-    "name": "Surya Roshni Ltd."
+    "name": "Surya Roshni Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SUVEN",
-    "name": "Suven Life Sciences Ltd."
+    "name": "Suven Life Sciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SWANENERGY",
-    "name": "Swan Energy Ltd."
+    "name": "Swan Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SWARAJENG",
-    "name": "Swaraj Engines Ltd."
+    "name": "Swaraj Engines Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SYMPHONY",
-    "name": "Symphony Ltd."
+    "name": "Symphony Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SYNGENE",
-    "name": "Syngene International Ltd."
+    "name": "Syngene International Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SYRMA",
-    "name": "Syrma SGS Technology Ltd."
+    "name": "Syrma SGS Technology Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "TMB",
-    "name": "Tamilnad Mercantile Bank Ltd."
+    "name": "Tamilnad Mercantile Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "TANLA",
-    "name": "Tanla Platforms Ltd."
+    "name": "Tanla Platforms Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "TARC",
-    "name": "TARC Ltd."
+    "name": "TARC Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "TATACHEM",
-    "name": "Tata Chemicals Ltd."
+    "name": "Tata Chemicals Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "TTML",
-    "name": "Tata Teleservices (Maharashtra) Ltd."
+    "name": "Tata Teleservices (Maharashtra) Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "TBOTEK",
-    "name": "TBO Tek Ltd."
+    "name": "TBO Tek Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TDPOWERSYS",
-    "name": "TD Power Systems Ltd."
+    "name": "TD Power Systems Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "TECHNOE",
-    "name": "Techno Electric & Engineering Company Ltd."
+    "name": "Techno Electric & Engineering Company Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "TIIL",
-    "name": "Technocraft Industries (India) Ltd."
+    "name": "Technocraft Industries (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TEGA",
-    "name": "Tega Industries Ltd."
+    "name": "Tega Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TEJASNET",
-    "name": "Tejas Networks Ltd."
+    "name": "Tejas Networks Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "TEXRAIL",
-    "name": "Texmaco Rail & Engineering Ltd."
+    "name": "Texmaco Rail & Engineering Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "THANGAMAYL",
-    "name": "Thangamayil Jewellery Ltd."
+    "name": "Thangamayil Jewellery Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "ANUP",
-    "name": "The Anup Engineering Ltd."
+    "name": "The Anup Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GESHIP",
-    "name": "The Great Eastern Shipping Company Ltd."
+    "name": "The Great Eastern Shipping Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDIACEM",
-    "name": "The India Cements Ltd."
+    "name": "The India Cements Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SCRIP-132209",
-    "name": "The Jammu & Kashmir Bank Ltd."
+    "name": "The Jammu & Kashmir Bank Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KTKBANK",
-    "name": "The Karnataka Bank Ltd."
+    "name": "The Karnataka Bank Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMCOCEM",
-    "name": "The Ramco Cements Ltd."
+    "name": "The Ramco Cements Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SOUTHBANK",
-    "name": "The South Indian Bank Ltd."
+    "name": "The South Indian Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "THOMASCOOK",
-    "name": "Thomas Cook (India) Ltd."
+    "name": "Thomas Cook (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "THYROCARE",
-    "name": "Thyrocare Technologies Ltd."
+    "name": "Thyrocare Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TI",
-    "name": "Tilaknagar Industries Ltd."
+    "name": "Tilaknagar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TIMETECHNO",
-    "name": "Time Technoplast Ltd."
+    "name": "Time Technoplast Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "TIMKEN",
-    "name": "Timken India Ltd."
+    "name": "Timken India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "TIPSMUSIC",
-    "name": "Tips Music Ltd."
+    "name": "Tips Music Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "TITAGARH",
-    "name": "Titagarh Rail Systems Ltd."
+    "name": "Titagarh Rail Systems Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "TARIL",
-    "name": "Transformers & Rectifiers (India) Ltd."
+    "name": "Transformers & Rectifiers (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TCI",
-    "name": "Transport Corporation Of India Ltd."
+    "name": "Transport Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TRANSRAILL",
-    "name": "Transrail Lighting Ltd."
+    "name": "Transrail Lighting Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TRIDENT",
-    "name": "Trident Ltd."
+    "name": "Trident Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TRIVENI",
-    "name": "Triveni Engineering & Industries Ltd."
+    "name": "Triveni Engineering & Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TRITURBINE",
-    "name": "Triveni Turbine Ltd."
+    "name": "Triveni Turbine Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TTKPRESTIG",
-    "name": "TTK Prestige Ltd."
+    "name": "TTK Prestige Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TVSHLTD",
-    "name": "TVS Holdings Ltd."
+    "name": "TVS Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TVSSCS",
-    "name": "TVS Supply Chain Solutions Ltd."
+    "name": "TVS Supply Chain Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UFLEX",
-    "name": "Uflex Ltd."
+    "name": "Uflex Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UJJIVANSFB",
-    "name": "Ujjivan Small Finance Bank Ltd."
+    "name": "Ujjivan Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "UNICHEMLAB",
-    "name": "Unichem Laboratories Ltd."
+    "name": "Unichem Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "UNIMECH",
-    "name": "Unimech Aerospace and Manufacturing Ltd."
+    "name": "Unimech Aerospace and Manufacturing Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "USHAMART",
-    "name": "Usha Martin Ltd."
+    "name": "Usha Martin Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UTIAMC",
-    "name": "UTI Asset Management Company Ltd."
+    "name": "UTI Asset Management Company Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "VGUARD",
-    "name": "V-Guard Industries Ltd."
+    "name": "V-Guard Industries Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "VMART",
-    "name": "V-Mart Retail Ltd."
+    "name": "V-Mart Retail Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "V2RETAIL",
-    "name": "V2 Retail Ltd."
+    "name": "V2 Retail Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WABAG",
-    "name": "VA Tech Wabag Ltd."
+    "name": "VA Tech Wabag Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VAIBHAVGBL",
-    "name": "Vaibhav Global Ltd."
+    "name": "Vaibhav Global Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DBREALTY",
-    "name": "Valor Estate Ltd."
+    "name": "Valor Estate Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "VTL",
-    "name": "Vardhman Textiles Ltd."
+    "name": "Vardhman Textiles Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VARROC",
-    "name": "Varroc Engineering Ltd."
+    "name": "Varroc Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANYAVAR",
-    "name": "Vedant Fashions Ltd."
+    "name": "Vedant Fashions Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "VENTIVE",
-    "name": "Ventive Hospitality Ltd."
+    "name": "Ventive Hospitality Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VESUVIUS",
-    "name": "Vesuvius India Ltd."
+    "name": "Vesuvius India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VIJAYA",
-    "name": "Vijaya Diagnostic Centre Ltd."
+    "name": "Vijaya Diagnostic Centre Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VINATIORGA",
-    "name": "Vinati Organics Ltd."
+    "name": "Vinati Organics Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "VIPIND",
-    "name": "VIP Industries Ltd."
+    "name": "VIP Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VOLTAMP",
-    "name": "Voltamp Transformers Ltd."
+    "name": "Voltamp Transformers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VRLLOG",
-    "name": "VRL Logistics Ltd."
+    "name": "VRL Logistics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VSTIND",
-    "name": "VST Industries Ltd."
+    "name": "VST Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WAAREERTL",
-    "name": "Waaree Renewable Technologies Ltd."
+    "name": "Waaree Renewable Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WEBELSOLAR",
-    "name": "Websol Energy System Ltd."
+    "name": "Websol Energy System Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "WELCORP",
-    "name": "Welspun Corp Ltd."
+    "name": "Welspun Corp Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "WELENT",
-    "name": "Welspun Enterprises Ltd."
+    "name": "Welspun Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WELSPUNLIV",
-    "name": "Welspun Living Ltd."
+    "name": "Welspun Living Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WESTLIFE",
-    "name": "Westlife Foodworld Ltd"
+    "name": "Westlife Foodworld Ltd",
+    "sector": "FMCG"
   },
   {
     "symbol": "WHIRLPOOL",
-    "name": "Whirlpool Of India Ltd."
+    "name": "Whirlpool Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WOCKPHARMA",
-    "name": "Wockhardt Ltd."
+    "name": "Wockhardt Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "WONDERLA",
-    "name": "Wonderla Holidays Ltd."
+    "name": "Wonderla Holidays Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "SCRIP-105872",
-    "name": "WPIL Ltd."
+    "name": "WPIL Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "YATHARTH",
-    "name": "Yatharth Hospital & Trauma Care Services Ltd."
+    "name": "Yatharth Hospital & Trauma Care Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BASF",
-    "name": "BASF India Ltd."
+    "name": "BASF India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BAYERCROP",
-    "name": "Bayer CropScience Ltd."
+    "name": "Bayer CropScience Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "DHANUKA",
-    "name": "Dhanuka Agritech Ltd."
+    "name": "Dhanuka Agritech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RALLIS",
-    "name": "Rallis India Ltd."
+    "name": "Rallis India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHARDACROP",
-    "name": "Sharda Cropchem Ltd."
+    "name": "Sharda Cropchem Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "SUMICHEM",
-    "name": "Sumitomo Chemical India Ltd."
+    "name": "Sumitomo Chemical India Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "20MICRONS",
-    "name": "20 Microns Ltd."
+    "name": "20 Microns Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "532067",
-    "name": "3B Blackbio Dx Ltd."
+    "name": "3B Blackbio Dx Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "5PAISA",
-    "name": "5Paisa Capital Ltd."
+    "name": "5Paisa Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "63MOONS",
-    "name": "63 Moons Technologies Ltd."
+    "name": "63 Moons Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "540718",
-    "name": "Aayush Art And Bullion Ltd."
+    "name": "Aayush Art And Bullion Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539528",
-    "name": "Aayush Wellness Ltd."
+    "name": "Aayush Wellness Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ABCOTS",
-    "name": "AB Cotspin India Ltd."
+    "name": "AB Cotspin India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ABINFRA",
-    "name": "AB Infrabuild Ltd."
+    "name": "AB Infrabuild Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AFSL",
-    "name": "Abans Financial Services Ltd."
+    "name": "Abans Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ACCELYA",
-    "name": "Accelya Solutions India Ltd."
+    "name": "Accelya Solutions India Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "ADFFOODS",
-    "name": "ADF Foods Ltd."
+    "name": "ADF Foods Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "BIRLAMONEY",
-    "name": "Aditya Birla Money Ltd."
+    "name": "Aditya Birla Money Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ADOR",
-    "name": "Ador Welding Ltd."
+    "name": "Ador Welding Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543230",
-    "name": "Advait Energy Transitions Ltd."
+    "name": "Advait Energy Transitions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ADVENZYMES",
-    "name": "Advanced Enzyme Technologies Ltd."
+    "name": "Advanced Enzyme Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SATINDLTD",
-    "name": "Aeroflex Enterprises Ltd."
+    "name": "Aeroflex Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AEROFLEX",
-    "name": "Aeroflex Industries Ltd."
+    "name": "Aeroflex Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544224",
-    "name": "Afcom Holdings Ltd."
+    "name": "Afcom Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AGARIND",
-    "name": "Agarwal Industrial Corporation Ltd."
+    "name": "Agarwal Industrial Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AGIIL",
-    "name": "AGI Infra Ltd."
+    "name": "AGI Infra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AIMTRON",
-    "name": "Aimtron Electronics Ltd."
+    "name": "Aimtron Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AJMERA",
-    "name": "Ajmera Realty & Infra India Ltd."
+    "name": "Ajmera Realty & Infra India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALEMBICLTD",
-    "name": "Alembic Ltd."
+    "name": "Alembic Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "505725",
-    "name": "Algoquant Fintech Ltd."
+    "name": "Algoquant Fintech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALICON",
-    "name": "Alicon Castalloy Ltd."
+    "name": "Alicon Castalloy Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ALLETEC",
-    "name": "All E Technologies Ltd."
+    "name": "All E Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ACLGATI",
-    "name": "Allcargo Gati Ltd."
+    "name": "Allcargo Gati Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALLCARGO",
-    "name": "Allcargo Logistics Ltd."
+    "name": "Allcargo Logistics Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "ATL",
-    "name": "Allcargo Terminals Ltd."
+    "name": "Allcargo Terminals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALLDIGI",
-    "name": "Alldigi Tech Ltd."
+    "name": "Alldigi Tech Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "ADSL",
-    "name": "Allied Digital Services Ltd."
+    "name": "Allied Digital Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ALPEXSOLAR",
-    "name": "Alpex Solar Ltd."
+    "name": "Alpex Solar Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "506597",
-    "name": "Amal Ltd."
+    "name": "Amal Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AMBIKCO",
-    "name": "Ambika Cotton Mills Ltd."
+    "name": "Ambika Cotton Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544037",
-    "name": "Amic Forging Ltd."
+    "name": "Amic Forging Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AMNPLST",
-    "name": "Amines & Plasticizers Ltd."
+    "name": "Amines & Plasticizers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AMRUTANJAN",
-    "name": "Amrutanjan Health Care Ltd."
+    "name": "Amrutanjan Health Care Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ANDHRAPAP",
-    "name": "Andhra Paper Ltd."
+    "name": "Andhra Paper Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ANDREWYU",
-    "name": "Andrew Yule & Company Ltd."
+    "name": "Andrew Yule & Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AWHCL",
-    "name": "Antony Waste Handling Cell Ltd."
+    "name": "Antony Waste Handling Cell Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ANUHPHR",
-    "name": "Anuh Pharma Ltd."
+    "name": "Anuh Pharma Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APCOTEXIND",
-    "name": "Apcotex Industries Ltd."
+    "name": "Apcotex Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PARKHOTELS",
-    "name": "Apeejay Surrendra Park Hotels Ltd."
+    "name": "Apeejay Surrendra Park Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APOLLOPIPE",
-    "name": "Apollo Pipes Ltd."
+    "name": "Apollo Pipes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APTECHT",
-    "name": "Aptech Ltd."
+    "name": "Aptech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARIHANTCAP",
-    "name": "Arihant Capital Markets Ltd."
+    "name": "Arihant Capital Markets Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARIHANTSUP",
-    "name": "Arihant Superstructures Ltd."
+    "name": "Arihant Superstructures Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "ARKADE",
-    "name": "Arkade Developers Ltd."
+    "name": "Arkade Developers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARMANFIN",
-    "name": "Arman Financial Services Ltd."
+    "name": "Arman Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARROWGREEN",
-    "name": "Arrow Greentech Ltd."
+    "name": "Arrow Greentech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARTEMISMED",
-    "name": "Artemis Medicare Services Ltd."
+    "name": "Artemis Medicare Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ARVSMART",
-    "name": "Arvind Smartspaces Ltd."
+    "name": "Arvind Smartspaces Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASHAPURMIN",
-    "name": "Ashapura Minechem Ltd."
+    "name": "Ashapura Minechem Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASHIANA",
-    "name": "Ashiana Housing Ltd."
+    "name": "Ashiana Housing Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "543766",
-    "name": "Ashika Credit Capital Ltd."
+    "name": "Ashika Credit Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASIANENE",
-    "name": "Asian Energy Services Ltd."
+    "name": "Asian Energy Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASIANTILES",
-    "name": "Asian Granito India Ltd."
+    "name": "Asian Granito India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531847",
-    "name": "Asian Star Company Ltd."
+    "name": "Asian Star Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526433",
-    "name": "ASM Technologies Ltd."
+    "name": "ASM Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASALCBR",
-    "name": "Associated Alcohols & Breweries Ltd."
+    "name": "Associated Alcohols & Breweries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ASTEC",
-    "name": "Astec Lifesciences Ltd."
+    "name": "Astec Lifesciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "ATULAUTO",
-    "name": "Atul Auto Ltd."
+    "name": "Atul Auto Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AURUM",
-    "name": "Aurum Proptech Ltd."
+    "name": "Aurum Proptech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "APS",
-    "name": "Australian Premium Solar (India) Ltd."
+    "name": "Australian Premium Solar (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AUTOCORP",
-    "name": "Automobile Corporation of Goa Ltd."
+    "name": "Automobile Corporation of Goa Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "AUTOAXLES",
-    "name": "Automotive Axles Ltd."
+    "name": "Automotive Axles Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "ASAL",
-    "name": "Automotive Stampings and Assemblies Ltd."
+    "name": "Automotive Stampings and Assemblies Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "AVADHSUGAR",
-    "name": "Avadh Sugar & Energy Ltd."
+    "name": "Avadh Sugar & Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AVTNPL",
-    "name": "AVT Natural Products Ltd."
+    "name": "AVT Natural Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "523850",
-    "name": "Axtel Industries Ltd."
+    "name": "Axtel Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "AYMSYNTEX",
-    "name": "AYM Syntex Ltd."
+    "name": "AYM Syntex Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLKASHYAP",
-    "name": "B.L. Kashyap and Sons Ltd."
+    "name": "B.L. Kashyap and Sons Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STYLEBAAZA",
-    "name": "Baazar Style Retail Ltd."
+    "name": "Baazar Style Retail Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "BAJAJCON",
-    "name": "Bajaj Consumer Care Ltd."
+    "name": "Bajaj Consumer Care Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "BAJAJHCARE",
-    "name": "Bajaj Healthcare Ltd."
+    "name": "Bajaj Healthcare Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BAJAJHIND",
-    "name": "Bajaj Hindusthan Sugar Ltd."
+    "name": "Bajaj Hindusthan Sugar Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "507944",
-    "name": "Bajaj Steel Industries Ltd."
+    "name": "Bajaj Steel Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BAJEL",
-    "name": "Bajel Projects Ltd."
+    "name": "Bajel Projects Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BALAJITELE",
-    "name": "Balaji Telefilms Ltd."
+    "name": "Balaji Telefilms Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BALMLAWRIE",
-    "name": "Balmer Lawrie & Company Ltd."
+    "name": "Balmer Lawrie & Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "532485",
-    "name": "Balmer Lawrie Investments Ltd."
+    "name": "Balmer Lawrie Investments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512025",
-    "name": "Banganga Paper Industries Ltd."
+    "name": "Banganga Paper Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BARBEQUE",
-    "name": "Barbeque-Nation Hospitality Ltd."
+    "name": "Barbeque-Nation Hospitality Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BASILIC",
-    "name": "Basilic Fly Studio Ltd."
+    "name": "Basilic Fly Studio Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BCLIND",
-    "name": "BCL Industries Ltd."
+    "name": "BCL Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539018",
-    "name": "Beekay Steel Industries Ltd."
+    "name": "Beekay Steel Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLAL",
-    "name": "BEML Land Assets Ltd."
+    "name": "BEML Land Assets Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "509438",
-    "name": "Benares Hotels Ltd."
+    "name": "Benares Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BESTAGRO",
-    "name": "Best Agrolife Ltd."
+    "name": "Best Agrolife Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BETA",
-    "name": "Beta Drugs Ltd."
+    "name": "Beta Drugs Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "BFINVEST",
-    "name": "BF Investment Ltd."
+    "name": "BF Investment Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BFUTILITIE",
-    "name": "BF Utilities Ltd."
+    "name": "BF Utilities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BGRENERGY",
-    "name": "BGR Energy Systems Ltd."
+    "name": "BGR Energy Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHAGERIA",
-    "name": "Bhageria Industries Ltd."
+    "name": "Bhageria Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHAGCHEM",
-    "name": "Bhagiradha Chemicals & Industries Ltd."
+    "name": "Bhagiradha Chemicals & Industries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "BEPL",
-    "name": "Bhansali Engineering Polymers Ltd."
+    "name": "Bhansali Engineering Polymers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BBL",
-    "name": "Bharat Bijlee Ltd."
+    "name": "Bharat Bijlee Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "521238",
-    "name": "Bharat Global Developers Ltd."
+    "name": "Bharat Global Developers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "541096",
-    "name": "Bharat Parenterals Ltd."
+    "name": "Bharat Parenterals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHARATRAS",
-    "name": "Bharat Rasayan Ltd."
+    "name": "Bharat Rasayan Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BHARATWIRE",
-    "name": "Bharat Wire Ropes Ltd."
+    "name": "Bharat Wire Ropes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BIL",
-    "name": "Bhartiya International Ltd."
+    "name": "Bhartiya International Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "BIGBLOC",
-    "name": "Bigbloc Construction Ltd."
+    "name": "Bigbloc Construction Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "BIRLANU",
-    "name": "BirlaNu Ltd."
+    "name": "BirlaNu Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLISSGVS",
-    "name": "Bliss GVS Pharma Ltd."
+    "name": "Bliss GVS Pharma Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BLSE",
-    "name": "BLS E-Services Ltd."
+    "name": "BLS E-Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539607",
-    "name": "Blue Cloud Softech Solutions Ltd."
+    "name": "Blue Cloud Softech Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "514440",
-    "name": "Blue Pearl Agriventures Ltd."
+    "name": "Blue Pearl Agriventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "542669",
-    "name": "BMW Industries Ltd."
+    "name": "BMW Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526125",
-    "name": "BN Holdings Ltd."
+    "name": "BN Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BODALCHEM",
-    "name": "Bodal Chemicals Ltd."
+    "name": "Bodal Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BOMDYEING",
-    "name": "Bombay Dyeing And Manufacturing Company Ltd."
+    "name": "Bombay Dyeing And Manufacturing Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BSHSL",
-    "name": "Bombay Super Hybrid Seeds Ltd."
+    "name": "Bombay Super Hybrid Seeds Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BOROSCI",
-    "name": "Borosil Scientific Ltd."
+    "name": "Borosil Scientific Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543831",
-    "name": "Bright Outdoor Media Ltd."
+    "name": "Bright Outdoor Media Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BCG",
-    "name": "Brightcom Group Ltd."
+    "name": "Brightcom Group Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BUTTERFLY",
-    "name": "Butterfly Gandhimathi Appliances Ltd."
+    "name": "Butterfly Gandhimathi Appliances Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "C2C",
-    "name": "C2C Advanced Systems Ltd."
+    "name": "C2C Advanced Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CANTABIL",
-    "name": "Cantabil Retail India Ltd."
+    "name": "Cantabil Retail India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CAPACITE",
-    "name": "Capacit''e Infraprojects Ltd."
+    "name": "Capacit''e Infraprojects Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "CIFL",
-    "name": "Capital India Finance Ltd."
+    "name": "Capital India Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CAPITALSFB",
-    "name": "Capital Small Finance Bank Ltd."
+    "name": "Capital Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "CARRARO",
-    "name": "Carraro India Ltd."
+    "name": "Carraro India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CARYSIL",
-    "name": "Carysil Ltd."
+    "name": "Carysil Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "538734",
-    "name": "Ceinsys Tech Ltd."
+    "name": "Ceinsys Tech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CELLECOR",
-    "name": "Cellecor Gadgets Ltd."
+    "name": "Cellecor Gadgets Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CENTRUM",
-    "name": "Centrum Capital Ltd."
+    "name": "Centrum Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CENTUM",
-    "name": "Centum Electronics Ltd."
+    "name": "Centum Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CENTENKA",
-    "name": "Century Enka Ltd."
+    "name": "Century Enka Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543920",
-    "name": "CFF Fluid Control Ltd."
+    "name": "CFF Fluid Control Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CLSEL",
-    "name": "Chaman Lal Setia Exports Ltd."
+    "name": "Chaman Lal Setia Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CHEMCON",
-    "name": "Chemcon Speciality Chemicals Ltd."
+    "name": "Chemcon Speciality Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CHEMFAB",
-    "name": "Chemfab Alkalis Ltd."
+    "name": "Chemfab Alkalis Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "519477",
-    "name": "CIAN Agro Industries & Infrastructure Ltd."
+    "name": "CIAN Agro Industries & Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "542727",
-    "name": "City Pulse Multiventures Ltd."
+    "name": "City Pulse Multiventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "542866",
-    "name": "Colab Platforms Ltd."
+    "name": "Colab Platforms Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543619",
-    "name": "Concord Control Systems Ltd."
+    "name": "Concord Control Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CEWATER",
-    "name": "Concord Enviro Systems Ltd."
+    "name": "Concord Enviro Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CONFIPET",
-    "name": "Confidence Petroleum India Ltd."
+    "name": "Confidence Petroleum India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CCCL",
-    "name": "Consolidated Construction Consortium Ltd."
+    "name": "Consolidated Construction Consortium Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CONTROLPR",
-    "name": "Control Print Ltd."
+    "name": "Control Print Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "COOLCAPS",
-    "name": "Cool Caps Industries Ltd."
+    "name": "Cool Caps Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543928",
-    "name": "Cosmic CRF Ltd."
+    "name": "Cosmic CRF Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "COSMOFIRST",
-    "name": "Cosmo First Ltd."
+    "name": "Cosmo First Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CREATIVE",
-    "name": "Creative Newtech Ltd."
+    "name": "Creative Newtech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MUFTI",
-    "name": "Credo Brands Marketing Ltd."
+    "name": "Credo Brands Marketing Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "CREST",
-    "name": "Crest Ventures Ltd."
+    "name": "Crest Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "523105",
-    "name": "Cropster Agro Ltd."
+    "name": "Cropster Agro Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CSLFINANCE",
-    "name": "CSL Finance Ltd."
+    "name": "CSL Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CUPID",
-    "name": "Cupid Ltd."
+    "name": "Cupid Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "CYIENTDLM",
-    "name": "Cyient DLM Ltd."
+    "name": "Cyient DLM Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DLINKINDIA",
-    "name": "D-Link (India) Ltd."
+    "name": "D-Link (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DPABHUSHAN",
-    "name": "D.P. Abhushan Ltd."
+    "name": "D.P. Abhushan Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DALMIASUG",
-    "name": "Dalmia Bharat Sugar And Industries Ltd."
+    "name": "Dalmia Bharat Sugar And Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DAMCAPITAL",
-    "name": "DAM Capital Advisors Ltd."
+    "name": "DAM Capital Advisors Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DANISH",
-    "name": "Danish Power Ltd."
+    "name": "Danish Power Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DATAMATICS",
-    "name": "Datamatics Global Services Ltd."
+    "name": "Datamatics Global Services Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "DCMSRIND",
-    "name": "DCM Shriram Industries Ltd."
+    "name": "DCM Shriram Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DCW",
-    "name": "DCW Ltd."
+    "name": "DCW Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DCXINDIA",
-    "name": "DCX Systems Ltd."
+    "name": "DCX Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DDEVPLSTIK",
-    "name": "Ddev Plastiks Industries Ltd."
+    "name": "Ddev Plastiks Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DECCANCE",
-    "name": "Deccan Cements Ltd."
+    "name": "Deccan Cements Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "512068",
-    "name": "Deccan Gold Mines Ltd."
+    "name": "Deccan Gold Mines Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DEEDEV",
-    "name": "Dee Development Engineers Ltd"
+    "name": "Dee Development Engineers Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "DEEPINDS",
-    "name": "Deep Industries Ltd."
+    "name": "Deep Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DELTACORP",
-    "name": "Delta Corp Ltd."
+    "name": "Delta Corp Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DEN",
-    "name": "Den Networks Ltd."
+    "name": "Den Networks Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "DENTA",
-    "name": "Denta Water And Infra Solutions Ltd."
+    "name": "Denta Water And Infra Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DHAMPURSUG",
-    "name": "Dhampur Sugar Mills Ltd."
+    "name": "Dhampur Sugar Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DHANI",
-    "name": "Dhani Services Ltd."
+    "name": "Dhani Services Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "DHANBANK",
-    "name": "Dhanlaxmi Bank Ltd."
+    "name": "Dhanlaxmi Bank Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DHARMAJ",
-    "name": "Dharmaj Crop Guard Ltd."
+    "name": "Dharmaj Crop Guard Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DHUNINV",
-    "name": "Dhunseri Investments Ltd."
+    "name": "Dhunseri Investments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DVL",
-    "name": "Dhunseri Ventures Ltd."
+    "name": "Dhunseri Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DIFFNKG",
-    "name": "Diffusion Engineers Ltd."
+    "name": "Diffusion Engineers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GEORGFISCH",
-    "name": "Disa India Ltd."
+    "name": "Disa India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DISHTV",
-    "name": "Dish TV India Ltd."
+    "name": "Dish TV India Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "DIVGIITTS",
-    "name": "Divgi Torqtransfer Systems Ltd."
+    "name": "Divgi Torqtransfer Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DOLATALGO",
-    "name": "Dolat Algotech Ltd."
+    "name": "Dolat Algotech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DOLLAR",
-    "name": "Dollar Industries Ltd."
+    "name": "Dollar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DOLPHIN",
-    "name": "Dolphin Offshore Enterprises (India) Ltd."
+    "name": "Dolphin Offshore Enterprises (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526783",
-    "name": "Dr Agarwals Eye Hospital Ltd."
+    "name": "Dr Agarwals Eye Hospital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DREAMFOLKS",
-    "name": "Dreamfolks Services Ltd."
+    "name": "Dreamfolks Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DREDGECORP",
-    "name": "Dredging Corporation Of India Ltd."
+    "name": "Dredging Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DWARKESH",
-    "name": "Dwarikesh Sugar Industries Ltd."
+    "name": "Dwarikesh Sugar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DSSL",
-    "name": "Dynacons Systems & Solutions Ltd."
+    "name": "Dynacons Systems & Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DYCL",
-    "name": "Dynamic Cables Ltd."
+    "name": "Dynamic Cables Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "530643",
-    "name": "Eco Recycling Ltd."
+    "name": "Eco Recycling Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ECOSMOBLTY",
-    "name": "Ecos (India) Mobility & Hospitality Ltd."
+    "name": "Ecos (India) Mobility & Hospitality Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512008",
-    "name": "EFC (I) Ltd."
+    "name": "EFC (I) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EIHAHOTELS",
-    "name": "EIH Associated Hotels Ltd."
+    "name": "EIH Associated Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EIMCOELECO",
-    "name": "Eimco Elecon (India) Ltd."
+    "name": "Eimco Elecon (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "503681",
-    "name": "Elcid Investments Ltd."
+    "name": "Elcid Investments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ELDEHSG",
-    "name": "Eldeco Housing & Industries Ltd."
+    "name": "Eldeco Housing & Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ELECTHERM",
-    "name": "Electrotherm (India) Ltd."
+    "name": "Electrotherm (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ELIN",
-    "name": "Elin Electronics Ltd."
+    "name": "Elin Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ELPROINTL",
-    "name": "Elpro International Ltd."
+    "name": "Elpro International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EMSLIMITED",
-    "name": "EMS Ltd."
+    "name": "EMS Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "533477",
-    "name": "Enkei Wheels (India) Ltd."
+    "name": "Enkei Wheels (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ENIL",
-    "name": "Entertainment Network (India) Ltd."
+    "name": "Entertainment Network (India) Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "EIEL",
-    "name": "Enviro Infra Engineers Ltd."
+    "name": "Enviro Infra Engineers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EPACK",
-    "name": "EPACK Durable Ltd."
+    "name": "EPACK Durable Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531035",
-    "name": "Eraaya Lifespaces Ltd."
+    "name": "Eraaya Lifespaces Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ESAFSFB",
-    "name": "ESAF Small Finance Bank Ltd."
+    "name": "ESAF Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "ESFL",
-    "name": "Essen Speciality Films Ltd."
+    "name": "Essen Speciality Films Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ESTER",
-    "name": "Ester Industries Ltd."
+    "name": "Ester Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EVEREADY",
-    "name": "Eveready Industries India Ltd."
+    "name": "Eveready Industries India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EVERESTIND",
-    "name": "Everest Industries Ltd."
+    "name": "Everest Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EKC",
-    "name": "Everest Kanto Cylinder Ltd."
+    "name": "Everest Kanto Cylinder Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EXCELINDUS",
-    "name": "Excel Industries Ltd."
+    "name": "Excel Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EXICOM",
-    "name": "Exicom Tele-Systems Ltd."
+    "name": "Exicom Tele-Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "EXPLEOSOL",
-    "name": "Expleo Solutions Ltd."
+    "name": "Expleo Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FAIRCHEMOR",
-    "name": "Fairchem Organics Ltd."
+    "name": "Fairchem Organics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FAZE3Q",
-    "name": "Faze Three Ltd."
+    "name": "Faze Three Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FEDFINA",
-    "name": "Fedbank Financial Services Ltd"
+    "name": "Fedbank Financial Services Ltd",
+    "sector": "BANKING"
   },
   {
     "symbol": "511628",
-    "name": "Fedders Holding Ltd."
+    "name": "Fedders Holding Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FMGOETZE",
-    "name": "Federal-Mogul Goetze (India) Ltd."
+    "name": "Federal-Mogul Goetze (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "506414",
-    "name": "Fermenta Biotech Ltd."
+    "name": "Fermenta Biotech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FILATEX",
-    "name": "Filatex India Ltd."
+    "name": "Filatex India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FCL",
-    "name": "Fineotex Chemical Ltd."
+    "name": "Fineotex Chemical Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "508954",
-    "name": "Finkurve Financial Services Ltd."
+    "name": "Finkurve Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FINOPB",
-    "name": "Fino Payments Bank Ltd."
+    "name": "Fino Payments Bank Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FLAIR",
-    "name": "Flair Writing Industries Ltd."
+    "name": "Flair Writing Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FOCE",
-    "name": "Foce India Ltd."
+    "name": "Foce India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FOCUS",
-    "name": "Focus Lighting & Fixtures Ltd."
+    "name": "Focus Lighting & Fixtures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FOODSIN",
-    "name": "Foods & Inns Ltd."
+    "name": "Foods & Inns Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544186",
-    "name": "Forbes Precision Tools And Machine Parts Ltd."
+    "name": "Forbes Precision Tools And Machine Parts Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FOSECOIND",
-    "name": "Foseco India Ltd."
+    "name": "Foseco India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "522195",
-    "name": "Frontier Springs Ltd."
+    "name": "Frontier Springs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FUSION",
-    "name": "Fusion Finance Ltd."
+    "name": "Fusion Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GALAPREC",
-    "name": "Gala Precision Engineering Ltd."
+    "name": "Gala Precision Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GANDHAR",
-    "name": "Gandhar Oil Refinery (India) Ltd."
+    "name": "Gandhar Oil Refinery (India) Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "GANDHITUBE",
-    "name": "Gandhi Special Tubes Ltd."
+    "name": "Gandhi Special Tubes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GANESHBE",
-    "name": "Ganesh Benzoplast Ltd."
+    "name": "Ganesh Benzoplast Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GGBL",
-    "name": "Ganesh Green Bharat Ltd."
+    "name": "Ganesh Green Bharat Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GANESHIN",
-    "name": "Ganesh Infraworld Ltd."
+    "name": "Ganesh Infraworld Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GANECOS",
-    "name": "Ganesha Ecosphere Ltd."
+    "name": "Ganesha Ecosphere Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GARUDA",
-    "name": "Garuda Construction & Engineering Ltd."
+    "name": "Garuda Construction & Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GATEWAY",
-    "name": "Gateway Distriparks Ltd."
+    "name": "Gateway Distriparks Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GEPIL",
-    "name": "GE Power India Ltd."
+    "name": "GE Power India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GEECEE",
-    "name": "GeeCee Ventures Ltd."
+    "name": "GeeCee Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GENESYS",
-    "name": "Genesys International Corporation Ltd."
+    "name": "Genesys International Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GEOJITFSL",
-    "name": "Geojit Financial Services Ltd."
+    "name": "Geojit Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GHCLTEXTIL",
-    "name": "GHCL Textiles Ltd."
+    "name": "GHCL Textiles Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "505504",
-    "name": "GHV Infra Projects Ltd."
+    "name": "GHV Infra Projects Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GICHSGFIN",
-    "name": "GIC Housing Finance Ltd."
+    "name": "GIC Housing Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GKWLIMITED",
-    "name": "GKW Ltd."
+    "name": "GKW Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GLOBUSSPR",
-    "name": "Globus Spirits Ltd."
+    "name": "Globus Spirits Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GLOSTERLTD",
-    "name": "Gloster Ltd."
+    "name": "Gloster Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GMBREW",
-    "name": "GM Breweries Ltd."
+    "name": "GM Breweries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "GNA",
-    "name": "GNA Axles Ltd."
+    "name": "GNA Axles Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "GOCLCORP",
-    "name": "GOCL Corporation Ltd."
+    "name": "GOCL Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GODAVARIB",
-    "name": "Godavari Biorefineries Ltd."
+    "name": "Godavari Biorefineries Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "GOLDIAM",
-    "name": "Goldiam International Ltd."
+    "name": "Goldiam International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GOODLUCK",
-    "name": "Goodluck India Ltd."
+    "name": "Goodluck India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GOODYEAR",
-    "name": "Goodyear India Ltd."
+    "name": "Goodyear India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GPTHEALTH",
-    "name": "GPT Healthcare Ltd."
+    "name": "GPT Healthcare Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GPTINFRA",
-    "name": "GPT Infraprojects Ltd."
+    "name": "GPT Infraprojects Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "523862",
-    "name": "Grand Oak Canyons Distillery Ltd."
+    "name": "Grand Oak Canyons Distillery Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GRAUWEIL",
-    "name": "Grauer & Weil (India) Ltd."
+    "name": "Grauer & Weil (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GREENPANEL",
-    "name": "Greenpanel Industries Ltd."
+    "name": "Greenpanel Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GREENPLY",
-    "name": "Greenply Industries Ltd."
+    "name": "Greenply Industries Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "GRMOVER",
-    "name": "GRM Overseas Ltd."
+    "name": "GRM Overseas Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GRPLTD",
-    "name": "GRP Ltd."
+    "name": "GRP Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GTLINFRA",
-    "name": "GTL Infrastructure Ltd."
+    "name": "GTL Infrastructure Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "GTPL",
-    "name": "GTPL Hathway Ltd."
+    "name": "GTPL Hathway Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "GUFICBIO",
-    "name": "Gufic Biosciences Ltd."
+    "name": "Gufic Biosciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GIPCL",
-    "name": "Gujarat Industries Power Company Ltd."
+    "name": "Gujarat Industries Power Company Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "513536",
-    "name": "Gujarat Natural Resources Ltd."
+    "name": "Gujarat Natural Resources Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GUJTHEM",
-    "name": "Gujarat Themis Biosyn Ltd."
+    "name": "Gujarat Themis Biosyn Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GULPOLY",
-    "name": "Gulshan Polyols Ltd."
+    "name": "Gulshan Polyols Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526407",
-    "name": "Hampton Sky Realty Ltd."
+    "name": "Hampton Sky Realty Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HARDWYN",
-    "name": "Hardwyn India Ltd."
+    "name": "Hardwyn India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HARIOMPIPE",
-    "name": "Hariom Pipe Industries Ltd."
+    "name": "Hariom Pipe Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HARSHA",
-    "name": "Harsha Engineers International Ltd."
+    "name": "Harsha Engineers International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "530927",
-    "name": "Haryana Financial Corporation Ltd."
+    "name": "Haryana Financial Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HATHWAY",
-    "name": "Hathway Cable & Datacom Ltd."
+    "name": "Hathway Cable & Datacom Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "532467",
-    "name": "Hazoor Multi Projects Ltd."
+    "name": "Hazoor Multi Projects Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HERANBA",
-    "name": "Heranba Industries Ltd."
+    "name": "Heranba Industries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "HESTERBIO",
-    "name": "Hester Biosciences Ltd."
+    "name": "Hester Biosciences Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HEUBACHIND",
-    "name": "Heubach Colorants India Ltd."
+    "name": "Heubach Colorants India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HEXATRADEX",
-    "name": "Hexa Tradex Ltd."
+    "name": "Hexa Tradex Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HITECH",
-    "name": "Hi-Tech Pipes Ltd."
+    "name": "Hi-Tech Pipes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HIMATSEIDE",
-    "name": "Himatsingka Seide Ltd."
+    "name": "Himatsingka Seide Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HIRECT",
-    "name": "Hind Rectifiers Ltd."
+    "name": "Hind Rectifiers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HGS",
-    "name": "Hinduja Global Solutions Ltd."
+    "name": "Hinduja Global Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HINDCOMPOS",
-    "name": "Hindustan Composites Ltd."
+    "name": "Hindustan Composites Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HINDOILEXP",
-    "name": "Hindustan Oil Exploration Company Ltd."
+    "name": "Hindustan Oil Exploration Company Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "HINDWAREAP",
-    "name": "Hindware Home Innovation Ltd."
+    "name": "Hindware Home Innovation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HLEGLAS",
-    "name": "HLE Glascoat Ltd."
+    "name": "HLE Glascoat Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HLVLTD",
-    "name": "HLV Ltd."
+    "name": "HLV Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HMAAGRO",
-    "name": "HMA Agro Industries Ltd."
+    "name": "HMA Agro Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HONDAPOWER",
-    "name": "Honda India Power Products Ltd."
+    "name": "Honda India Power Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HPL",
-    "name": "HPL Electric & Power Ltd."
+    "name": "HPL Electric & Power Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "HUBTOWN",
-    "name": "Hubtown Ltd."
+    "name": "Hubtown Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "HUHTAMAKI",
-    "name": "Huhtamaki India Ltd."
+    "name": "Huhtamaki India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ICEMAKE",
-    "name": "ICE Make Refrigeration Ltd."
+    "name": "ICE Make Refrigeration Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IDEAFORGE",
-    "name": "Ideaforge Technology Ltd."
+    "name": "Ideaforge Technology Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IFBAGRO",
-    "name": "IFB Agro Industries Ltd."
+    "name": "IFB Agro Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IFGLEXPOR",
-    "name": "IFGL Refractories Ltd."
+    "name": "IFGL Refractories Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IGPL",
-    "name": "IG Petrochemicals Ltd."
+    "name": "IG Petrochemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IGARASHI",
-    "name": "Igarashi Motors India Ltd."
+    "name": "Igarashi Motors India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IKIO",
-    "name": "IKIO Technologies Ltd."
+    "name": "IKIO Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "BAJAJINDEF",
-    "name": "Indef Manufacturing Ltd."
+    "name": "Indef Manufacturing Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IMPAL",
-    "name": "India Motor Parts & Accessories Ltd."
+    "name": "India Motor Parts & Accessories Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDNIPPON",
-    "name": "India Nippon Electricals Ltd."
+    "name": "India Nippon Electricals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IPL",
-    "name": "India Pesticides Ltd."
+    "name": "India Pesticides Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DPSCLTD",
-    "name": "India Power Corporation Ltd."
+    "name": "India Power Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDIANHUME",
-    "name": "Indian Hume Pipe Company Ltd."
+    "name": "Indian Hume Pipe Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "IMFA",
-    "name": "Indian Metals & Ferro Alloys Ltd."
+    "name": "Indian Metals & Ferro Alloys Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOAMIN",
-    "name": "Indo Amines Ltd."
+    "name": "Indo Amines Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOFARM",
-    "name": "Indo Farm Equipments Ltd."
+    "name": "Indo Farm Equipments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDORAMA",
-    "name": "Indo Rama Synthetics (India) Ltd."
+    "name": "Indo Rama Synthetics (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOTECH",
-    "name": "Indo Tech Transformers Ltd."
+    "name": "Indo Tech Transformers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOTHAI",
-    "name": "Indo Thai Securities Ltd."
+    "name": "Indo Thai Securities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDOCO",
-    "name": "Indoco Remedies Ltd."
+    "name": "Indoco Remedies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INDRAMEDCO",
-    "name": "Indraprastha Medical Corporation Ltd."
+    "name": "Indraprastha Medical Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "501298",
-    "name": "Industrial & Prudential Investment Company Ltd."
+    "name": "Industrial & Prudential Investment Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INFOBEAN",
-    "name": "Infobeans Technologies Ltd."
+    "name": "Infobeans Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INNOVANA",
-    "name": "Innovana Thinklabs Ltd."
+    "name": "Innovana Thinklabs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INSECTICID",
-    "name": "Insecticides (India) Ltd."
+    "name": "Insecticides (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "505358",
-    "name": "Integra Engineering India Ltd."
+    "name": "Integra Engineering India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "INTERARCH",
-    "name": "Interarch Building Solutions Ltd."
+    "name": "Interarch Building Solutions Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "IOLCP",
-    "name": "IOL Chemicals And Pharmaceuticals Ltd."
+    "name": "IOL Chemicals And Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "IRMENERGY",
-    "name": "IRM Energy Ltd."
+    "name": "IRM Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "508807",
-    "name": "IST Ltd."
+    "name": "IST Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAGAJITIND",
-    "name": "Jagatjit Industries Ltd."
+    "name": "Jagatjit Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAGRAN",
-    "name": "Jagran Prakashan Ltd."
+    "name": "Jagran Prakashan Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "JAGSNPHARM",
-    "name": "Jagsonpal Pharmaceuticals Ltd."
+    "name": "Jagsonpal Pharmaceuticals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAICORPLTD",
-    "name": "Jai Corp Ltd."
+    "name": "Jai Corp Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JPASSOCIAT",
-    "name": "Jaiprakash Associates Ltd."
+    "name": "Jaiprakash Associates Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAMNAAUTO",
-    "name": "Jamna Auto Industries Ltd."
+    "name": "Jamna Auto Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "JASH",
-    "name": "Jash Engineering Ltd."
+    "name": "Jash Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAYBARMARU",
-    "name": "Jay Bharat Maruti Ltd."
+    "name": "Jay Bharat Maruti Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "JAYAGROGN",
-    "name": "Jayant Agro-Organics Ltd."
+    "name": "Jayant Agro-Organics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JAYNECOIND",
-    "name": "Jayaswal Neco Industries Ltd."
+    "name": "Jayaswal Neco Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512233",
-    "name": "Jaybharat Textiles & Real Estate Ltd."
+    "name": "Jaybharat Textiles & Real Estate Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JKSYNTHETC",
-    "name": "Jaykay Enterprises Ltd."
+    "name": "Jaykay Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JGCHEM",
-    "name": "JG Chemicals Ltd."
+    "name": "JG Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JINDRILL",
-    "name": "Jindal Drilling & Industries Ltd."
+    "name": "Jindal Drilling & Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JINDALPHOT",
-    "name": "Jindal Photo Ltd."
+    "name": "Jindal Photo Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JINDALPOLY",
-    "name": "Jindal Poly Films Ltd."
+    "name": "Jindal Poly Films Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JPOLYINVST",
-    "name": "Jindal Poly Investment and Finance Company Ltd."
+    "name": "Jindal Poly Investment and Finance Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JITFINFRA",
-    "name": "JITF Infralogistics Ltd."
+    "name": "JITF Infralogistics Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "JNKINDIA",
-    "name": "JNK India Ltd."
+    "name": "JNK India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "FLATPROD",
-    "name": "John Cockerill India Ltd"
+    "name": "John Cockerill India Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "JTEKTINDIA",
-    "name": "JTEKT India Ltd."
+    "name": "JTEKT India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JTLIND",
-    "name": "JTL Industries Ltd"
+    "name": "JTL Industries Ltd",
+    "sector": "METALS"
   },
   {
     "symbol": "JUBLCPL",
-    "name": "Jubilant Agri And Consumer Products Ltd."
+    "name": "Jubilant Agri And Consumer Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "514448",
-    "name": "Jyoti Resins & Adhesives Ltd."
+    "name": "Jyoti Resins & Adhesives Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "JYOTISTRUC",
-    "name": "Jyoti Structures Ltd."
+    "name": "Jyoti Structures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KABRAEXTRU",
-    "name": "Kabra Extrusiontechnik Ltd."
+    "name": "Kabra Extrusiontechnik Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KICL",
-    "name": "Kalyani Investment Company Ltd."
+    "name": "Kalyani Investment Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KSL",
-    "name": "Kalyani Steels Ltd."
+    "name": "Kalyani Steels Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "KAMDHENU",
-    "name": "Kamdhenu Ltd."
+    "name": "Kamdhenu Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KARNIKA",
-    "name": "Karnika Industries Ltd."
+    "name": "Karnika Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KCP",
-    "name": "KCP Ltd."
+    "name": "KCP Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "KDDL",
-    "name": "KDDL Ltd."
+    "name": "KDDL Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KELLTONTEC",
-    "name": "Kellton Tech Solutions Ltd."
+    "name": "Kellton Tech Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KERNEX",
-    "name": "Kernex Microsystems (India) Ltd."
+    "name": "Kernex Microsystems (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543542",
-    "name": "Kesar India Ltd."
+    "name": "Kesar India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KKCL",
-    "name": "Kewal Kiran Clothing Ltd."
+    "name": "Kewal Kiran Clothing Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KHAICHEM",
-    "name": "Khaitan Chemicals & Fertilizers Ltd."
+    "name": "Khaitan Chemicals & Fertilizers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543953",
-    "name": "Khazanchi Jewellers Ltd."
+    "name": "Khazanchi Jewellers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KILBUNENGG",
-    "name": "Kilburn Engineering Ltd."
+    "name": "Kilburn Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KILITCH",
-    "name": "Kilitch Drugs (India) Ltd."
+    "name": "Kilitch Drugs (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KINGFA",
-    "name": "Kingfa Science & Technology (India) Ltd."
+    "name": "Kingfa Science & Technology (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KIRIINDUS",
-    "name": "Kiri Industries Ltd."
+    "name": "Kiri Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KECL",
-    "name": "Kirloskar Electric Company Ltd."
+    "name": "Kirloskar Electric Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "524520",
-    "name": "KMC Speciality Hospitals (India) Ltd."
+    "name": "KMC Speciality Hospitals (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KMEW",
-    "name": "Knowledge Marine & Engineering Works Ltd."
+    "name": "Knowledge Marine & Engineering Works Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KODYTECH",
-    "name": "Kody Technolab Ltd."
+    "name": "Kody Technolab Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KOKUYOCMLN",
-    "name": "Kokuyo Camlin Ltd."
+    "name": "Kokuyo Camlin Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KOLTEPATIL",
-    "name": "Kolte-Patil Developers Ltd."
+    "name": "Kolte-Patil Developers Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "KOPRAN",
-    "name": "Kopran Ltd."
+    "name": "Kopran Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "KOTHARINDL",
-    "name": "Kothari Industrial Corporation Ltd."
+    "name": "Kothari Industrial Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KOTHARIPET",
-    "name": "Kothari Petrochemicals Ltd."
+    "name": "Kothari Petrochemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KOVAI",
-    "name": "Kovai Medical Center & Hospital Ltd."
+    "name": "Kovai Medical Center & Hospital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KPEL",
-    "name": "KP Energy Ltd."
+    "name": "KP Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544150",
-    "name": "KP Green Engineering Ltd."
+    "name": "KP Green Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRISHANA",
-    "name": "Krishana Phoschem Ltd."
+    "name": "Krishana Phoschem Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRISHIVAL",
-    "name": "Krishival Foods Ltd."
+    "name": "Krishival Foods Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRISHNADEF",
-    "name": "Krishna Defence and Allied Industries Ltd."
+    "name": "Krishna Defence and Allied Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRITI",
-    "name": "Kriti Industries (India) Ltd."
+    "name": "Kriti Industries (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KROSS",
-    "name": "Kross Ltd."
+    "name": "Kross Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRSNAA",
-    "name": "Krsnaa Diagnostics Ltd."
+    "name": "Krsnaa Diagnostics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KRYSTAL",
-    "name": "Krystal Integrated Services Ltd"
+    "name": "Krystal Integrated Services Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "KSE",
-    "name": "KSE Ltd."
+    "name": "KSE Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KSOLVES",
-    "name": "KSolves India Ltd."
+    "name": "KSolves India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KUANTUM",
-    "name": "Kuantum Papers Ltd."
+    "name": "Kuantum Papers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539997",
-    "name": "Kwality Pharmaceuticals Ltd."
+    "name": "Kwality Pharmaceuticals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LAOPALA",
-    "name": "La Opala RG Ltd."
+    "name": "La Opala RG Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LANCER",
-    "name": "Lancer Container Lines Ltd."
+    "name": "Lancer Container Lines Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LANDMARK",
-    "name": "Landmark Cars Ltd."
+    "name": "Landmark Cars Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LAXMIDENTL",
-    "name": "Laxmi Dental Ltd."
+    "name": "Laxmi Dental Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LGHL",
-    "name": "Laxmi Goldorna House Ltd."
+    "name": "Laxmi Goldorna House Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LEMERITE",
-    "name": "Le Merite Exports Ltd."
+    "name": "Le Merite Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LIBERTSHOE",
-    "name": "Liberty Shoes Ltd."
+    "name": "Liberty Shoes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LIKHITHA",
-    "name": "Likhitha Infrastructure Ltd."
+    "name": "Likhitha Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LINC",
-    "name": "Linc Ltd."
+    "name": "Linc Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LINCOLN",
-    "name": "Lincoln Pharmaceuticals Ltd."
+    "name": "Lincoln Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "523475",
-    "name": "Lotus Chocolate Company Ltd."
+    "name": "Lotus Chocolate Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "514446",
-    "name": "LS Industries Ltd."
+    "name": "LS Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539682",
-    "name": "Lucent Industries Ltd."
+    "name": "Lucent Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "LUMAXIND",
-    "name": "Lumax Industries Ltd."
+    "name": "Lumax Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "507836",
-    "name": "Mac Charles (India) Ltd."
+    "name": "Mac Charles (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543787",
-    "name": "Macfos Ltd."
+    "name": "Macfos Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MACPOWER",
-    "name": "Macpower CNC Machines Ltd."
+    "name": "Macpower CNC Machines Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "MBAPL",
-    "name": "Madhya Bharat Agro Products Ltd."
+    "name": "Madhya Bharat Agro Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MADRASFERT",
-    "name": "Madras Fertilizers Ltd."
+    "name": "Madras Fertilizers Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "MAFATLAIND",
-    "name": "Mafatlal Industries Ltd."
+    "name": "Mafatlal Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MAGADSUGAR",
-    "name": "Magadh Sugar & Energy Ltd."
+    "name": "Magadh Sugar & Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MTNL",
-    "name": "Mahanagar Telephone Nigam Ltd."
+    "name": "Mahanagar Telephone Nigam Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "MAHLOG",
-    "name": "Mahindra Logistics Ltd."
+    "name": "Mahindra Logistics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MAITHANALL",
-    "name": "Maithan Alloys Ltd."
+    "name": "Maithan Alloys Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MAMATA",
-    "name": "Mamata Machinery Ltd."
+    "name": "Mamata Machinery Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANINDS",
-    "name": "Man Industries (India) Ltd."
+    "name": "Man Industries (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANAKCOAT",
-    "name": "Manaksia Coated Metals & Industries Ltd."
+    "name": "Manaksia Coated Metals & Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANALIPETC",
-    "name": "Manali Petrochemicals Ltd."
+    "name": "Manali Petrochemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANGLMCEM",
-    "name": "Mangalam Cement Ltd."
+    "name": "Mangalam Cement Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MANGCHEFER",
-    "name": "Mangalore Chemicals & Fertilizers Ltd."
+    "name": "Mangalore Chemicals & Fertilizers Ltd.",
+    "sector": "DIVERSIFIED"
   },
   {
     "symbol": "MVGJL",
-    "name": "Manoj Vaibhav Gems ''N'' Jewellers Ltd."
+    "name": "Manoj Vaibhav Gems ''N'' Jewellers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MARATHON",
-    "name": "Marathon Nextgen Realty Ltd."
+    "name": "Marathon Nextgen Realty Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "MARINE",
-    "name": "Marine Electricals (India) Ltd."
+    "name": "Marine Electricals (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "517467",
-    "name": "Marsons Ltd."
+    "name": "Marsons Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MASTERTR",
-    "name": "Master Trust Ltd."
+    "name": "Master Trust Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MATRIMONY",
-    "name": "Matrimony.Com Ltd."
+    "name": "Matrimony.Com Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MAXIND",
-    "name": "Max India Ltd."
+    "name": "Max India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MAYURUNIQ",
-    "name": "Mayur Uniquoters Ltd."
+    "name": "Mayur Uniquoters Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MEDIASSIST",
-    "name": "Medi Assist Healthcare Services Ltd."
+    "name": "Medi Assist Healthcare Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MMWL",
-    "name": "Media Matrix Worldwide Ltd"
+    "name": "Media Matrix Worldwide Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "MOL",
-    "name": "Meghmani Organics Ltd."
+    "name": "Meghmani Organics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "538668",
-    "name": "Meghna Infracon Infrastructure Ltd."
+    "name": "Meghna Infracon Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531357",
-    "name": "Mercury Ev-Tech Ltd."
+    "name": "Mercury Ev-Tech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MICEL",
-    "name": "MIC Electronics Ltd."
+    "name": "MIC Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526570",
-    "name": "Midwest Gold Ltd."
+    "name": "Midwest Gold Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MINDTECK",
-    "name": "Mindteck (India) Ltd."
+    "name": "Mindteck (India) Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "MMFL",
-    "name": "MM Forgings Ltd."
+    "name": "MM Forgings Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "519003",
-    "name": "Modi Naturals Ltd."
+    "name": "Modi Naturals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MOLDTKPAC",
-    "name": "Mold-Tek Packaging Ltd."
+    "name": "Mold-Tek Packaging Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MONARCH",
-    "name": "Monarch Networth Capital Ltd."
+    "name": "Monarch Networth Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MONTECARLO",
-    "name": "Monte Carlo Fashions Ltd."
+    "name": "Monte Carlo Fashions Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "MOREPENLAB",
-    "name": "Morepen Laboratories Ltd."
+    "name": "Morepen Laboratories Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "523160",
-    "name": "Morganite Crucible (India) Ltd."
+    "name": "Morganite Crucible (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MOS",
-    "name": "MOS Utility Ltd."
+    "name": "MOS Utility Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MOSCHIP",
-    "name": "Moschip Technologies Ltd."
+    "name": "Moschip Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MOTISONS",
-    "name": "Motisons Jewellers Ltd."
+    "name": "Motisons Jewellers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MSPL",
-    "name": "MSP Steel & Power Ltd."
+    "name": "MSP Steel & Power Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MSTCLTD",
-    "name": "MSTC Ltd."
+    "name": "MSTC Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MUFIN",
-    "name": "Mufin Green Finance Ltd."
+    "name": "Mufin Green Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MUKANDLTD",
-    "name": "Mukand Ltd."
+    "name": "Mukand Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "MUKKA",
-    "name": "Mukka Proteins Ltd."
+    "name": "Mukka Proteins Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "MUNJALAU",
-    "name": "Munjal Auto Industries Ltd."
+    "name": "Munjal Auto Industries Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "MUTHOOTMF",
-    "name": "Muthoot Microfin Ltd."
+    "name": "Muthoot Microfin Ltd.",
+    "sector": "CONGLOMERATE"
   },
   {
     "symbol": "NBIFIN",
-    "name": "N.B.I. Industrial Finance Co. Ltd."
+    "name": "N.B.I. Industrial Finance Co. Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NACLIND",
-    "name": "NACL Industries Ltd."
+    "name": "NACL Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAHARPOLY",
-    "name": "Nahar Poly Films Ltd."
+    "name": "Nahar Poly Films Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAHARSPING",
-    "name": "Nahar Spinning Mills Ltd."
+    "name": "Nahar Spinning Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NSIL",
-    "name": "Nalwa Sons Investments Ltd."
+    "name": "Nalwa Sons Investments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAVKARCORP",
-    "name": "Navkar Corporation Ltd."
+    "name": "Navkar Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NAVNETEDUL",
-    "name": "Navneet Education Ltd."
+    "name": "Navneet Education Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NCLIND",
-    "name": "NCL Industries Ltd."
+    "name": "NCL Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NDRAUTO",
-    "name": "NDR Auto Components Ltd."
+    "name": "NDR Auto Components Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NELCAST",
-    "name": "Nelcast Ltd."
+    "name": "Nelcast Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NELCO",
-    "name": "Nelco Ltd."
+    "name": "Nelco Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "NDTV",
-    "name": "New Delhi Television Ltd."
+    "name": "New Delhi Television Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "NIBE",
-    "name": "NIBE Ltd."
+    "name": "NIBE Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NIITLTD",
-    "name": "NIIT Ltd."
+    "name": "NIIT Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NILKAMAL",
-    "name": "Nilkamal Ltd."
+    "name": "Nilkamal Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NINSYS",
-    "name": "Nintec Systems Ltd."
+    "name": "Nintec Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NITCO",
-    "name": "Nitco Ltd."
+    "name": "Nitco Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NITINSPIN",
-    "name": "Nitin Spinners Ltd."
+    "name": "Nitin Spinners Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KERALACHEM",
-    "name": "Nitta Gelatin India Ltd."
+    "name": "Nitta Gelatin India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NOCIL",
-    "name": "Nocil Ltd."
+    "name": "Nocil Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NORTHARC",
-    "name": "Northern ARC Capital Ltd."
+    "name": "Northern ARC Capital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "NOVARTIND",
-    "name": "Novartis India Ltd."
+    "name": "Novartis India Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "NRBBEARING",
-    "name": "NRB Bearings Ltd."
+    "name": "NRB Bearings Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "NUCLEUS",
-    "name": "Nucleus Software Exports Ltd."
+    "name": "Nucleus Software Exports Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "OMINFRAL",
-    "name": "Om Infra Ltd."
+    "name": "Om Infra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OMAXE",
-    "name": "Omaxe Ltd."
+    "name": "Omaxe Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "MOBIKWIK",
-    "name": "One Mobikwik Systems Ltd."
+    "name": "One Mobikwik Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ONEPOINT",
-    "name": "One Point One Solutions Ltd."
+    "name": "One Point One Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORCHPHARMA",
-    "name": "Orchid Pharma Ltd."
+    "name": "Orchid Pharma Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "ORICONENT",
-    "name": "Oricon Enterprises Ltd."
+    "name": "Oricon Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "GREENPOWER",
-    "name": "Orient Green Power Company Ltd."
+    "name": "Orient Green Power Company Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "ORIENTTECH",
-    "name": "Orient Technologies Ltd."
+    "name": "Orient Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OAL",
-    "name": "Oriental Aromatics Ltd."
+    "name": "Oriental Aromatics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORIENTHOT",
-    "name": "Oriental Hotels Ltd."
+    "name": "Oriental Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531859",
-    "name": "Oriental Rail Infrastructure Ltd."
+    "name": "Oriental Rail Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OSWALAGRO",
-    "name": "Oswal Agro Mills Ltd."
+    "name": "Oswal Agro Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OSWALGREEN",
-    "name": "Oswal Greentech Ltd."
+    "name": "Oswal Greentech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "OWAIS",
-    "name": "Owais Metal & Mineral Processing Ltd."
+    "name": "Owais Metal & Mineral Processing Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PAISALO",
-    "name": "Paisalo Digital Ltd."
+    "name": "Paisalo Digital Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PAKKA",
-    "name": "Pakka Ltd."
+    "name": "Pakka Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PANACEABIO",
-    "name": "Panacea Biotec Ltd."
+    "name": "Panacea Biotec Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PANAMAPET",
-    "name": "Panama Petrochem Ltd."
+    "name": "Panama Petrochem Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "539469",
-    "name": "Panorama Studios International Ltd."
+    "name": "Panorama Studios International Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PARAGMILK",
-    "name": "Parag Milk Foods Ltd."
+    "name": "Parag Milk Foods Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "PARACABLES",
-    "name": "Paramount Communications Ltd."
+    "name": "Paramount Communications Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PARSVNATH",
-    "name": "Parsvnath Developers Ltd."
+    "name": "Parsvnath Developers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PASHUPATI",
-    "name": "Pashupati Cotspin Ltd."
+    "name": "Pashupati Cotspin Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PATELENG",
-    "name": "Patel Engineering Ltd."
+    "name": "Patel Engineering Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "532742",
-    "name": "Paushak Ltd."
+    "name": "Paushak Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PENINLAND",
-    "name": "Peninsula Land Ltd."
+    "name": "Peninsula Land Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "PENIND",
-    "name": "Pennar Industries Ltd."
+    "name": "Pennar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PERMAGNET",
-    "name": "Permanent Magnets Ltd."
+    "name": "Permanent Magnets Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PITTIENG",
-    "name": "Pitti Engineering Ltd."
+    "name": "Pitti Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PIXTRANS",
-    "name": "Pix Transmissions Ltd."
+    "name": "Pix Transmissions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PLATIND",
-    "name": "Platinum Industries Ltd."
+    "name": "Platinum Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PNBGILTS",
-    "name": "PNB Gilts Ltd."
+    "name": "PNB Gilts Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "543709",
-    "name": "PNGS Gargi Fashion Jewellery Ltd."
+    "name": "PNGS Gargi Fashion Jewellery Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "POKARNA",
-    "name": "Pokarna Ltd."
+    "name": "Pokarna Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "540717",
-    "name": "Polo Queen Industrial & Fintech Ltd."
+    "name": "Polo Queen Industrial & Fintech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "POCL",
-    "name": "Pondy Oxides & Chemicals Ltd."
+    "name": "Pondy Oxides & Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PVSL",
-    "name": "Popular Vehicles & Services Ltd."
+    "name": "Popular Vehicles & Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRABHA",
-    "name": "Prabha Energy Ltd"
+    "name": "Prabha Energy Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRAKASH",
-    "name": "Prakash Industries Ltd."
+    "name": "Prakash Industries Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "PPL",
-    "name": "Prakash Pipes Ltd."
+    "name": "Prakash Pipes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DIAMONDYD",
-    "name": "Prataap Snacks Ltd."
+    "name": "Prataap Snacks Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531637",
-    "name": "Praveg Ltd."
+    "name": "Praveg Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRECAM",
-    "name": "Precision Camshafts Ltd."
+    "name": "Precision Camshafts Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "PRECWIRE",
-    "name": "Precision Wires India Ltd."
+    "name": "Precision Wires India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PREMEXPLN",
-    "name": "Premier Explosives Ltd."
+    "name": "Premier Explosives Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PFOCUS",
-    "name": "Prime Focus Ltd."
+    "name": "Prime Focus Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRIMESECU",
-    "name": "Prime Securities Ltd."
+    "name": "Prime Securities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PRINCEPIPE",
-    "name": "Prince Pipes and Fittings Ltd."
+    "name": "Prince Pipes and Fittings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PROTEAN",
-    "name": "Protean e-Gov Technologies Ltd."
+    "name": "Protean e-Gov Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PSPPROJECT",
-    "name": "PSP Projects Ltd."
+    "name": "PSP Projects Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "PFS",
-    "name": "PTC India Financial Services Ltd."
+    "name": "PTC India Financial Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PDMJEPAPER",
-    "name": "Pudumjee Paper Products Ltd."
+    "name": "Pudumjee Paper Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PUNJABCHEM",
-    "name": "Punjab Chemicals & Crop Protection Ltd."
+    "name": "Punjab Chemicals & Crop Protection Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "QUADFUTURE",
-    "name": "Quadrant Future Tek Ltd."
+    "name": "Quadrant Future Tek Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "QPOWER",
-    "name": "Quality Power Electrical Equipments Ltd."
+    "name": "Quality Power Electrical Equipments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "QUICKHEAL",
-    "name": "Quick Heal Technologies Ltd."
+    "name": "Quick Heal Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "538119",
-    "name": "R&B Denims Ltd."
+    "name": "R&B Denims Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RACLGEAR",
-    "name": "RACL Geartech Ltd."
+    "name": "RACL Geartech Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "RADHIKAJWE",
-    "name": "Radhika Jeweltech Ltd."
+    "name": "Radhika Jeweltech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RADIANTCMS",
-    "name": "Radiant Cash Management Services Ltd."
+    "name": "Radiant Cash Management Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RPEL",
-    "name": "Raghav Productivity Enhancers Ltd."
+    "name": "Raghav Productivity Enhancers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAJRILTD",
-    "name": "Raj Rayon Industries Ltd."
+    "name": "Raj Rayon Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAJPALAYAM",
-    "name": "Rajapalayam Mills Ltd."
+    "name": "Rajapalayam Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544291",
-    "name": "Rajesh Power Services Ltd."
+    "name": "Rajesh Power Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAJOOENG",
-    "name": "Rajoo Engineers Ltd."
+    "name": "Rajoo Engineers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAJRATAN",
-    "name": "Rajratan Global Wire Ltd."
+    "name": "Rajratan Global Wire Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMRAT",
-    "name": "Ram Ratna Wires Ltd."
+    "name": "Ram Ratna Wires Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMASTEEL",
-    "name": "Rama Steel Tubes Ltd."
+    "name": "Rama Steel Tubes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMCOIND",
-    "name": "Ramco Industries Ltd."
+    "name": "Ramco Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMCOSYS",
-    "name": "Ramco Systems Ltd."
+    "name": "Ramco Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RAMKY",
-    "name": "Ramky Infrastructure Ltd."
+    "name": "Ramky Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RML",
-    "name": "Rane (Madras) Ltd."
+    "name": "Rane (Madras) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RANEHOLDIN",
-    "name": "Rane Holdings Ltd."
+    "name": "Rane Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RPTECH",
-    "name": "Rashi Peripherals Ltd."
+    "name": "Rashi Peripherals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RATNAVEER",
-    "name": "Ratnaveer Precision Engineering Ltd."
+    "name": "Ratnaveer Precision Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RELTD",
-    "name": "Ravindra Energy Ltd."
+    "name": "Ravindra Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "533285",
-    "name": "RDB Infrastructure And Power Ltd."
+    "name": "RDB Infrastructure And Power Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RIIL",
-    "name": "Reliance Industrial Infrastructure Ltd."
+    "name": "Reliance Industrial Infrastructure Ltd.",
+    "sector": "OIL_GAS"
   },
   {
     "symbol": "REMUS",
-    "name": "Remus Pharmaceuticals Ltd."
+    "name": "Remus Pharmaceuticals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RGL",
-    "name": "Renaissance Global Ltd."
+    "name": "Renaissance Global Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "REPCOHOME",
-    "name": "Repco Home Finance Ltd."
+    "name": "Repco Home Finance Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "REPRO",
-    "name": "Repro India Ltd."
+    "name": "Repro India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543590",
-    "name": "Rhetan TMT Ltd."
+    "name": "Rhetan TMT Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RICOAUTO",
-    "name": "Rico Auto Industries Ltd."
+    "name": "Rico Auto Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "517035",
-    "name": "RIR Power Electronics Ltd."
+    "name": "RIR Power Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RISHABH",
-    "name": "Rishabh Instruments Ltd."
+    "name": "Rishabh Instruments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RITCO",
-    "name": "Ritco Logistics Ltd."
+    "name": "Ritco Logistics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RKSWAMY",
-    "name": "RK Swamy Ltd."
+    "name": "RK Swamy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RMDRIP",
-    "name": "RM Drip and Sprinklers System Ltd."
+    "name": "RM Drip and Sprinklers System Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "540358",
-    "name": "RMC Switchgears Ltd."
+    "name": "RMC Switchgears Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ROSSARI",
-    "name": "Rossari Biotech Ltd."
+    "name": "Rossari Biotech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ROSSTECH",
-    "name": "Rossell Techsys Ltd."
+    "name": "Rossell Techsys Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ROTO",
-    "name": "Roto Pumps Ltd."
+    "name": "Roto Pumps Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ROHLTD",
-    "name": "Royal Orchid Hotels Ltd."
+    "name": "Royal Orchid Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RPGLIFE",
-    "name": "RPG Life Sciences Ltd."
+    "name": "RPG Life Sciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "RPSGVENT",
-    "name": "RPSG Ventures Ltd."
+    "name": "RPSG Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "504346",
-    "name": "RRP Semiconductor Ltd."
+    "name": "RRP Semiconductor Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RSWM",
-    "name": "RSWM Ltd."
+    "name": "RSWM Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RUPA",
-    "name": "Rupa & Company Ltd."
+    "name": "Rupa & Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RUSHIL",
-    "name": "Rushil Decor Ltd."
+    "name": "Rushil Decor Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCHAND",
-    "name": "S Chand And Company Ltd."
+    "name": "S Chand And Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SPAL",
-    "name": "S.P. Apparels Ltd."
+    "name": "S.P. Apparels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAGCEM",
-    "name": "Sagar Cements Ltd."
+    "name": "Sagar Cements Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SAHANA",
-    "name": "Sahana System Ltd."
+    "name": "Sahana System Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAHASRA",
-    "name": "Sahasra Electronic Solutions Ltd."
+    "name": "Sahasra Electronic Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "KALAMANDIR",
-    "name": "Sai Silks (Kalamandir) Ltd."
+    "name": "Sai Silks (Kalamandir) Ltd.",
+    "sector": "RETAIL"
   },
   {
     "symbol": "515043",
-    "name": "Saint-Gobain Sekurit India Ltd."
+    "name": "Saint-Gobain Sekurit India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAKSOFT",
-    "name": "Saksoft Ltd."
+    "name": "Saksoft Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SALASAR",
-    "name": "Salasar Techno Engineering Ltd."
+    "name": "Salasar Techno Engineering Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SALZERELEC",
-    "name": "Salzer Electronics Ltd."
+    "name": "Salzer Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANATHAN",
-    "name": "Sanathan Textiles Ltd."
+    "name": "Sanathan Textiles Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANDHAR",
-    "name": "Sandhar Technologies Ltd."
+    "name": "Sandhar Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANGAMIND",
-    "name": "Sangam (India) Ltd."
+    "name": "Sangam (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANGHIIND",
-    "name": "Sanghi Industries Ltd."
+    "name": "Sanghi Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANGHVIMOV",
-    "name": "Sanghvi Movers Ltd."
+    "name": "Sanghvi Movers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANSTAR",
-    "name": "Sanstar Ltd."
+    "name": "Sanstar Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "538992",
-    "name": "Sar Auto Products Ltd."
+    "name": "Sar Auto Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SARTELE",
-    "name": "Sar Televenture Ltd."
+    "name": "Sar Televenture Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512020",
-    "name": "Saraswati Commercial (India) Ltd."
+    "name": "Saraswati Commercial (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SARLAPOLY",
-    "name": "Sarla Performance Fibers Ltd."
+    "name": "Sarla Performance Fibers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SARVESHWAR",
-    "name": "Sarveshwar Foods Ltd."
+    "name": "Sarveshwar Foods Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SASKEN",
-    "name": "Sasken Technologies Ltd."
+    "name": "Sasken Technologies Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "SASTASUNDR",
-    "name": "Sastasundar Ventures Ltd."
+    "name": "Sastasundar Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SSEGL",
-    "name": "Sathlokhar Synergys E&C Global Ltd."
+    "name": "Sathlokhar Synergys E&C Global Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SATIA",
-    "name": "Satia Industries Ltd."
+    "name": "Satia Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SATIN",
-    "name": "Satin Creditcare Network Ltd."
+    "name": "Satin Creditcare Network Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SAURASHCEM",
-    "name": "Saurashtra Cement Ltd."
+    "name": "Saurashtra Cement Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SOTL",
-    "name": "Savita Oil Technologies Ltd."
+    "name": "Savita Oil Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SBC",
-    "name": "SBC Exports Ltd."
+    "name": "SBC Exports Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCODATUBES",
-    "name": "Scoda Tubes Ltd."
+    "name": "Scoda Tubes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SEAMECLTD",
-    "name": "Seamec Ltd."
+    "name": "Seamec Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SELAN",
-    "name": "Selan Exploration Technology Ltd."
+    "name": "Selan Exploration Technology Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SENORES",
-    "name": "Senores Pharmaceuticals Ltd."
+    "name": "Senores Pharmaceuticals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SEPC",
-    "name": "SEPC Ltd."
+    "name": "SEPC Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SERVOTECH",
-    "name": "Servotech Renewable Power System Ltd."
+    "name": "Servotech Renewable Power System Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SESHAPAPER",
-    "name": "Seshasayee Paper and Boards Ltd."
+    "name": "Seshasayee Paper and Boards Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539199",
-    "name": "SG Finserve Ltd."
+    "name": "SG Finserve Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHK",
-    "name": "SH Kelkar And Company Ltd."
+    "name": "SH Kelkar And Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHALBY",
-    "name": "Shalby Ltd."
+    "name": "Shalby Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539895",
-    "name": "Shalimar Agencies Ltd."
+    "name": "Shalimar Agencies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHALPAINTS",
-    "name": "Shalimar Paints Ltd."
+    "name": "Shalimar Paints Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHANKARA",
-    "name": "Shankara Building Products Ltd."
+    "name": "Shankara Building Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHANTIGEAR",
-    "name": "Shanthi Gears Ltd."
+    "name": "Shanthi Gears Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539921",
-    "name": "Shanti Educational Initiatives Ltd."
+    "name": "Shanti Educational Initiatives Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHAREINDIA",
-    "name": "Share India Securities Ltd."
+    "name": "Share India Securities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SCILAL",
-    "name": "Shipping Corporation of India Land and Assets Ltd."
+    "name": "Shipping Corporation of India Land and Assets Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "532323",
-    "name": "Shiva Cement Ltd."
+    "name": "Shiva Cement Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SBCL",
-    "name": "Shivalik Bimetal Controls Ltd."
+    "name": "Shivalik Bimetal Controls Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHIVALIK",
-    "name": "Shivalik Rasayan Ltd."
+    "name": "Shivalik Rasayan Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHREDIGCEM",
-    "name": "Shree Digvijay Cement Company Ltd."
+    "name": "Shree Digvijay Cement Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "540737",
-    "name": "Shree Ganesh Remedies Ltd."
+    "name": "Shree Ganesh Remedies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHREEPUSHK",
-    "name": "Shree Pushkar Chemicals & Fertilisers Ltd."
+    "name": "Shree Pushkar Chemicals & Fertilisers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SVLL",
-    "name": "Shree Vasu Logistics Ltd."
+    "name": "Shree Vasu Logistics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512453",
-    "name": "Shri Jagdamba Polymers Ltd."
+    "name": "Shri Jagdamba Polymers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "531359",
-    "name": "Shriram Asset Management Company Ltd."
+    "name": "Shriram Asset Management Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SHRIRAMPPS",
-    "name": "Shriram Properties Ltd."
+    "name": "Shriram Properties Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SIGACHI",
-    "name": "Sigachi Industries Ltd."
+    "name": "Sigachi Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SIGNPOST",
-    "name": "Signpost India Ltd."
+    "name": "Signpost India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "523606",
-    "name": "Sika Interplant Systems Ltd."
+    "name": "Sika Interplant Systems Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SILVERTUC",
-    "name": "Silver Touch Technologies Ltd."
+    "name": "Silver Touch Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SIMPLEXINF",
-    "name": "Simplex Infrastructures Ltd."
+    "name": "Simplex Infrastructures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SINDHUTRAD",
-    "name": "Sindhu Trade Links Ltd."
+    "name": "Sindhu Trade Links Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SIRCA",
-    "name": "SIRCA Paints India Ltd."
+    "name": "SIRCA Paints India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SIYSIL",
-    "name": "Siyaram Silk Mills Ltd."
+    "name": "Siyaram Silk Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SJLOGISTIC",
-    "name": "SJ Logistics (India) Ltd."
+    "name": "SJ Logistics (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SJS",
-    "name": "SJS Enterprises Ltd."
+    "name": "SJS Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SMCGLOBAL",
-    "name": "SMC Global Securities Ltd."
+    "name": "SMC Global Securities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SMLISUZU",
-    "name": "SML Isuzu Ltd."
+    "name": "SML Isuzu Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "SMSPHARMA",
-    "name": "SMS Pharmaceuticals Ltd."
+    "name": "SMS Pharmaceuticals Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SNOWMAN",
-    "name": "Snowman Logistics Ltd."
+    "name": "Snowman Logistics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SOLARA",
-    "name": "Solara Active Pharma Sciences Ltd."
+    "name": "Solara Active Pharma Sciences Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "544354",
-    "name": "Solarium Green Energy Ltd."
+    "name": "Solarium Green Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SOLEX",
-    "name": "Solex Energy Ltd."
+    "name": "Solex Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SDBL",
-    "name": "Som Distilleries And Breweries Ltd."
+    "name": "Som Distilleries And Breweries Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "SOMANYCERA",
-    "name": "Somany Ceramics Ltd."
+    "name": "Somany Ceramics Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SPIC",
-    "name": "Southern Petrochemical Industries Corporation Ltd."
+    "name": "Southern Petrochemical Industries Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SPANDANA",
-    "name": "Spandana Sphoorty Financial Ltd."
+    "name": "Spandana Sphoorty Financial Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SPECTRUM",
-    "name": "Spectrum Electrical Industries Ltd."
+    "name": "Spectrum Electrical Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SPMLINFRA",
-    "name": "SPML Infra Ltd."
+    "name": "SPML Infra Ltd.",
+    "sector": "CONSTRUCTION"
   },
   {
     "symbol": "SPORTKING",
-    "name": "Sportking India Ltd."
+    "name": "Sportking India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SRHHYPOLTD",
-    "name": "Sree Rayalaseema Hi-Strength Hypo Ltd."
+    "name": "Sree Rayalaseema Hi-Strength Hypo Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SABTNL",
-    "name": "Sri Adhikari Brothers Television Network Ltd."
+    "name": "Sri Adhikari Brothers Television Network Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "SRM",
-    "name": "SRM Contractors Ltd."
+    "name": "SRM Contractors Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SGLTL",
-    "name": "Standard Glass Lining Technology Ltd."
+    "name": "Standard Glass Lining Technology Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STANLEY",
-    "name": "Stanley Lifestyles Ltd."
+    "name": "Stanley Lifestyles Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STEELXIND",
-    "name": "Steel Exchange India Ltd."
+    "name": "Steel Exchange India Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "SSWL",
-    "name": "Steel Strips Wheels Ltd."
+    "name": "Steel Strips Wheels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STEELCAS",
-    "name": "Steelcast Ltd."
+    "name": "Steelcast Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "STEL",
-    "name": "STEL Holdings Ltd."
+    "name": "STEL Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STERTOOLS",
-    "name": "Sterling Tools Ltd."
+    "name": "Sterling Tools Ltd.",
+    "sector": "TELECOM"
   },
   {
     "symbol": "STLTECH",
-    "name": "Sterlite Technologies Ltd."
+    "name": "Sterlite Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STOVEKRAFT",
-    "name": "Stove Kraft Ltd."
+    "name": "Stove Kraft Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "534535",
-    "name": "String Metaverse Ltd."
+    "name": "String Metaverse Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STYLAMIND",
-    "name": "Stylam Industries Ltd."
+    "name": "Stylam Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUBEXLTD",
-    "name": "Subex Ltd."
+    "name": "Subex Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543828",
-    "name": "Sudarshan Pharma Industries Ltd."
+    "name": "Sudarshan Pharma Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SULA",
-    "name": "Sula Vineyards Ltd."
+    "name": "Sula Vineyards Ltd.",
+    "sector": "FMCG"
   },
   {
     "symbol": "SUMMITSEC",
-    "name": "Summit Securities Ltd."
+    "name": "Summit Securities Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SUNDROP",
-    "name": "Sundrop Brands Ltd."
+    "name": "Sundrop Brands Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539300",
-    "name": "Sunrakshakk Industries India Ltd."
+    "name": "Sunrakshakk Industries India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SURAJEST",
-    "name": "Suraj Estate Developers Ltd."
+    "name": "Suraj Estate Developers Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "SURAJLTD",
-    "name": "Suraj Ltd."
+    "name": "Suraj Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SURAKSHA",
-    "name": "Suraksha Diagnostic Ltd."
+    "name": "Suraksha Diagnostic Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SURYODAY",
-    "name": "Suryoday Small Finance Bank Ltd."
+    "name": "Suryoday Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "SUYOG",
-    "name": "Suyog Telematics Ltd."
+    "name": "Suyog Telematics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SWANDEF",
-    "name": "Swan Defence and Heavy Industries Ltd."
+    "name": "Swan Defence and Heavy Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SWELECTES",
-    "name": "Swelect Energy Systems Ltd."
+    "name": "Swelect Energy Systems Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "SYNCOMF",
-    "name": "Syncom Formulations (India) Ltd."
+    "name": "Syncom Formulations (India) Ltd.",
+    "sector": "PHARMA"
   },
   {
     "symbol": "SGIL",
-    "name": "Synergy Green Industries Ltd."
+    "name": "Synergy Green Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "526506",
-    "name": "Systematix Corporate Services Ltd."
+    "name": "Systematix Corporate Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "539956",
-    "name": "TAAL Enterprises Ltd."
+    "name": "TAAL Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TAC",
-    "name": "TAC Infosec Ltd."
+    "name": "TAC Infosec Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TAJGVK",
-    "name": "Taj GVK Hotels & Resorts Ltd."
+    "name": "Taj GVK Hotels & Resorts Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TALBROAUTO",
-    "name": "Talbros Automotive Components Ltd."
+    "name": "Talbros Automotive Components Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "TNPL",
-    "name": "Tamil Nadu Newsprint & Papers Ltd."
+    "name": "Tamil Nadu Newsprint & Papers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TNPETRO",
-    "name": "Tamilnadu Petroproducts Ltd."
+    "name": "Tamilnadu Petroproducts Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TANEJAERO",
-    "name": "Taneja Aerospace & Aviation Ltd."
+    "name": "Taneja Aerospace & Aviation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TANFACIND",
-    "name": "Tanfac Industries Ltd."
+    "name": "Tanfac Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TARSONS",
-    "name": "Tarsons Products Ltd."
+    "name": "Tarsons Products Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TASTYBITE",
-    "name": "Tasty Bite Eatables Ltd."
+    "name": "Tasty Bite Eatables Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TATVA",
-    "name": "Tatva Chintan Pharma Chem Ltd."
+    "name": "Tatva Chintan Pharma Chem Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512038",
-    "name": "TCC Concept Ltd."
+    "name": "TCC Concept Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TCIEXP",
-    "name": "TCI Express Ltd."
+    "name": "TCI Express Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TCPLPACK",
-    "name": "TCPL Packaging Ltd."
+    "name": "TCPL Packaging Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TEAMLEASE",
-    "name": "TeamLease Services Ltd."
+    "name": "TeamLease Services Ltd.",
+    "sector": "IT"
   },
   {
     "symbol": "501421",
-    "name": "TechNVision Ventures Ltd."
+    "name": "TechNVision Ventures Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TEMBO",
-    "name": "Tembo Global Industries Ltd."
+    "name": "Tembo Global Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TEXINFRA",
-    "name": "Texmaco Infrastructure & Holdings Ltd."
+    "name": "Texmaco Infrastructure & Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SREERAYALK",
-    "name": "TGV SRACC Ltd."
+    "name": "TGV SRACC Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ANDHRSUGAR",
-    "name": "The Andhra Sugars Ltd."
+    "name": "The Andhra Sugars Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "HITECHGEAR",
-    "name": "The Hi-Tech Gears Ltd."
+    "name": "The Hi-Tech Gears Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "THEINVEST",
-    "name": "The Investment Trust of India Ltd."
+    "name": "The Investment Trust of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ORISSAMINE",
-    "name": "The Orissa Minerals Development Company Ltd."
+    "name": "The Orissa Minerals Development Company Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "RUBYMILLS",
-    "name": "The Ruby Mills Ltd."
+    "name": "The Ruby Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "SANDESH",
-    "name": "The Sandesh Ltd."
+    "name": "The Sandesh Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "STCINDIA",
-    "name": "The State Trading Corporation Of India Ltd."
+    "name": "The State Trading Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "540980",
-    "name": "The Yamuna Syndicate Ltd."
+    "name": "The Yamuna Syndicate Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "THEJO",
-    "name": "Thejo Engineering Ltd."
+    "name": "Thejo Engineering Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "THEMISMED",
-    "name": "Themis Medicare Ltd."
+    "name": "Themis Medicare Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TIRUMALCHM",
-    "name": "Thirumalai Chemicals Ltd."
+    "name": "Thirumalai Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TIL",
-    "name": "TIL Ltd."
+    "name": "TIL Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TIMEXWATCH",
-    "name": "Timex Group India Ltd."
+    "name": "Timex Group India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TINNARUBR",
-    "name": "Tinna Rubber And Infrastructure Ltd."
+    "name": "Tinna Rubber And Infrastructure Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TFCILTD",
-    "name": "Tourism Finance Corporation Of India Ltd."
+    "name": "Tourism Finance Corporation Of India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TREL",
-    "name": "Transindia Real Estate Ltd."
+    "name": "Transindia Real Estate Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TRANSPEK",
-    "name": "Transpek Industry Ltd."
+    "name": "Transpek Industry Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TBZ",
-    "name": "Tribhovandas Bhimji Zaveri Ltd."
+    "name": "Tribhovandas Bhimji Zaveri Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TECHLABS",
-    "name": "Trident Techlabs Ltd."
+    "name": "Trident Techlabs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TTKHLTCARE",
-    "name": "TTK Healthcare Ltd."
+    "name": "TTK Healthcare Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TUTICORALK",
-    "name": "Tuticorin Alkali Chemicals and Fertilizers Ltd."
+    "name": "Tuticorin Alkali Chemicals and Fertilizers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TVTODAY",
-    "name": "TV Today Network Ltd."
+    "name": "TV Today Network Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "TVSELECT",
-    "name": "TVS Electronics Ltd."
+    "name": "TVS Electronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "TVSSRICHAK",
-    "name": "TVS Srichakra Ltd."
+    "name": "TVS Srichakra Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UDAICEMENT",
-    "name": "Udaipur Cement Works Ltd."
+    "name": "Udaipur Cement Works Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UGROCAP",
-    "name": "Ugro Capital Ltd."
+    "name": "Ugro Capital Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "UEL",
-    "name": "Ujaas Energy Ltd."
+    "name": "Ujaas Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ULTRMARINE",
-    "name": "Ultramarine & Pigments Ltd."
+    "name": "Ultramarine & Pigments Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UNIECOM",
-    "name": "Unicommerce eSolutions Ltd."
+    "name": "Unicommerce eSolutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UNIPARTS",
-    "name": "Uniparts India Ltd."
+    "name": "Uniparts India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UNIENTER",
-    "name": "Uniphos Enterprises Ltd."
+    "name": "Uniphos Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UNITECH",
-    "name": "Unitech Ltd."
+    "name": "Unitech Ltd.",
+    "sector": "REALTY"
   },
   {
     "symbol": "UNIVCABLES",
-    "name": "Universal Cables Ltd."
+    "name": "Universal Cables Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "509960",
-    "name": "UP Hotels Ltd."
+    "name": "UP Hotels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UDS",
-    "name": "Updater Services Ltd."
+    "name": "Updater Services Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "URJA",
-    "name": "Urja Global Ltd."
+    "name": "Urja Global Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "UTKARSHBNK",
-    "name": "Utkarsh Small Finance Bank Ltd."
+    "name": "Utkarsh Small Finance Bank Ltd.",
+    "sector": "BANKING"
   },
   {
     "symbol": "UTTAMSUGAR",
-    "name": "Uttam Sugar Mills Ltd."
+    "name": "Uttam Sugar Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VMARCIND",
-    "name": "V-Marc India Ltd."
+    "name": "V-Marc India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VSTTILLERS",
-    "name": "V.S.T. Tillers Tractors Ltd."
+    "name": "V.S.T. Tillers Tractors Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "519152",
-    "name": "Vadilal Enterprises Ltd."
+    "name": "Vadilal Enterprises Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VADILALIND",
-    "name": "Vadilal Industries Ltd."
+    "name": "Vadilal Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VAKRANGEE",
-    "name": "Vakrangee Ltd."
+    "name": "Vakrangee Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VALIANTORG",
-    "name": "Valiant Organics Ltd."
+    "name": "Valiant Organics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VHL",
-    "name": "Vardhman Holdings Ltd."
+    "name": "Vardhman Holdings Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VSSL",
-    "name": "Vardhman Special Steels Ltd."
+    "name": "Vardhman Special Steels Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "DENTALKART",
-    "name": "Vasa Denticity Ltd."
+    "name": "Vasa Denticity Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VASCONEQ",
-    "name": "Vascon Engineers Ltd."
+    "name": "Vascon Engineers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VEEDOL",
-    "name": "Veedol Corporation Ltd."
+    "name": "Veedol Corporation Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543931",
-    "name": "Veefin Solutions Ltd."
+    "name": "Veefin Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VENKEYS",
-    "name": "Venky''S (India) Ltd."
+    "name": "Venky''S (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VENUSPIPES",
-    "name": "Venus Pipes & Tubes Ltd."
+    "name": "Venus Pipes & Tubes Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VERANDA",
-    "name": "Veranda Learning Solutions Ltd."
+    "name": "Veranda Learning Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "512229",
-    "name": "Veritas (India) Ltd."
+    "name": "Veritas (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VERTOZ",
-    "name": "Vertoz Ltd."
+    "name": "Vertoz Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VIDHIING",
-    "name": "Vidhi Specialty Food Ingredients Ltd."
+    "name": "Vidhi Specialty Food Ingredients Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VILAS",
-    "name": "Vilas Transcore Ltd."
+    "name": "Vilas Transcore Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VIMTALABS",
-    "name": "Vimta Labs Ltd."
+    "name": "Vimta Labs Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VINDHYATEL",
-    "name": "Vindhya Telelinks Ltd."
+    "name": "Vindhya Telelinks Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VINCOFE",
-    "name": "Vintage Coffee & Beverages Ltd."
+    "name": "Vintage Coffee & Beverages Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VINYAS",
-    "name": "Vinyas Innovative Technologies Ltd."
+    "name": "Vinyas Innovative Technologies Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "543597",
-    "name": "Virtuoso Optoelectronics Ltd."
+    "name": "Virtuoso Optoelectronics Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VISAKAIND",
-    "name": "Visaka Industries Ltd."
+    "name": "Visaka Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VISHNU",
-    "name": "Vishnu Chemicals Ltd."
+    "name": "Vishnu Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VPRPL",
-    "name": "Vishnu Prakash R Punglia Ltd."
+    "name": "Vishnu Prakash R Punglia Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VLSFINANCE",
-    "name": "VLS Finance Ltd."
+    "name": "VLS Finance Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "PORRITSPEN",
-    "name": "Voith Paper Fabrics India Ltd."
+    "name": "Voith Paper Fabrics India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "VTMLTD",
-    "name": "VTM Ltd."
+    "name": "VTM Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WALCHANNAG",
-    "name": "Walchandnagar Industries Ltd."
+    "name": "Walchandnagar Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WANBURY",
-    "name": "Wanbury Ltd."
+    "name": "Wanbury Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WEALTH",
-    "name": "Wealth First Portfolio Managers Ltd."
+    "name": "Wealth First Portfolio Managers Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "REMIMETAL",
-    "name": "Welspun Specialty Solutions Ltd."
+    "name": "Welspun Specialty Solutions Ltd.",
+    "sector": "METALS"
   },
   {
     "symbol": "WENDT",
-    "name": "Wendt (India) Ltd."
+    "name": "Wendt (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WSTCSTPAPR",
-    "name": "West Coast Paper Mills Ltd."
+    "name": "West Coast Paper Mills Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WCIL",
-    "name": "Western Carriers (India) Ltd."
+    "name": "Western Carriers (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WHEELS",
-    "name": "Wheels India Ltd."
+    "name": "Wheels India Ltd.",
+    "sector": "AUTO"
   },
   {
     "symbol": "WINDLAS",
-    "name": "Windlas Biotech Ltd."
+    "name": "Windlas Biotech Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "WINDMACHIN",
-    "name": "Windsor Machines Ltd."
+    "name": "Windsor Machines Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "WEL",
-    "name": "Wonder Electricals Ltd."
+    "name": "Wonder Electricals Ltd.",
+    "sector": "POWER"
   },
   {
     "symbol": "538451",
-    "name": "Worth Investment & Trading Co Ltd."
+    "name": "Worth Investment & Trading Co Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "XCHANGING",
-    "name": "Xchanging Solutions Ltd."
+    "name": "Xchanging Solutions Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "XPROINDIA",
-    "name": "Xpro India Ltd."
+    "name": "Xpro India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "544310",
-    "name": "Yash Highvoltage Ltd."
+    "name": "Yash Highvoltage Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "YASHO",
-    "name": "Yasho Industries Ltd."
+    "name": "Yasho Industries Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "YATRA",
-    "name": "Yatra Online Ltd"
+    "name": "Yatra Online Ltd",
+    "sector": "OTHER"
   },
   {
     "symbol": "511702",
-    "name": "Yogi Ltd."
+    "name": "Yogi Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "YUKEN",
-    "name": "Yuken India Ltd."
+    "name": "Yuken India Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZTECH",
-    "name": "Z-Tech (India) Ltd."
+    "name": "Z-Tech (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZEEMEDIA",
-    "name": "Zee Media Corporation Ltd."
+    "name": "Zee Media Corporation Ltd.",
+    "sector": "MEDIA"
   },
   {
     "symbol": "ZFSTEERING",
-    "name": "ZF Steering Gear (India) Ltd."
+    "name": "ZF Steering Gear (India) Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZODIAC",
-    "name": "Zodiac Energy Ltd."
+    "name": "Zodiac Energy Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZOTA",
-    "name": "Zota Health Care Ltd."
+    "name": "Zota Health Care Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZUARI",
-    "name": "Zuari Agro Chemicals Ltd."
+    "name": "Zuari Agro Chemicals Ltd.",
+    "sector": "OTHER"
   },
   {
     "symbol": "ZUARIIND",
-    "name": "Zuari Industries Ltd."
+    "name": "Zuari Industries Ltd.",
+    "sector": "OTHER"
   }
 ];
-
 
 export default stockList;

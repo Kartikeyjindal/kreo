@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup, Tag
 from fastapi import HTTPException
+from typing import Optional
 
 def fetch_company_essentials_from_ticker(symbol: str) -> dict:
     url = f"https://ticker.finology.in/company/{symbol.upper()}?mode=C"
@@ -29,7 +30,7 @@ def fetch_company_essentials_from_ticker(symbol: str) -> dict:
         "ROE": "ROE", "ROCE": "ROCE", "PROFIT_GROWTH": "PROFIT_GROWTH"
     }
 
-    def parse_number(s: str) -> float | None:
+    def parse_number(s: str) -> Optional[float]:
         if not s:
             return None
         s = s.strip().replace("₹", "").replace(",", "").replace("\r", "").replace("\n", "").strip()

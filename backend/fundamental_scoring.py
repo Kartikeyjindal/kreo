@@ -1,4 +1,13 @@
-def evaluate_fundamentals(data):
+def evaluate_fundamentals(input_data, config=None):
+    if config is None:
+        config = {}
+    data = dict(input_data)
+        
+    pe_threshold = config.get("pe", 15.0)
+    pb_threshold = config.get("pb", 2.5)
+    roe_threshold = config.get("roe", 20.0)
+    roce_threshold = config.get("roce", 20.0)
+
     # Revised weights per category
     weights = {
         "pe": 10,
@@ -27,35 +36,35 @@ def evaluate_fundamentals(data):
 
     def score_pe(pe):
         if pe is None: return 0
-        if pe < 15: return 90
-        elif pe < 25: return 75
-        elif pe < 35: return 60
-        elif pe < 45: return 40
-        elif pe < 60: return 25
+        if pe < pe_threshold: return 90
+        elif pe < pe_threshold + 10: return 75
+        elif pe < pe_threshold + 20: return 60
+        elif pe < pe_threshold + 30: return 40
+        elif pe < pe_threshold + 45: return 25
         else: return 10
 
     def score_pb(pb):
         if pb is None: return 0
-        if pb < 1: return 90
-        elif pb < 2.5: return 75
-        elif pb < 4: return 60
-        elif pb < 6: return 40
+        if pb < pb_threshold * 0.4: return 90
+        elif pb < pb_threshold: return 75
+        elif pb < pb_threshold * 1.6: return 60
+        elif pb < pb_threshold * 2.4: return 40
         else: return 20
 
     def score_roe(roe):
         if roe is None: return 0
-        if roe >= 35: return 90
-        elif roe >= 25: return 75
-        elif roe >= 15: return 60
-        elif roe >= 10: return 40
+        if roe >= roe_threshold + 15: return 90
+        elif roe >= roe_threshold + 5: return 75
+        elif roe >= roe_threshold: return 60
+        elif roe >= roe_threshold - 10: return 40
         else: return 20
 
     def score_roce(roce):
         if roce is None: return 0
-        if roce >= 35: return 90
-        elif roce >= 25: return 75
-        elif roce >= 15: return 60
-        elif roce >= 10: return 40
+        if roce >= roce_threshold + 15: return 90
+        elif roce >= roce_threshold + 5: return 75
+        elif roce >= roce_threshold: return 60
+        elif roce >= roce_threshold - 10: return 40
         else: return 20
 
     def score_eps(eps):

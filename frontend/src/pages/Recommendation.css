@@ -229,7 +229,40 @@
   color: var(--text-primary);
   margin: 0;
   letter-spacing: -0.02em;
-  flex: 1;
+}
+
+.recommend-page .result-verdict-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.recommend-page .result-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: 99px;
+}
+
+.recommend-page .result-price .price-change {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.recommend-page .result-price .price-change.positive {
+  color: #34d399;
+}
+
+.recommend-page .result-price .price-change.negative {
+  color: #f87171;
 }
 
 /* ─── Verdict Badge ─── */
