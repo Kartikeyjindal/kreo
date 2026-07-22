@@ -5,6 +5,8 @@ import Fuse from "fuse.js";
 import stockList from "../companies.js";
 import WatchlistStar from "../components/WatchlistStar";
 import IndicesBar from "../components/IndicesBar";
+import FearGreedGauge from "../components/FearGreedGauge";
+import SectorHeatmap from "../components/SectorHeatmap";
 import "./Home.css";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
@@ -210,6 +212,10 @@ function Home() {
           )}
         </div>
       </div>
+
+      {/* Feature 4: Fear & Greed Index & Sector Heatmap */}
+      <FearGreedGauge stockPrices={prices} />
+      <SectorHeatmap stockPrices={prices} />
 
       <div className="home-grid">
         {loading ? (

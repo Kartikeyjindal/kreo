@@ -101,14 +101,33 @@ function StockView() {
 
 
   return (
-    <div className="container">
+    <div className="container stock-view-page">
+      {/* Printable Executive Header Banner */}
+      {result && !result.error && (
+        <div className="pdf-tear-sheet-header">
+          <div className="pdf-brand-logo">
+            <span className="pdf-brand-title">KREO</span>
+            <span className="pdf-brand-sub">Equity Research Tear Sheet</span>
+          </div>
+          <div className="pdf-report-meta">
+            <span><strong>Date:</strong> {new Date().toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+            <span><strong>Symbol:</strong> {symbol}</span>
+          </div>
+        </div>
+      )}
+
       <div className="button-container">
-      <button className="back-button" onClick={() => navigate('/')}>
-        ← Back to Watchlists
-      </button>
-      <button className="export-button" onClick={() => window.print()}>
-        Export PDF Report
-      </button>
+        <button className="back-button" onClick={() => navigate('/')}>
+          ← Back to Watchlists
+        </button>
+        <button className="export-button" onClick={() => window.print()}>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: '6px' }}>
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Export Stock Tear Sheet (PDF)
+        </button>
       </div>
       <div className="result-container">
         {!result && (
