@@ -2,7 +2,7 @@
 import os
 import time
 import logging
-from ipo_service import fetch_live_market_ipos
+from ipo_service import fetch_live_market_ipos, fetch_historical_ipos
 import logging
 from fastapi import FastAPI, HTTPException, Depends, Header, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -1096,12 +1096,12 @@ async def mark_notifications_read(token_data: dict = Depends(verify_token)):
 # ---------------------------- IPO Endpoints (Automated Live Market Data) ---------------------------- #
 @app.get("/ipos")
 def get_ipos(token_data: dict = Depends(verify_token)):
-    """Fetches real-time live Indian IPOs automatically from NSE India API & market providers."""
-    return fetch_live_market_ipos()
+    """Fetches historical listed Indian IPOs with listing day gain performance."""
+    return fetch_historical_ipos()
 
 @app.get("/ipos/live")
 def get_live_ipos(token_data: dict = Depends(verify_token)):
-    """Fetches real-time live Indian IPOs automatically from NSE India API & market providers."""
+    """Fetches real-time live and upcoming Indian IPOs automatically from NSE India API."""
     return fetch_live_market_ipos()
 
 # ---------------------------- Live IPO Data (Auto-Fetched) ---------------------------- #
