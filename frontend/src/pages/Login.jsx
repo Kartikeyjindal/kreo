@@ -21,7 +21,8 @@ function Login() {
     try {
       await login({ username, password });
     } catch (err) {
-      setError("Invalid credentials");
+      const msg = err?.response?.data?.detail || err?.message || "Invalid credentials";
+      setError(msg);
     }
   };
 
@@ -38,7 +39,8 @@ function Login() {
     try {
       await register({ username, password, name });
     } catch (err) {
-      setError("Registration failed");
+      const msg = err?.response?.data?.detail || err?.message || "Registration failed";
+      setError(msg);
     }
   };
 
