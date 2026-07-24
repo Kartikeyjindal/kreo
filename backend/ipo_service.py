@@ -31,8 +31,8 @@ def fetch_live_market_ipos():
     try:
         session = requests.Session()
         session.headers.update(headers)
-        session.get("https://www.nseindia.com", timeout=6)
-        resp = session.get("https://www.nseindia.com/api/ipo-current-issue", timeout=8)
+        session.get("https://www.nseindia.com", timeout=2.0)
+        resp = session.get("https://www.nseindia.com/api/ipo-current-issue", timeout=2.0)
         
         if resp.status_code == 200:
             nse_items = resp.json()
@@ -117,7 +117,7 @@ def fetch_live_market_ipos():
         return live_ipos
 
     # Fallback default active IPOs if NSE API is unreachable
-    return [
+    fallback_data = [
         {
             "id": "xtranet",
             "name": "Xtranet Technologies Limited IPO",
@@ -170,6 +170,9 @@ def fetch_live_market_ipos():
             "listing_date_strategy": "Hold for long term dividends and steady yield."
         }
     ]
+    _LIVE_IPO_CACHE["data"] = fallback_data
+    _LIVE_IPO_CACHE["expires_at"] = now + 300
+    return fallback_data
 
 def fetch_historical_ipos():
     """
