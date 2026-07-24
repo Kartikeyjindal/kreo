@@ -1,5 +1,6 @@
 # db.py — uses real MongoDB if MONGO_URI is set, else in-memory mongomock for local dev
 import os
+import certifi
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -13,7 +14,7 @@ def get_db():
     if _client is None:
         if MONGO_URI:
             from motor.motor_asyncio import AsyncIOMotorClient
-            _client = AsyncIOMotorClient(MONGO_URI)
+            _client = AsyncIOMotorClient(MONGO_URI, tlsCAFile=certifi.where())
         else:
             # In-memory MongoDB for local development (no MongoDB install needed)
             from mongomock_motor import AsyncMongoMockClient
