@@ -4,7 +4,7 @@ import "./FearGreedGauge.css";
 function FearGreedGauge({ stockPrices = {} }) {
   // Calculate Market Sentiment Score (0 to 100) based on stock change distribution
   const symbols = Object.keys(stockPrices);
-  let totalScore = 50; // default neutral
+  let totalScore = 55; // default stable market sentiment
 
   if (symbols.length > 0) {
     let positiveCount = 0;
