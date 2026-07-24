@@ -39,12 +39,23 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/health")
+async def health_check():
+    db_status = "unknown"
+    try:
+        db = get_db()
+        await db.command("ping")
+        db_status = "connected"
+    except Exception as e:
+        db_status = f"error: {str(e)}"
+    return {"status": "ok", "database": db_status}
+
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # ---------------------------- Auth Models ---------------------------- #
 class RegisterModel(BaseModel):
-    username: EmailStr
+    username: str
     password: str
     name: str
 
