@@ -6,13 +6,17 @@ load_dotenv()
 
 MONGO_URI = os.getenv("MONGO_URI")
 
-def get_db():
-    if MONGO_URI:
-        from motor.motor_asyncio import AsyncIOMotorClient
-        client = AsyncIOMotorClient(MONGO_URI)
-    else:
-        # In-memory MongoDB for local development (no MongoDB install needed)
-        from mongomock_motor import AsyncMongoMockClient
-        client = AsyncMongoMockClient()
+_client = None
 
-    return client["smartstocks"]
+def get_db():
+    global _client
+    if _client is None:
+        if MONGO_URI:
+            from motor.motor_asyncio import AsyncIOMotorClient
+            _client = AsyncIOMotorClient(MONGO_URI)
+        else:
+            # In-memory MongoDB for local development (no MongoDB install needed)
+            from mongomock_motor import AsyncMongoMockClient
+            _client = AsyncMongoMockClient()
+
+    return _client["smartstocks"]
