@@ -31,13 +31,9 @@ logging.basicConfig(level=logging.INFO)
 
 app = FastAPI()
 
-raw_frontend_url = os.getenv("FRONTEND_URL", "http://localhost:5173")
-frontend_origins = [url.strip() for url in raw_frontend_url.split(",") if url.strip()]
-origins = list(set(frontend_origins + ["http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174"]))
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
