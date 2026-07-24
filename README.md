@@ -1,7 +1,7 @@
 <div align="center">
 
-  # 📈 KREO (SmartStocks)
-  ### Next-Gen Indian Stock Analysis, IPO GMP Tracker & Fundamental Scoring Platform
+  # KREO (SmartStocks)
+  ### Indian Stock Analysis, IPO GMP Tracker & Fundamental Scoring Platform
 
   [![React](https://img.shields.io/badge/React-19.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
   [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
@@ -21,7 +21,7 @@
 
 ---
 
-## 🚀 System Architecture
+## System Architecture
 
 ```mermaid
 graph TD
@@ -35,9 +35,9 @@ graph TD
 
 ---
 
-## ✨ Features Highlight
+## Features Highlight
 
-### 📊 1. Fundamental Analysis & Scoring Algorithm
+### 1. Fundamental Analysis & Scoring Algorithm
 - **100-Point Metric Evaluation**: Automatically scores stocks across 8 fundamental pillars:
   - **P/E Ratio** (Price to Earnings valuation check)
   - **P/B Ratio** (Price to Book value analysis)
@@ -47,35 +47,35 @@ graph TD
   - **Profit Growth %** (Bottom-line earnings quality)
   - **EPS** (Earnings Per Share profitability)
   - **Dividend Yield %** (Income return metrics)
-- **Verdict Tiers**: Automatically assigns glowing status badges:
-  - 🟢 **Strong Buy** (Score 80–100)
-  - 🟢 **Buy** (Score 65–79)
-  - 🟡 **Hold** (Score 45–64)
-  - 🔴 **Sell** (Score 30–44)
-  - 🔴 **Strong Sell** (Score 0–29)
+- **Verdict Tiers**: Automatically assigns status badges:
+  - **Strong Buy** (Score 80–100)
+  - **Buy** (Score 65–79)
+  - **Hold** (Score 45–64)
+  - **Sell** (Score 30–44)
+  - **Strong Sell** (Score 0–29)
 
-### 🇮🇳 2. Live IPO & Grey Market Premium (GMP) Tracker
+### 2. Live IPO & Grey Market Premium (GMP) Tracker
 - **Real-Time Bidding Demand**: Auto-fetches live subscription numbers (Retail, QIB, NII, Total) directly from NSE India API.
 - **GMP Gains Estimation**: Dynamic calculation of listing day gain percentages, expected listing prices, and strategic verdicts (*Strong Listing Gains*, *Moderate Listing Gains*, *Hold Long-Term*, *Avoid*).
 - **Issue Breakdown**: Visual percentage split of **Fresh Issue** vs **Offer for Sale (OFS)** capital allocation.
 - **Historical Analysis**: Tracks past IPO performance (e.g. Tata Technologies, Swiggy, Hyundai Motor, Mankind Pharma) with actual vs issue price statistics.
 
-### 😱 3. Market Sentiment & Sector Heatmap
-- **Fear & Greed Index Gauge**: Custom visual gauge reflecting market sentiment (Extreme Fear to Extreme Greed).
+### 3. Market Sentiment & Sector Heatmap
+- **Fear & Greed Index Gauge**: Visual gauge reflecting market sentiment (Extreme Fear to Extreme Greed).
 - **Sector Heatmap**: Live tracking of sector strength across IT, Banking, Auto, Pharma, Defense, and Infrastructure.
 
-### 📋 4. Watchlists & Portfolio Tracking
+### 4. Watchlists & Portfolio Tracking
 - **Multi-Watchlist Management**: Create, rename, delete, and add stocks to custom watchlists.
 - **Portfolio P&L**: Track bought stock quantities, average buy prices, current market values, and net returns.
 - **Price Target Alerts**: Set price thresholds with "Alert Above" or "Alert Below" notification triggers.
 
-### 🔐 5. Dual Authentication & Dark Glassmorphism UI
+### 5. Dual Authentication & Dark Glassmorphism UI
 - **JWT & Google OAuth 2.0**: Seamless authentication via standard email credentials or one-click Google Sign-In.
 - **Modern Dark Theme**: Styled with a dark glassmorphism aesthetic, custom backdrop blurs, HSL color palettes, and Google Inter typography.
 
 ---
 
-## 🛠️ Tech Stack & Dependencies
+## Tech Stack & Dependencies
 
 | Component | Technology | Description |
 |---|---|---|
@@ -89,7 +89,7 @@ graph TD
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 kreo/
@@ -113,7 +113,7 @@ kreo/
 
 ---
 
-## ⚙️ Environment Variables Reference
+## Environment Variables Reference
 
 ### Backend (`backend/.env`)
 ```env
@@ -132,7 +132,7 @@ VITE_GOOGLE_CLIENT_ID=your_google_client_id.apps.googleusercontent.com
 
 ---
 
-## 💻 Local Development Setup
+## Local Development Setup
 
 ### Prerequisites
 - **Node.js**: v18.0.0 or higher
@@ -182,7 +182,7 @@ npm run dev
 
 ---
 
-## 🌐 Production Deployment
+## Production Deployment
 
 ### Backend on Render
 1. Create a **Web Service** on [Render.com](https://render.com).
@@ -202,14 +202,14 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions, issues, and feature requests are welcome!  
 Feel free to check the [issues page](https://github.com/Kartikeyjindal/kreo/issues).
 
 ---
 
-## 👤 Author
+## Author
 
 **Kartikey Jindal**
 - GitHub: [@Kartikeyjindal](https://github.com/Kartikeyjindal)
@@ -217,6 +217,6 @@ Feel free to check the [issues page](https://github.com/Kartikeyjindal/kreo/issu
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](./LICENSE) - see the LICENSE file for details.
