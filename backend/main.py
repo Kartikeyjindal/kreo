@@ -108,25 +108,37 @@ def verify_token(authorization: str = Header(...)):
 # ---------------------------- Auth Endpoints ---------------------------- #
 @app.post("/register")
 async def register(model: RegisterModel):
-    db = get_db()
-    users_collection = db["users"]
-    if await users_collection.find_one({"username": model.username}):
-        raise HTTPException(400, "User already exists")
-    hashed = pwd_ctx.hash(model.password)
-    user_doc = {"username": model.username, "name": model.name, "password": hashed}
-    await users_collection.insert_one(user_doc)
-    token = create_token({"sub": model.username, "name": model.name})
-    return {"access_token": token, "user": {"username": model.username, "name": model.name}}
+    try:
+        db = get_db()
+        users_collection = db["users"]
+        if await users_collection.find_one({"username": model.username}):
+            raise HTTPException(400, "User already exists")
+        hashed = pwd_ctx.hash(model.password)
+        user_doc = {"username": model.username, "name": model.name, "password": hashed}
+        await users_collection.insert_one(user_doc)
+        token = create_token({"sub": model.username, "name": model.name})
+        return {"access_token": token, "user": {"username": model.username, "name": model.name}}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Registration error: {e}", exc_info=True)
+        raise HTTPException(500, detail=f"Database error: {str(e)}")
 
 @app.post("/login")
 async def login(model: LoginModel):
-    db = get_db()
-    users_collection = db["users"]
-    user = await users_collection.find_one({"username": model.username})
-    if not user or not pwd_ctx.verify(model.password, user["password"]):
-        raise HTTPException(401, "Invalid credentials")
-    token = create_token({"sub": user["username"], "name": user["name"]})
-    return {"access_token": token, "user": {"username": user["username"], "name": user["name"]}}
+    try:
+        db = get_db()
+        users_collection = db["users"]
+        user = await users_collection.find_one({"username": model.username})
+        if not user or not pwd_ctx.verify(model.password, user["password"]):
+            raise HTTPException(401, "Invalid credentials")
+        token = create_token({"sub": user["username"], "name": user["name"]})
+        return {"access_token": token, "user": {"username": user["username"], "name": user["name"]}}
+    except HTTPException:
+        raise
+    except Exception as e:
+        logging.error(f"Login error: {e}", exc_info=True)
+        raise HTTPException(500, detail=f"Database error: {str(e)}")
 
 # ---------------------------- Google Login Endpoint ---------------------------- #
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
