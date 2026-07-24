@@ -16,11 +16,9 @@ function IpoAnalysis() {
     const fetchIpos = async () => {
       setLoading(true);
       try {
-        const endpoint = viewMode === "live" ? `${API_BASE}/ipos/live` : `${API_BASE}/ipos`;
-        const res = await axios.get(endpoint, {
-          headers: { Authorization: `Bearer ${token}` }
-        });
-        setIpos(res.data);
+        const config = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
+        const res = await axios.get(endpoint, config);
+        setIpos(res.data || []);
       } catch (err) {
         console.error(err);
       } finally {

@@ -1116,12 +1116,12 @@ async def mark_notifications_read(token_data: dict = Depends(verify_token)):
 
 # ---------------------------- IPO Endpoints (Automated Live Market Data) ---------------------------- #
 @app.get("/ipos")
-def get_ipos(token_data: dict = Depends(verify_token)):
+def get_ipos():
     """Fetches historical listed Indian IPOs with listing day gain performance."""
     return fetch_historical_ipos()
 
 @app.get("/ipos/live")
-def get_live_ipos(token_data: dict = Depends(verify_token)):
+def get_live_ipos():
     """Fetches real-time live and upcoming Indian IPOs automatically from NSE India API."""
     return fetch_live_market_ipos()
 
