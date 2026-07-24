@@ -15,7 +15,7 @@ def fetch_live_market_ipos():
     Eliminates manual entry and operates without third-party API keys.
     """
     now = time.time()
-    if _LIVE_IPO_CACHE["data"] and now < _LIVE_IPO_CACHE["expires_at"]:
+    if _LIVE_IPO_CACHE["data"] and len(_LIVE_IPO_CACHE["data"]) > 0 and now < _LIVE_IPO_CACHE["expires_at"]:
         return _LIVE_IPO_CACHE["data"]
 
     headers = {
