@@ -1,6 +1,7 @@
 # main.py (FastAPI backend with MongoDB integration for serverless)
 import os
 import time
+import re
 import logging
 from ipo_service import fetch_live_market_ipos, fetch_historical_ipos
 import logging
@@ -402,47 +403,83 @@ def get_http_session():
         })
     return _http_session
 
-def fetch_real_price(symbol):
-    sym = symbol.upper().replace(".NS", "").replace(".BO", "")
+def fetch_real_price(symbol: str) -> dict:
+    if not symbol:
+        return {"price": 100.0, "change": 0.0}
 
-    # 1. Fast Direct Finology Scraper (NSE/BSE Indian Stocks — ~200ms)
-    try:
-        session = get_http_session()
-        url = f"https://ticker.finology.in/company/{sym}?mode=C"
-        resp = session.get(url, timeout=2.0)
-        if resp.status_code == 200:
-            from bs4 import BeautifulSoup
-            soup = BeautifulSoup(resp.text, "html.parser")
-            price_elem = soup.find(class_="currprice") or soup.find("span", id="MainContent_ltrlPrice")
-            if price_elem:
-                p_val = float(price_elem.text.strip().replace("₹", "").replace(",", ""))
-                chg_elem = soup.find(class_="change") or soup.find(class_="perchange")
-                chg_val = 0.0
-                if chg_elem:
-                    try:
-                        chg_val = float(chg_elem.text.strip().replace("%", "").replace("+", ""))
-                    except Exception:
-                        pass
-                return {"price": round(p_val, 2), "change": round(chg_val, 2)}
-    except Exception:
-        pass
+    sym = symbol.upper().replace(".NS", "").replace(".BO", "").strip()
 
-    # 2. yfinance Fallback
-    try:
-        import yfinance as yf
-        ticker = yf.Ticker(f"{sym}.NS")
-        info = ticker.info or {}
-        price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("previousClose")
-        if price is not None and float(price) > 0:
-            change = info.get("regularMarketChangePercent") or 0
-            return {
-                "price": round(float(price), 2),
-                "change": round(float(change), 2)
-            }
-    except Exception:
-        pass
+    symbol_aliases = {
+        "ZOMATO": "ETERNAL",
+    }
+    target_sym = symbol_aliases.get(sym, sym)
 
-    # 3. Deterministic fallback calculation
+    session = get_http_session()
+
+    # 1. High-Performance Google Finance Scraper (Live NSE/BSE ~150-250ms)
+    for code in [target_sym, sym]:
+        for exchange in ["NSE", "BSE"]:
+            try:
+                url = f"https://www.google.com/finance/quote/{code}:{exchange}"
+                resp = session.get(url, timeout=1.8)
+                if resp.status_code == 200:
+                    soup = BeautifulSoup(resp.text, "html.parser")
+                    p_div = soup.find("div", class_="N6SYTe") or soup.find("div", class_="YMlSp") or soup.find("div", class_="fx250")
+                    if p_div:
+                        raw_p = p_div.text.strip().replace("₹", "").replace(",", "")
+                        price = float(raw_p)
+                        if price > 0:
+                            chg = 0.0
+                            parent = p_div.parent
+                            if parent:
+                                m = re.search(r"([+-]?\d+\.?\d*)%", parent.text)
+                                if m:
+                                    chg = float(m.group(1))
+                            return {"price": round(price, 2), "change": round(chg, 2)}
+            except Exception:
+                pass
+
+    # 2. yfinance fast_info Fallback (~200ms)
+    for code in [target_sym, sym]:
+        for suffix in [".NS", ".BO"]:
+            try:
+                import yfinance as yf
+                t = yf.Ticker(f"{code}{suffix}")
+                fi = t.fast_info
+                p = getattr(fi, "last_price", None)
+                pc = getattr(fi, "previous_close", None)
+                if p and float(p) > 0:
+                    chg = round(((float(p) - float(pc)) / float(pc)) * 100, 2) if (pc and float(pc) > 0) else 0.0
+                    return {"price": round(float(p), 2), "change": round(chg, 2)}
+            except Exception:
+                pass
+
+    # 3. Screener.in Scraper Fallback (~300ms)
+    for code in [target_sym, sym]:
+        try:
+            url = f"https://www.screener.in/company/{code}/"
+            resp = session.get(url, timeout=2.0)
+            if resp.status_code == 200:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                top_ratios = soup.find("ul", id="top-ratios")
+                if top_ratios:
+                    for li in top_ratios.find_all("li"):
+                        name_el = li.find("span", class_="name")
+                        val_el = li.find("span", class_="number")
+                        if name_el and "Current Price" in name_el.text and val_el:
+                            p_val = float(val_el.text.strip().replace(",", ""))
+                            if p_val > 0:
+                                return {"price": round(p_val, 2), "change": 0.0}
+        except Exception:
+            pass
+
+    # 4. Check BASE_PRICES fallback memory dictionary
+    if sym in BASE_PRICES:
+        return BASE_PRICES[sym]
+    if target_sym in BASE_PRICES:
+        return BASE_PRICES[target_sym]
+
+    # 5. Deterministic fallback calculation
     h = 0
     for char in sym:
         h = (31 * h + ord(char)) & 0xFFFFFFFF
@@ -452,56 +489,57 @@ def fetch_real_price(symbol):
 
 # Instant pre-seeded memory cache for top 50 Indian stocks
 BASE_PRICES = {
-    "RELIANCE": {"price": 1303.70, "change": 0.45},
-    "TCS": {"price": 2221.10, "change": 1.20},
-    "HDFCBANK": {"price": 761.45, "change": -0.35},
-    "ICICIBANK": {"price": 1240.50, "change": 0.85},
-    "INFY": {"price": 1073.50, "change": -1.10},
-    "HINDUNILVR": {"price": 2410.00, "change": 0.15},
-    "ITC": {"price": 465.30, "change": 0.60},
-    "SBIN": {"price": 845.20, "change": -0.80},
-    "BHARTIARTL": {"price": 1680.00, "change": 1.45},
+    "ETERNAL": {"price": 323.10, "change": 1.92},
+    "ZOMATO": {"price": 323.10, "change": 1.92},
+    "RELIANCE": {"price": 1245.50, "change": 0.44},
+    "TCS": {"price": 2193.50, "change": 0.21},
+    "HDFCBANK": {"price": 716.10, "change": -0.75},
+    "ICICIBANK": {"price": 1350.70, "change": -0.60},
+    "INFY": {"price": 1058.60, "change": -0.13},
+    "HINDUNILVR": {"price": 1949.00, "change": -0.66},
+    "ITC": {"price": 265.20, "change": 0.40},
+    "SBIN": {"price": 986.50, "change": -0.49},
+    "BHARTIARTL": {"price": 1833.60, "change": -0.08},
     "KOTAKBANK": {"price": 1790.00, "change": -0.50},
-    "WIPRO": {"price": 540.20, "change": 0.30},
-    "LT": {"price": 3650.00, "change": 1.10},
-    "AXISBANK": {"price": 1180.00, "change": -0.65},
-    "BAJFINANCE": {"price": 6920.00, "change": 0.90},
-    "MARUTI": {"price": 12150.00, "change": -1.25},
-    "SUNPHARMA": {"price": 1740.00, "change": 0.75},
-    "TATAMOTORS": {"price": 333.80, "change": -0.90},
-    "NTPC": {"price": 395.40, "change": 0.40},
-    "ONGC": {"price": 242.10, "change": -0.30},
-    "POWERGRID": {"price": 328.60, "change": 0.20},
-    "ULTRACEMCO": {"price": 11250.00, "change": 0.80},
-    "HCLTECH": {"price": 1820.00, "change": -0.40},
-    "TATASTEEL": {"price": 165.40, "change": 1.10},
-    "ADANIENT": {"price": 3120.00, "change": -1.30},
-    "M&M": {"price": 3201.70, "change": 1.14},
-    "TITAN": {"price": 3480.00, "change": 0.50},
-    "ASIANPAINT": {"price": 2850.00, "change": -0.70},
-    "NESTLEIND": {"price": 2450.00, "change": 0.25},
-    "BAJAJFINSV": {"price": 1740.00, "change": 0.95},
-    "JSWSTEEL": {"price": 940.00, "change": -0.45},
-    "HAL": {"price": 4680.00, "change": 2.10},
-    "BEL": {"price": 295.00, "change": 1.80},
-    "TRENT": {"price": 7120.00, "change": 2.50},
-    "DMART": {"price": 4150.00, "change": -0.60},
-    "ZOMATO": {"price": 265.00, "change": 1.70},
-    "TCIEXP": {"price": 1140.00, "change": -0.30},
-    "COALINDIA": {"price": 485.00, "change": 0.85},
-    "IOC": {"price": 175.00, "change": -0.40},
-    "BPCL": {"price": 355.00, "change": 0.30},
-    "BRITANNIA": {"price": 5820.00, "change": 0.40},
-    "ADANIPORTS": {"price": 1380.00, "change": -0.90},
-    "GRASIM": {"price": 2680.00, "change": 0.55},
-    "EICHERMOT": {"price": 4890.00, "change": -1.10},
-    "CIPLA": {"price": 1540.00, "change": 0.65},
-    "DRREDDY": {"price": 6850.00, "change": -0.35},
-    "HEROMOTOCO": {"price": 5420.00, "change": 0.80},
-    "TVSMOTOR": {"price": 2480.00, "change": 1.25},
-    "DIVISLAB": {"price": 5210.00, "change": -0.45},
-    "PIDILITIND": {"price": 3140.00, "change": 0.30},
-    "HINDALCO": {"price": 675.00, "change": -0.85}
+    "WIPRO": {"price": 166.35, "change": -0.32},
+    "LT": {"price": 3855.00, "change": 1.24},
+    "AXISBANK": {"price": 1242.80, "change": 0.15},
+    "BAJFINANCE": {"price": 1016.00, "change": 0.97},
+    "MARUTI": {"price": 12382.00, "change": 1.78},
+    "SUNPHARMA": {"price": 1860.90, "change": 0.40},
+    "TATAMOTORS": {"price": 834.25, "change": 0.85},
+    "NTPC": {"price": 328.50, "change": 0.46},
+    "ONGC": {"price": 232.40, "change": -1.86},
+    "POWERGRID": {"price": 264.90, "change": 0.80},
+    "ULTRACEMCO": {"price": 10800.00, "change": 0.93},
+    "HCLTECH": {"price": 1243.30, "change": -0.77},
+    "TATASTEEL": {"price": 187.15, "change": 2.27},
+    "ADANIENT": {"price": 2929.20, "change": 0.32},
+    "M&M": {"price": 3086.00, "change": 0.52},
+    "TITAN": {"price": 4844.50, "change": -1.30},
+    "ASIANPAINT": {"price": 2448.40, "change": 1.32},
+    "NESTLEIND": {"price": 1377.40, "change": -0.51},
+    "BAJAJFINSV": {"price": 1852.90, "change": 0.87},
+    "JSWSTEEL": {"price": 1253.30, "change": 0.35},
+    "HAL": {"price": 4777.40, "change": 1.74},
+    "BEL": {"price": 394.10, "change": 2.16},
+    "TRENT": {"price": 2789.00, "change": 0.70},
+    "DMART": {"price": 3716.00, "change": -0.11},
+    "TCIEXP": {"price": 489.50, "change": 0.08},
+    "COALINDIA": {"price": 417.35, "change": -1.16},
+    "IOC": {"price": 134.04, "change": -0.53},
+    "BPCL": {"price": 306.60, "change": 1.07},
+    "BRITANNIA": {"price": 4998.50, "change": -0.02},
+    "ADANIPORTS": {"price": 1731.60, "change": 0.45},
+    "GRASIM": {"price": 3173.40, "change": -0.43},
+    "EICHERMOT": {"price": 7525.00, "change": 0.33},
+    "CIPLA": {"price": 1385.00, "change": 1.99},
+    "DRREDDY": {"price": 1175.00, "change": 3.07},
+    "HEROMOTOCO": {"price": 5337.50, "change": 1.96},
+    "TVSMOTOR": {"price": 4111.70, "change": 1.95},
+    "DIVISLAB": {"price": 9345.00, "change": 2.04},
+    "PIDILITIND": {"price": 1557.90, "change": 0.91},
+    "HINDALCO": {"price": 984.20, "change": 1.18}
 }
 
 _bulk_price_cache = {
