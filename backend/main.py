@@ -415,21 +415,34 @@ def generate_fallback_fundamentals(symbol: str) -> dict:
     }
 
 async def get_cached_or_scrape_fundamentals(symbol):
-    db = get_db()
-    cache_col = db["fundamentals_cache"]
     key = symbol.upper()
-    cached = await cache_col.find_one({"_id": key})
-    if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
-        cached_at = cached.get("cached_at")
-        if cached_at:
-            try:
-                cached_time = datetime.fromisoformat(cached_at)
-                age = datetime.utcnow() - cached_time
-                if age.total_seconds() < 86400:  # 24 hours
-                    cached.pop("cached_at", None)
-                    return cached
-            except (ValueError, TypeError):
-                pass
+    cache_col = None
+    try:
+        db = get_db()
+        cache_col = db["fundamentals_cache"]
+        cached = await cache_col.find_one({"_id": key})
+        if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
+            cached_at = cached.get("cached_at")
+            if cached_at:
+                try:
+                    cached_time = datetime.fromisoformat(cached_at)
+                    age = datetime.utcnow() - cached_time
+                    if age.total_seconds() < 86400:  # 24 hours
+                        cached.pop("cached_at", None)
+                        return cached
+                except (ValueError, TypeError):
+                    pass
+    except Exception as e:
+        logging.warning(f"Primary DB failed on fundamental cache lookup for {symbol}: {e}. Switching to fallback DB.")
+        db = switch_to_fallback()
+        cache_col = db["fundamentals_cache"]
+        try:
+            cached = await cache_col.find_one({"_id": key})
+            if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
+                cached.pop("cached_at", None)
+                return cached
+        except Exception:
+            pass
 
     try:
         data = fetch_company_essentials_from_ticker(symbol)
@@ -444,7 +457,12 @@ async def get_cached_or_scrape_fundamentals(symbol):
 
     data["_id"] = key
     data["cached_at"] = datetime.utcnow().isoformat()
-    await cache_col.replace_one({"_id": key}, data, upsert=True)
+    try:
+        if cache_col is not None:
+            await cache_col.replace_one({"_id": key}, data, upsert=True)
+    except Exception as e:
+        logging.warning(f"Failed to save fundamental cache for {symbol}: {e}")
+
     result = dict(data)
     result.pop("cached_at", None)
     return result
@@ -757,8 +775,18 @@ async def screener(
     limit: int = Query(20),
     token_data: Optional[dict] = Depends(verify_token_optional)
 ):
-    db = get_db()
-    cache_col = db["fundamentals_cache"]
+    try:
+        db = get_db()
+        cache_col = db["fundamentals_cache"]
+        cache_count = await cache_col.count_documents({})
+    except Exception as e:
+        logging.warning(f"Primary DB failed on screener count: {e}. Switching to fallback DB.")
+        db = switch_to_fallback()
+        cache_col = db["fundamentals_cache"]
+        try:
+            cache_count = await cache_col.count_documents({})
+        except Exception:
+            cache_count = 0
 
     # Build reverse symbol->sector lookup
     sym_to_sector = {}
@@ -773,15 +801,17 @@ async def screener(
             all_known_symbols.add(sym.upper())
 
     # Ensure fundamentals exist for all companies across all sectors
-    cache_count = await cache_col.count_documents({})
     if cache_count < len(all_known_symbols):
         for s in all_known_symbols:
-            doc = await cache_col.find_one({"_id": s})
-            if not doc:
-                fallback_data = generate_fallback_fundamentals(s)
-                fallback_data["_id"] = s
-                fallback_data["cached_at"] = datetime.utcnow().isoformat()
-                await cache_col.replace_one({"_id": s}, fallback_data, upsert=True)
+            try:
+                doc = await cache_col.find_one({"_id": s})
+                if not doc:
+                    fallback_data = generate_fallback_fundamentals(s)
+                    fallback_data["_id"] = s
+                    fallback_data["cached_at"] = datetime.utcnow().isoformat()
+                    await cache_col.replace_one({"_id": s}, fallback_data, upsert=True)
+            except Exception:
+                pass
 
     all_stocks = []
     async for doc in cache_col.find({}):
