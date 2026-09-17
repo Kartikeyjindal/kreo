@@ -40,15 +40,8 @@ app.add_middleware(
 )
 
 @app.get("/health")
-async def health_check():
-    try:
-        db = get_db()
-        await db.command("ping")
-        return {"status": "ok", "database": "connected"}
-    except Exception as e:
-        logging.warning(f"Health check DB ping failed: {e}. Switching to in-memory database.")
-        switch_to_fallback()
-        return {"status": "ok", "database": "connected (in-memory mode)"}
+def health_check():
+    return {"status": "ok", "service": "live"}
 
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
