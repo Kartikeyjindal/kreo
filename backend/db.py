@@ -11,6 +11,7 @@ logger = logging.getLogger("db")
 
 _client = None
 _mem_client = None
+_use_mem = False
 
 def _get_mem_db():
     global _mem_client
@@ -20,24 +21,30 @@ def _get_mem_db():
     return _mem_client["smartstocks"]
 
 def get_db():
-    global _client
+    global _client, _use_mem
+    if _use_mem or not MONGO_URI:
+        return _get_mem_db()
+
     if _client is None:
-        if MONGO_URI:
-            try:
-                from motor.motor_asyncio import AsyncIOMotorClient
-                _client = AsyncIOMotorClient(
-                    MONGO_URI,
-                    tlsCAFile=certifi.where(),
-                    serverSelectionTimeoutMS=2500,
-                    connectTimeoutMS=2500
-                )
-            except Exception as e:
-                logger.warning(f"MongoDB connection init failed: {e}. Using in-memory store.")
-                return _get_mem_db()
-        else:
+        try:
+            from motor.motor_asyncio import AsyncIOMotorClient
+            _client = AsyncIOMotorClient(
+                MONGO_URI,
+                tlsCAFile=certifi.where(),
+                serverSelectionTimeoutMS=2000,
+                connectTimeoutMS=2000
+            )
+        except Exception as e:
+            logger.warning(f"Failed to initialize Motor client: {e}. Switching to in-memory DB.")
+            _use_mem = True
             return _get_mem_db()
 
     return _client["smartstocks"]
+
+def switch_to_fallback():
+    global _use_mem
+    _use_mem = True
+    return _get_mem_db()
 
 def get_fallback_db():
     return _get_mem_db()

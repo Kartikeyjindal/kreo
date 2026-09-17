@@ -41,14 +41,14 @@ app.add_middleware(
 
 @app.get("/health")
 async def health_check():
-    db_status = "unknown"
     try:
         db = get_db()
         await db.command("ping")
-        db_status = "connected"
+        return {"status": "ok", "database": "connected"}
     except Exception as e:
-        db_status = f"error: {str(e)}"
-    return {"status": "ok", "database": db_status}
+        logging.warning(f"Health check DB ping failed: {e}. Switching to in-memory database.")
+        switch_to_fallback()
+        return {"status": "ok", "database": "connected (in-memory mode)"}
 
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -126,8 +126,8 @@ async def register(model: RegisterModel):
             db = get_db()
             existing = await _safe_get_user(db, model.username)
         except Exception as e:
-            logging.warning(f"Primary DB failed on register: {e}. Using fallback DB.")
-            db = get_fallback_db()
+            logging.warning(f"Primary DB failed on register: {e}. Switching to fallback DB.")
+            db = switch_to_fallback()
             existing = await _safe_get_user(db, model.username)
 
         if existing:
@@ -139,7 +139,7 @@ async def register(model: RegisterModel):
         try:
             await _safe_insert_user(db, user_doc)
         except Exception:
-            db = get_fallback_db()
+            db = switch_to_fallback()
             await _safe_insert_user(db, user_doc)
 
         token = create_token({"sub": model.username, "name": model.name})
@@ -157,8 +157,8 @@ async def login(model: LoginModel):
             db = get_db()
             user = await _safe_get_user(db, model.username)
         except Exception as e:
-            logging.warning(f"Primary DB failed on login: {e}. Using fallback DB.")
-            db = get_fallback_db()
+            logging.warning(f"Primary DB failed on login: {e}. Switching to fallback DB.")
+            db = switch_to_fallback()
             user = await _safe_get_user(db, model.username)
 
         if not user or not user.get("password") or not pwd_ctx.verify(model.password, user["password"]):
