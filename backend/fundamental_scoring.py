@@ -1,14 +1,31 @@
+def to_float(val):
+    if val is None:
+        return None
+    if isinstance(val, (int, float)):
+        return float(val)
+    if isinstance(val, str):
+        try:
+            return float(val.replace("₹", "").replace(",", "").replace("%", "").strip())
+        except ValueError:
+            return None
+    return None
+
+def to_pct(val):
+    v = to_float(val)
+    if v is None:
+        return None
+    return float(v * 100) if abs(v) <= 1.0 else float(v)
+
 def evaluate_fundamentals(input_data, config=None):
     if config is None:
         config = {}
     data = dict(input_data)
         
-    pe_threshold = config.get("pe", 15.0)
-    pb_threshold = config.get("pb", 2.5)
-    roe_threshold = config.get("roe", 20.0)
-    roce_threshold = config.get("roce", 20.0)
+    pe_threshold = to_float(config.get("pe")) or 15.0
+    pb_threshold = to_float(config.get("pb")) or 2.5
+    roe_threshold = to_float(config.get("roe")) or 20.0
+    roce_threshold = to_float(config.get("roce")) or 20.0
 
-    # Revised weights per category
     weights = {
         "pe": 10,
         "pb": 8,
@@ -23,16 +40,18 @@ def evaluate_fundamentals(input_data, config=None):
         "book_value": 4
     }
 
-    # Convert decimals to actual percentages if needed
-    def to_pct(val):
-        return val * 100 if val is not None else None
-
-    data["ROE"] = to_pct(data.get("ROE"))
-    data["ROCE"] = to_pct(data.get("ROCE"))
-    data["DIV._YIELD"] = to_pct(data.get("DIV._YIELD"))
-    data["PROMOTER_HOLDING"] = to_pct(data.get("PROMOTER_HOLDING"))
-    data["SALES_GROWTH"] = to_pct(data.get("SALES_GROWTH"))
-    data["PROFIT_GROWTH"] = to_pct(data.get("PROFIT_GROWTH"))
+    pe_val = to_float(data.get("P/E"))
+    pb_val = to_float(data.get("P/B"))
+    roe_val = to_pct(data.get("ROE"))
+    roce_val = to_pct(data.get("ROCE"))
+    eps_val = to_float(data.get("EPS_TTM"))
+    sales_growth_val = to_pct(data.get("SALES_GROWTH"))
+    profit_growth_val = to_pct(data.get("PROFIT_GROWTH"))
+    div_yield_val = to_pct(data.get("DIV._YIELD"))
+    promoter_holding_val = to_pct(data.get("PROMOTER_HOLDING"))
+    book_value_val = to_float(data.get("BOOK_VALUE_TTM"))
+    debt_val = to_float(data.get("DEBT"))
+    shares_val = to_float(data.get("NO_OF_SHARES"))
 
     def score_pe(pe):
         if pe is None: return 0
@@ -108,7 +127,6 @@ def evaluate_fundamentals(input_data, config=None):
         elif dte < 2: return 20
         else: return 10
 
-
     def score_promoter_holding(ph):
         if ph is None: return 0
         if ph >= 65: return 90
@@ -127,39 +145,32 @@ def evaluate_fundamentals(input_data, config=None):
 
     # Derived D/E
     try:
-        if (
-            data.get("DEBT") is not None and
-            data.get("BOOK_VALUE_TTM") not in (None, 0) and
-            data.get("NO_OF_SHARES") not in (None, 0)
-        ):
-            debt_to_equity = data["DEBT"] / (data["BOOK_VALUE_TTM"] * data["NO_OF_SHARES"])
+        if debt_val is not None and book_value_val and shares_val and (book_value_val * shares_val) != 0:
+            debt_to_equity = debt_val / (book_value_val * shares_val)
         else:
             debt_to_equity = None
     except Exception:
         debt_to_equity = None
 
-    # Compute all metric scores
     scores = {
-        "pe": score_pe(data.get("P/E")),
-        "pb": score_pb(data.get("P/B")),
-        "roe": score_roe(data.get("ROE")),
-        "roce": score_roce(data.get("ROCE")),
-        "eps": score_eps(data.get("EPS_TTM")),
-        "sales_growth": score_sales_growth(data.get("SALES_GROWTH")),
-        "profit_growth": score_profit_growth(data.get("PROFIT_GROWTH")),
-        "dividend_yield": score_dividend_yield(data.get("DIV._YIELD")),
+        "pe": score_pe(pe_val),
+        "pb": score_pb(pb_val),
+        "roe": score_roe(roe_val),
+        "roce": score_roce(roce_val),
+        "eps": score_eps(eps_val),
+        "sales_growth": score_sales_growth(sales_growth_val),
+        "profit_growth": score_profit_growth(profit_growth_val),
+        "dividend_yield": score_dividend_yield(div_yield_val),
         "debt_to_equity": score_debt_to_equity(debt_to_equity),
-        "promoter_holding": score_promoter_holding(data.get("PROMOTER_HOLDING")),
-        "book_value": score_book_value(data.get("BOOK_VALUE_TTM"))
+        "promoter_holding": score_promoter_holding(promoter_holding_val),
+        "book_value": score_book_value(book_value_val)
     }
 
-    # Final score using only available metrics
     valid_metrics = [f for f in weights if scores[f] > 0]
     valid_total_weight = sum(weights[f] for f in valid_metrics)
     total_score = sum(scores[f] * weights[f] for f in valid_metrics)
-    final_score = total_score / valid_total_weight if valid_total_weight > 0 else 0
+    final_score = total_score / valid_total_weight if valid_total_weight > 0 else 50.0
 
-    # Verdict logic (realistic)
     if final_score >= 72:
         verdict = "strong buy"
     elif final_score >= 60:
@@ -170,10 +181,6 @@ def evaluate_fundamentals(input_data, config=None):
         verdict = "sell"
     else:
         verdict = "strong sell"
-
-# for debugging purposes
-#     print("Final Score:", round(final_score, 2))
-#     print("Individual Scores:", scores)
 
     return {
         "final_score": round(final_score, 2),
