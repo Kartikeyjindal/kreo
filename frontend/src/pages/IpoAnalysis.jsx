@@ -118,7 +118,6 @@ function IpoAnalysis() {
             }
           ]);
         }
-      }
       } finally {
         setLoading(false);
       }
