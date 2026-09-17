@@ -19,7 +19,7 @@ import pandas as pd
 import time
 
 from fundamental_scoring import evaluate_fundamentals
-from db import get_db
+from db import get_db, get_fallback_db
 from scraping import fetch_company_essentials_from_ticker
 
 from google.oauth2 import id_token
@@ -113,16 +113,35 @@ def verify_token(authorization: str = Header(...)):
         raise HTTPException(401, "Invalid token")
 
 # ---------------------------- Auth Endpoints ---------------------------- #
+async def _safe_get_user(db, username: str):
+    return await db["users"].find_one({"username": username})
+
+async def _safe_insert_user(db, doc: dict):
+    return await db["users"].insert_one(doc)
+
 @app.post("/register")
 async def register(model: RegisterModel):
     try:
-        db = get_db()
-        users_collection = db["users"]
-        if await users_collection.find_one({"username": model.username}):
+        try:
+            db = get_db()
+            existing = await _safe_get_user(db, model.username)
+        except Exception as e:
+            logging.warning(f"Primary DB failed on register: {e}. Using fallback DB.")
+            db = get_fallback_db()
+            existing = await _safe_get_user(db, model.username)
+
+        if existing:
             raise HTTPException(400, "User already exists")
+
         hashed = pwd_ctx.hash(model.password)
         user_doc = {"username": model.username, "name": model.name, "password": hashed}
-        await users_collection.insert_one(user_doc)
+
+        try:
+            await _safe_insert_user(db, user_doc)
+        except Exception:
+            db = get_fallback_db()
+            await _safe_insert_user(db, user_doc)
+
         token = create_token({"sub": model.username, "name": model.name})
         return {"access_token": token, "user": {"username": model.username, "name": model.name}}
     except HTTPException:
@@ -134,11 +153,17 @@ async def register(model: RegisterModel):
 @app.post("/login")
 async def login(model: LoginModel):
     try:
-        db = get_db()
-        users_collection = db["users"]
-        user = await users_collection.find_one({"username": model.username})
-        if not user or not pwd_ctx.verify(model.password, user["password"]):
+        try:
+            db = get_db()
+            user = await _safe_get_user(db, model.username)
+        except Exception as e:
+            logging.warning(f"Primary DB failed on login: {e}. Using fallback DB.")
+            db = get_fallback_db()
+            user = await _safe_get_user(db, model.username)
+
+        if not user or not user.get("password") or not pwd_ctx.verify(model.password, user["password"]):
             raise HTTPException(401, "Invalid credentials")
+
         token = create_token({"sub": user["username"], "name": user["name"]})
         return {"access_token": token, "user": {"username": user["username"], "name": user["name"]}}
     except HTTPException:
@@ -152,32 +177,39 @@ GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
 @app.post("/google-login")
 async def google_login(model: GoogleLoginModel):
     try:
-        # verify Google JWT and pull out email + name
         idinfo = id_token.verify_oauth2_token(model.token, grequests.Request(), GOOGLE_CLIENT_ID)
         email = idinfo['email']
         google_name = idinfo.get('name', email.split('@')[0])
 
-        db = get_db()
-        users_collection = db["users"]
+        try:
+            db = get_db()
+            user = await _safe_get_user(db, email)
+        except Exception:
+            db = get_fallback_db()
+            user = await _safe_get_user(db, email)
 
-        # if we already have a user, keep their stored name; otherwise insert Google user
-        user = await users_collection.find_one({"username": email})
         if user:
             final_name = user.get("name", google_name)
         else:
             final_name = google_name
-            await users_collection.insert_one({
-                "username": email,
-                "name":    final_name,
-                "password": None      # no password yet
-            })
+            user_doc = {"username": email, "name": final_name, "password": None}
+            try:
+                await _safe_insert_user(db, user_doc)
+            except Exception:
+                db = get_fallback_db()
+                await _safe_insert_user(db, user_doc)
 
-        # issue token with BOTH sub (email) and the chosen name
         access_token = create_token({"sub": email, "name": final_name})
         return {
             "access_token": access_token,
             "user": {
                 "username": email,
+                "name": final_name
+            }
+        }
+    except Exception as e:
+        logging.error(f"Google login error: {e}", exc_info=True)
+        raise HTTPException(400, detail=f"Google auth error: {str(e)}")
                 "name":     final_name
             }
         }
