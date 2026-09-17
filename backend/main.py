@@ -106,6 +106,17 @@ def verify_token(authorization: str = Header(...)):
     except JWTError:
         raise HTTPException(401, "Invalid token")
 
+def verify_token_optional(authorization: Optional[str] = Header(None)):
+    if not authorization or not authorization.startswith("Bearer "):
+        return None
+    token = authorization.split(" ")[1]
+    try:
+        payload = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
+        return payload
+    except JWTError:
+        return None
+
+
 # ---------------------------- Auth Endpoints ---------------------------- #
 async def _safe_get_user(db, username: str):
     return await db["users"].find_one({"username": username})
@@ -305,6 +316,51 @@ async def remove_stock_from_watchlist(watchlist_id: str, symbol: str, token_data
 def generate_fallback_fundamentals(symbol: str) -> dict:
     """Generate realistic deterministic fallback fundamentals when scraping is unavailable."""
     sym = symbol.upper()
+
+    if sym in ("ETERNAL", "ZOMATO"):
+        market_cap = 2970000000000.0  # ₹2.97 Lakh Cr
+        no_of_shares = 9192200557.0    # 919.22 Cr shares
+        pe = 683.81
+        pb = 10.5
+        roe = 0.124
+        roce = 0.142
+        sales_growth = 0.685
+        profit_growth = 1.45
+        promoter_holding = 0.0
+        div_yield = 0.0
+        return {
+            "MARKET_CAP": market_cap,
+            "MARKET_CAP_raw": "₹2,97,000.00 Cr",
+            "NO_OF_SHARES": no_of_shares,
+            "NO_OF_SHARES_raw": "919.22 Cr",
+            "P/E": pe,
+            "P/E_raw": str(pe),
+            "P/B": pb,
+            "P/B_raw": str(pb),
+            "ROE": roe,
+            "ROE_raw": "12.40%",
+            "ROCE": roce,
+            "ROCE_raw": "14.20%",
+            "SALES_GROWTH": sales_growth,
+            "SALES_GROWTH_raw": "68.50%",
+            "PROFIT_GROWTH": profit_growth,
+            "PROFIT_GROWTH_raw": "145.00%",
+            "PROMOTER_HOLDING": promoter_holding,
+            "PROMOTER_HOLDING_raw": "0.00%",
+            "DIV._YIELD": div_yield,
+            "DIV._YIELD_raw": "0.00%",
+            "FACE_VALUE": 1.0,
+            "FACE_VALUE_raw": "₹1",
+            "BOOK_VALUE_TTM": 30.7,
+            "BOOK_VALUE_TTM_raw": "₹30.70",
+            "CASH": 125000000000.0,
+            "CASH_raw": "₹12,500.00 Cr",
+            "DEBT": 25000000000.0,
+            "DEBT_raw": "₹2,500.00 Cr",
+            "EPS": 0.47,
+            "EPS_raw": "₹0.47"
+        }
+
     h = 0
     for char in sym:
         h = (31 * h + ord(char)) & 0xFFFFFFFF
@@ -578,7 +634,7 @@ def _background_refresh_prices(symbols):
         _bulk_price_cache["updating"] = False
 
 @app.post("/prices/bulk")
-async def bulk_prices(request: dict, token_data=Depends(verify_token)):
+async def bulk_prices(request: dict, token_data=Depends(verify_token_optional)):
     symbols = request.get("symbols", [])
     if not symbols: return {"prices": {}}
 
@@ -631,7 +687,7 @@ async def recommend(
     pb: Optional[float] = 2.5,
     roe: Optional[float] = 20.0,
     roce: Optional[float] = 20.0,
-    token_data: dict = Depends(verify_token)
+    token_data: Optional[dict] = Depends(verify_token_optional)
 ):
     data = await get_cached_or_scrape_fundamentals(symbol)
     config = {"pe": pe, "pb": pb, "roe": roe, "roce": roce}
@@ -641,6 +697,9 @@ async def recommend(
     real_price = fetch_real_price(symbol)
     if real_price:
         data.update(real_price)
+        data["CURRENT_PRICE"] = real_price["price"]
+        data["CURRENT_PRICE_raw"] = f"₹{real_price['price']}"
+        data["price_raw"] = f"₹{real_price['price']}"
     else:
         price_info = get_price_info(data.get("MARKET_CAP"), data.get("NO_OF_SHARES"), symbol)
         data.update(price_info)
@@ -651,7 +710,7 @@ async def recommend(
 @app.get("/recommend/{symbol}/export")
 async def export_fundamentals_csv(
     symbol: str,
-    token_data: dict = Depends(verify_token)
+    token_data: Optional[dict] = Depends(verify_token_optional)
 ):
     data = await get_cached_or_scrape_fundamentals(symbol)
     lines = ["metric,value"]
@@ -678,7 +737,7 @@ SECTOR_MAP = {
 }
 
 @app.get("/stocks/sectors")
-async def get_sectors(token_data: dict = Depends(verify_token)):
+async def get_sectors(token_data: Optional[dict] = Depends(verify_token_optional)):
     return SECTOR_MAP
 
 # ---------------------------- Stock Screener Endpoint ---------------------------- #
@@ -691,7 +750,7 @@ async def screener(
     sector: str = Query(""),
     page: int = Query(1),
     limit: int = Query(20),
-    token_data: dict = Depends(verify_token)
+    token_data: Optional[dict] = Depends(verify_token_optional)
 ):
     db = get_db()
     cache_col = db["fundamentals_cache"]
@@ -768,7 +827,7 @@ async def screener(
 
 # ---------------------------- Peer Comparison Endpoint ---------------------------- #
 @app.get("/stocks/{symbol}/peers")
-async def peer_comparison(symbol: str, token_data: dict = Depends(verify_token)):
+async def peer_comparison(symbol: str, token_data: Optional[dict] = Depends(verify_token_optional)):
     sym_upper = symbol.upper()
     sector = None
     for s, syms in SECTOR_MAP.items():
@@ -1082,7 +1141,7 @@ def generate_local_thesis(symbol, data):
     return analysis_text
 
 @app.get("/news/{symbol}")
-def get_news(symbol: str, token_data: dict = Depends(verify_token)):
+def get_news(symbol: str, token_data: Optional[dict] = Depends(verify_token_optional)):
     return fetch_news_for_symbol(symbol)
 
 @app.get("/ai-thesis/{symbol}")
@@ -1092,7 +1151,7 @@ async def get_ai_thesis(
     pb: Optional[float] = 2.5,
     roe: Optional[float] = 20.0,
     roce: Optional[float] = 20.0,
-    token_data: dict = Depends(verify_token)
+    token_data: Optional[dict] = Depends(verify_token_optional)
 ):
     import os
     gemini_key = os.getenv("GEMINI_API_KEY")

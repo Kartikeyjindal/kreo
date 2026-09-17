@@ -39,6 +39,7 @@ const STOCK_SECTOR_MAP = {
   "TRENT": "FMCG & Consumer",
   "DMART": "FMCG & Consumer",
   "ZOMATO": "IT & Tech",
+  "ETERNAL": "IT & Tech",
   "TCIEXP": "Industrials & Infra",
   "COALINDIA": "Energy & Utilities",
   "IOC": "Energy & Utilities",
