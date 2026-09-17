@@ -109,7 +109,12 @@ def verify_token(authorization: str = Header(...)):
 def verify_token_optional(authorization: Optional[str] = Header(None)):
     if not authorization or not authorization.startswith("Bearer "):
         return None
-    token = authorization.split(" ")[1]
+    parts = authorization.split(" ")
+    if len(parts) < 2:
+        return None
+    token = parts[1]
+    if token in ("null", "undefined", "None", "", "Bearer"):
+        return None
     try:
         payload = jwt.decode(token, JWT_SECRET, algorithms=["HS256"])
         return payload
