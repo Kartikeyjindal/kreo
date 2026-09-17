@@ -210,11 +210,7 @@ async def google_login(model: GoogleLoginModel):
     except Exception as e:
         logging.error(f"Google login error: {e}", exc_info=True)
         raise HTTPException(400, detail=f"Google auth error: {str(e)}")
-                "name":     final_name
-            }
-        }
-    except Exception:
-        raise HTTPException(400, "Invalid Google Token")
+
 # ---------------------------- Watchlist Endpoints ---------------------------- #
 @app.get("/watchlists")
 async def get_watchlists(token_data: dict = Depends(verify_token)):
