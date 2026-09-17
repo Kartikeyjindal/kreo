@@ -19,7 +19,7 @@ import pandas as pd
 import time
 
 from fundamental_scoring import evaluate_fundamentals
-from db import get_db, get_fallback_db
+from db import get_db, get_fallback_db, switch_to_fallback
 from scraping import fetch_company_essentials_from_ticker
 
 from google.oauth2 import id_token
