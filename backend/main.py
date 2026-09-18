@@ -745,19 +745,50 @@ async def export_fundamentals_csv(
 
 # ---------------------------- Stock Sectors Endpoint ---------------------------- #
 SECTOR_MAP = {
-    "IT": ["TCS", "INFY", "WIPRO", "HCLTECH", "TECHM", "LTTS", "MINDTREE", "COFORGE", "PERSISTENT", "MPHASIS"],
-    "BANKING": ["HDFCBANK", "ICICIBANK", "SBIN", "AXISBANK", "KOTAKBANK", "INDUSINDBK", "YESBANK", "BANDHANBNK", "FEDERALBNK", "IDFCFIRSTB"],
-    "AUTO": ["MARUTI", "TATAMOTORS", "M&M", "BAJAJ-AUTO", "EICHERMOT", "TVSMOTOR", "HEROMOTOCO", "ASHOKLEY"],
-    "PHARMA": ["SUNPHARMA", "DRREDDY", "CIPLA", "DIVISLAB", "LUPIN", "AUROPHARMA", "BIOCON", "GLENMARK", "CADILAHC"],
-    "FMCG": ["HINDUNILVR", "ITC", "NESTLEIND", "BRITANNIA", "MARICO", "DABUR", "GODREJCP", "TATACONSUM", "COLPAL"],
-    "OIL_GAS": ["RELIANCE", "ONGC", "IOC", "BPCL", "GAIL", "HINDPETRO", "OIL", "PETRONET", "GUJGAS", "IGL"],
-    "METALS": ["TATASTEEL", "JSWSTEEL", "HINDALCO", "NATIONALUM", "APLAPOLLO", "VEDANTA", "JINDALSTEL"],
-    "POWER": ["NTPC", "POWERGRID", "ADANIGREEN", "TATAPOWER", "JSWENERGY", "SUZLON", "INOXWIND", "SIEMENS", "BHEL"],
-    "TELECOM": ["BHARTIARTL", "IDEA", "TATACOMM"],
-    "CONSTRUCTION": ["L&T", "ULTRACEMCO", "AMBUJACEM", "GRASIM", "DALMIABHARAT", "SHREECEM", "ADANIPORTS", "HINDZINC"],
-    "CONGLOMERATE": ["ADANIENT", "ADANITRANS"],
-    "RETAIL": ["DMART", "TRENT", "TITAN", "AVENUE", "MCDOWELL-N"]
+    "IT": ["TCS", "INFY", "WIPRO", "HCLTECH", "TECHM", "LTTS", "MINDTREE", "COFORGE", "PERSISTENT", "MPHASIS", "ETERNAL", "ZOMATO", "SWIGGY", "PAYTM", "POLICYBZR", "NYKAA", "DELHIVERY", "NAUKRI", "MAPMYINDIA", "INDIAMART", "LTIM", "TATAELXSI", "OFSS", "NETWEB"],
+    "BANKING": ["HDFCBANK", "ICICIBANK", "SBIN", "AXISBANK", "KOTAKBANK", "INDUSINDBK", "YESBANK", "BANDHANBNK", "FEDERALBNK", "IDFCFIRSTB", "BAJFINANCE", "BAJAJFINSV", "CHOLAFIN", "SHRIRAMFIN", "JIOFIN", "MUTHOOTFIN", "REC", "PFC", "LICHSGFIN"],
+    "AUTO": ["MARUTI", "TATAMOTORS", "M&M", "BAJAJ-AUTO", "EICHERMOT", "TVSMOTOR", "HEROMOTOCO", "ASHOKLEY", "BHARATFORG", "SONACOMS", "BOSCHLTD", "MOTHERSON"],
+    "PHARMA": ["SUNPHARMA", "DRREDDY", "CIPLA", "DIVISLAB", "LUPIN", "AUROPHARMA", "BIOCON", "GLENMARK", "MANKIND", "TORNTPHARM", "MAXHEALTH", "APOLLOHOSP", "FORTIS"],
+    "FMCG": ["HINDUNILVR", "ITC", "NESTLEIND", "BRITANNIA", "MARICO", "DABUR", "GODREJCP", "TATACONSUM", "COLPAL", "DMART", "TRENT", "TITAN", "VARUN", "VBL"],
+    "OIL_GAS": ["RELIANCE", "ONGC", "IOC", "BPCL", "GAIL", "HINDPETRO", "OIL", "PETRONET", "GUJGAS", "IGL", "MGL"],
+    "METALS": ["TATASTEEL", "JSWSTEEL", "HINDALCO", "NATIONALUM", "APLAPOLLO", "VEDANTA", "JINDALSTEL", "COALINDIA", "NMDC", "SAIL"],
+    "POWER": ["NTPC", "POWERGRID", "ADANIGREEN", "TATAPOWER", "JSWENERGY", "SUZLON", "INOXWIND", "SIEMENS", "BHEL", "ABB", "CGPOWER"],
+    "TELECOM": ["BHARTIARTL", "IDEA", "TATACOMM", "SUNTV", "PVRINOX"],
+    "CONSTRUCTION": ["L&T", "ULTRACEMCO", "AMBUJACEM", "GRASIM", "DALMIABHARAT", "SHREECEM", "ADANIPORTS", "DLF", "LODHA", "GODREJPROP", "OBEROIRLTY"],
+    "DEFENSE": ["HAL", "BEL", "BDL", "MAZDOCK", "COCHINSHIP", "DATAPATTERNS"],
+    "CONGLOMERATE": ["ADANIENT", "ADANITRANS"]
 }
+
+def detect_stock_sector(symbol: str, name: str = "") -> str:
+    sym = symbol.upper().strip()
+    symbol_aliases = {"ZOMATO": "ETERNAL", "ETERNAL": "ETERNAL"}
+    target_sym = symbol_aliases.get(sym, sym)
+
+    for s_name, sym_list in SECTOR_MAP.items():
+        if sym in [x.upper() for x in sym_list] or target_sym in [x.upper() for x in sym_list]:
+            return s_name
+
+    name_lower = name.lower()
+    if any(k in name_lower for k in ["bank", "finan", "capital", "invest", "housing", "credit", "securit"]):
+        return "BANKING"
+    if any(k in name_lower for k in ["tech", "software", "info", "digital", "cloud", "cyber", "ai", "telecom", "data", "solut", "online"]):
+        return "IT"
+    if any(k in name_lower for k in ["pharma", "lab", "bio", "health", "medic", "life", "drug", "care"]):
+        return "PHARMA"
+    if any(k in name_lower for k in ["auto", "motor", "ev", "wheel", "gear", "tire", "tyre", "vehicl"]):
+        return "AUTO"
+    if any(k in name_lower for k in ["food", "fmcg", "retail", "consumer", "beverage", "dairy", "super", "store", "product"]):
+        return "FMCG"
+    if any(k in name_lower for k in ["steel", "metal", "mine", "copper", "zinc", "iron", "alumin", "alloy"]):
+        return "METALS"
+    if any(k in name_lower for k in ["power", "energy", "solar", "wind", "electric", "thermal", "atom"]):
+        return "POWER"
+    if any(k in name_lower for k in ["gas", "petro", "oil", "refin", "fuel"]):
+        return "OIL_GAS"
+    if any(k in name_lower for k in ["infra", "construct", "cement", "build", "real", "estate", "prop", "port"]):
+        return "CONSTRUCTION"
+
+    return "IT"
 
 @app.get("/stocks/sectors")
 async def get_sectors(token_data: Optional[dict] = Depends(verify_token_optional)):
@@ -863,18 +894,16 @@ async def screener(
 # ---------------------------- Peer Comparison Endpoint ---------------------------- #
 @app.get("/stocks/{symbol}/peers")
 async def peer_comparison(symbol: str, token_data: Optional[dict] = Depends(verify_token_optional)):
-    sym_upper = symbol.upper()
-    sector = None
-    for s, syms in SECTOR_MAP.items():
-        if sym_upper in [x.upper() for x in syms]:
-            sector = s
-            break
+    sym_upper = symbol.upper().strip()
+    symbol_aliases = {"ZOMATO": "ETERNAL", "ETERNAL": "ETERNAL"}
+    target_sym = symbol_aliases.get(sym_upper, sym_upper)
 
-    if not sector:
-        # Fallback to OIL_GAS or IT if sector not mapped
-        sector = "OIL_GAS"
+    doc_target = await get_cached_or_scrape_fundamentals(symbol)
+    comp_name = doc_target.get("COMPANY_NAME") or doc_target.get("name") or symbol
 
-    peers = [s for s in SECTOR_MAP.get(sector, []) if s.upper() != sym_upper][:10]
+    sector = detect_stock_sector(symbol, comp_name)
+
+    peers = [s for s in SECTOR_MAP.get(sector, []) if s.upper() != sym_upper and s.upper() != target_sym][:10]
 
     result = []
     config = {"pe": 15.0, "pb": 2.5, "roe": 20.0, "roce": 20.0}
