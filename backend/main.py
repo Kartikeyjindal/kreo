@@ -42,7 +42,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "live", "version": "v1.4-live-priority"}
+    return {"status": "ok", "service": "live", "version": "v1.5-auto-live-polling"}
 
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -539,7 +539,7 @@ def fetch_real_price(symbol: str) -> dict:
 
     now = time.time()
     cached_entry = _REAL_PRICE_CACHE.get(target_sym)
-    if cached_entry and (now - cached_entry["ts"]) < 30: # 30s TTL for real-time freshness
+    if cached_entry and (now - cached_entry["ts"]) < 10: # 10s TTL for real-time live price changes
         return cached_entry["data"]
 
     # 1. ALWAYS TRY LIVE ONLINE FETCH FIRST FOR THE ABSOLUTE LATEST PRICE!
@@ -683,7 +683,7 @@ async def bulk_prices(request: dict, token_data=Depends(verify_token_optional)):
             _bulk_price_cache["data"][s_u] = real_item
             res_prices[s_u] = real_item
 
-    if (now - _bulk_price_cache["ts"]) > 60 and not _bulk_price_cache["updating"]:
+    if (now - _bulk_price_cache["ts"]) > 10 and not _bulk_price_cache["updating"]:
         _bulk_price_cache["ts"] = now
         threading.Thread(target=_background_refresh_prices, args=(symbols,), daemon=True).start()
 

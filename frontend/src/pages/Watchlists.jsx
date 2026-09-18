@@ -192,6 +192,8 @@ const submitRename = async () => {
 
   useEffect(() => {
     fetchLists();
+    const interval = setInterval(fetchLists, 10000);
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {

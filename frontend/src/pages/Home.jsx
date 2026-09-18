@@ -106,7 +106,7 @@ function Home() {
   useEffect(() => {
     document.title = "Kreo — Market Dashboard";
     fetchPrices();
-    const interval = setInterval(fetchPrices, 30000);
+    const interval = setInterval(fetchPrices, 10000);
     return () => clearInterval(interval);
   }, [fetchPrices]);
 

@@ -41,8 +41,13 @@ export default function Portfolio() {
   }, []);
 
   useEffect(() => {
-    if (activeTab === "portfolio") fetchHoldings();
-    else if (activeTab === "history") fetchTrades();
+    if (activeTab === "portfolio") {
+      fetchHoldings();
+      const interval = setInterval(fetchHoldings, 10000);
+      return () => clearInterval(interval);
+    } else if (activeTab === "history") {
+      fetchTrades();
+    }
   }, [activeTab]);
 
   const fetchHoldings = async () => {

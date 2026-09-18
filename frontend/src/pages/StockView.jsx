@@ -92,6 +92,12 @@ function StockView() {
     fetchData();
     fetchThesisAndNews();
     fetchPeers();
+
+    const priceInterval = setInterval(() => {
+      fetchData();
+    }, 10000);
+
+    return () => clearInterval(priceInterval);
   }, [symbol, location.search]);
 
   useEffect(() => {
