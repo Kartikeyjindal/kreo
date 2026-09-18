@@ -31,8 +31,9 @@ def get_db():
             _client = AsyncIOMotorClient(
                 MONGO_URI,
                 tlsCAFile=certifi.where(),
-                serverSelectionTimeoutMS=2000,
-                connectTimeoutMS=2000
+                serverSelectionTimeoutMS=500,
+                connectTimeoutMS=500,
+                socketTimeoutMS=500
             )
         except Exception as e:
             logger.warning(f"Failed to initialize Motor client: {e}. Switching to in-memory DB.")

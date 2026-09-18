@@ -425,7 +425,7 @@ async def get_cached_or_scrape_fundamentals(symbol):
     try:
         db = get_db()
         cache_col = db["fundamentals_cache"]
-        cached = await cache_col.find_one({"_id": key})
+        cached = await asyncio.wait_for(cache_col.find_one({"_id": key}), timeout=0.3)
         if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
             cached_at = cached.get("cached_at")
             if cached_at:
@@ -443,7 +443,7 @@ async def get_cached_or_scrape_fundamentals(symbol):
         db = switch_to_fallback()
         cache_col = db["fundamentals_cache"]
         try:
-            cached = await cache_col.find_one({"_id": key})
+            cached = await asyncio.wait_for(cache_col.find_one({"_id": key}), timeout=0.2)
             if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
                 cached.pop("cached_at", None)
                 _FUNDAMENTALS_MEMORY_CACHE[key] = dict(cached)
@@ -458,7 +458,7 @@ async def get_cached_or_scrape_fundamentals(symbol):
     data["cached_at"] = datetime.utcnow().isoformat()
     try:
         if cache_col is not None:
-            await cache_col.replace_one({"_id": key}, data, upsert=True)
+            await asyncio.wait_for(cache_col.replace_one({"_id": key}, data, upsert=True), timeout=0.3)
     except Exception as e:
         logging.warning(f"Failed to save fundamental cache for {symbol}: {e}")
 
