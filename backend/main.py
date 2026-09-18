@@ -42,7 +42,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "live", "version": "v1.5-auto-live-polling"}
+    return {"status": "ok", "service": "live", "version": "v1.6-dynamic-fear-greed"}
 
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -294,6 +294,72 @@ def get_market_indices():
             "change": chg,
             "change_pct": pct
         })
+    return res
+
+# ---------------------------- Market Sentiment Endpoint ---------------------------- #
+_SENTIMENT_CACHE = {"data": None, "ts": 0}
+
+@app.get("/market-sentiment")
+def get_market_sentiment():
+    now = time.time()
+    if _SENTIMENT_CACHE["data"] and (now - _SENTIMENT_CACHE["ts"]) < 10:
+        return _SENTIMENT_CACHE["data"]
+
+    indices_data = get_market_indices()
+    idx_pcts = [i.get("change_pct", 0.0) for i in indices_data]
+    avg_idx_pct = sum(idx_pcts) / len(idx_pcts) if idx_pcts else 0.0
+
+    advancers = 0
+    decliners = 0
+    total_chg = 0.0
+    count = 0
+    for sym, data in BASE_PRICES.items():
+        chg = data.get("change", 0.0)
+        count += 1
+        total_chg += chg
+        if chg > 0:
+            advancers += 1
+        elif chg < 0:
+            decliners += 1
+
+    breadth_pct = (advancers / max(count, 1)) * 100.0
+    avg_stock_chg = total_chg / max(count, 1) if count > 0 else 0.0
+
+    index_component = min(max(50.0 + (avg_idx_pct * 20.0), 10.0), 90.0)
+    breadth_component = breadth_pct
+    momentum_component = min(max(50.0 + (avg_stock_chg * 15.0), 10.0), 90.0)
+
+    score = int(round(0.45 * index_component + 0.35 * breadth_component + 0.20 * momentum_component))
+    score = min(max(score, 8), 92)
+
+    label = "NEUTRAL"
+    color = "#eab308"
+    if score <= 25:
+        label = "EXTREME FEAR"
+        color = "#ef4444"
+    elif score <= 45:
+        label = "FEAR"
+        color = "#f97316"
+    elif score <= 55:
+        label = "NEUTRAL"
+        color = "#eab308"
+    elif score <= 75:
+        label = "GREED"
+        color = "#84cc16"
+    else:
+        label = "EXTREME GREED"
+        color = "#22c55e"
+
+    res = {
+        "score": score,
+        "label": label,
+        "color": color,
+        "advancers": advancers,
+        "decliners": decliners,
+        "avg_index_change": round(avg_idx_pct, 2)
+    }
+    _SENTIMENT_CACHE["data"] = res
+    _SENTIMENT_CACHE["ts"] = now
     return res
 
 @app.post("/watchlists/{watchlist_id}/stocks")
