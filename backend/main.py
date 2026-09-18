@@ -42,7 +42,7 @@ app.add_middleware(
 
 @app.get("/health")
 def health_check():
-    return {"status": "ok", "service": "live", "version": "v1.3-real-price"}
+    return {"status": "ok", "service": "live", "version": "v1.4-live-priority"}
 
 JWT_SECRET = os.getenv("JWT_SECRET", "secret")
 pwd_ctx = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -539,10 +539,17 @@ def fetch_real_price(symbol: str) -> dict:
 
     now = time.time()
     cached_entry = _REAL_PRICE_CACHE.get(target_sym)
-    if cached_entry and (now - cached_entry["ts"]) < 300: # 5 min TTL
+    if cached_entry and (now - cached_entry["ts"]) < 30: # 30s TTL for real-time freshness
         return cached_entry["data"]
 
-    # 1. Check verified live BASE_PRICES dictionary
+    # 1. ALWAYS TRY LIVE ONLINE FETCH FIRST FOR THE ABSOLUTE LATEST PRICE!
+    live_res = fetch_live_price_online(target_sym)
+    if live_res and live_res.get("price") is not None:
+        _REAL_PRICE_CACHE[target_sym] = {"data": live_res, "ts": now}
+        BASE_PRICES[target_sym] = live_res
+        return live_res
+
+    # 2. Fall back to BASE_PRICES if live online API is offline or restricted
     if target_sym in BASE_PRICES:
         res_data = BASE_PRICES[target_sym]
         _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
@@ -551,13 +558,6 @@ def fetch_real_price(symbol: str) -> dict:
         res_data = BASE_PRICES[sym]
         _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
         return res_data
-
-    # 2. Fetch actual live price online
-    live_res = fetch_live_price_online(target_sym)
-    if live_res and live_res.get("price") is not None:
-        _REAL_PRICE_CACHE[target_sym] = {"data": live_res, "ts": now}
-        BASE_PRICES[target_sym] = live_res
-        return live_res
 
     # 3. Calculate actual price from Market Cap and Shares if present
     fund = _FUNDAMENTALS_MEMORY_CACHE.get(target_sym) or _FUNDAMENTALS_MEMORY_CACHE.get(sym)
@@ -710,7 +710,7 @@ async def recommend(
 ):
     cache_key = f"{symbol.upper()}_{pe}_{pb}_{roe}_{roce}"
     now = time.time()
-    if cache_key in _RECOMMEND_MEMORY_CACHE and (now - _RECOMMEND_MEMORY_CACHE[cache_key]["ts"]) < 300:
+    if cache_key in _RECOMMEND_MEMORY_CACHE and (now - _RECOMMEND_MEMORY_CACHE[cache_key]["ts"]) < 15:
         return dict(_RECOMMEND_MEMORY_CACHE[cache_key]["data"])
 
     data = await get_cached_or_scrape_fundamentals(symbol)
