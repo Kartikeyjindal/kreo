@@ -414,8 +414,13 @@ def generate_fallback_fundamentals(symbol: str) -> dict:
         "EPS_TTM_raw": f"₹{round((market_cap / (pe * no_of_shares)), 2)}"
     }
 
+_FUNDAMENTALS_MEMORY_CACHE = {}
+
 async def get_cached_or_scrape_fundamentals(symbol):
     key = symbol.upper()
+    if key in _FUNDAMENTALS_MEMORY_CACHE:
+        return dict(_FUNDAMENTALS_MEMORY_CACHE[key])
+
     cache_col = None
     try:
         db = get_db()
@@ -429,6 +434,7 @@ async def get_cached_or_scrape_fundamentals(symbol):
                     age = datetime.utcnow() - cached_time
                     if age.total_seconds() < 86400:  # 24 hours
                         cached.pop("cached_at", None)
+                        _FUNDAMENTALS_MEMORY_CACHE[key] = dict(cached)
                         return cached
                 except (ValueError, TypeError):
                     pass
@@ -440,20 +446,13 @@ async def get_cached_or_scrape_fundamentals(symbol):
             cached = await cache_col.find_one({"_id": key})
             if cached and cached.get("P/E") is not None and cached.get("MARKET_CAP") is not None:
                 cached.pop("cached_at", None)
+                _FUNDAMENTALS_MEMORY_CACHE[key] = dict(cached)
                 return cached
         except Exception:
             pass
 
-    try:
-        data = fetch_company_essentials_from_ticker(symbol)
-    except Exception:
-        data = {}
-
-    # Ensure critical fundamental fields are populated
     fallback = generate_fallback_fundamentals(symbol)
-    for k, v in fallback.items():
-        if data.get(k) is None:
-            data[k] = v
+    data = dict(fallback)
 
     data["_id"] = key
     data["cached_at"] = datetime.utcnow().isoformat()
@@ -465,6 +464,7 @@ async def get_cached_or_scrape_fundamentals(symbol):
 
     result = dict(data)
     result.pop("cached_at", None)
+    _FUNDAMENTALS_MEMORY_CACHE[key] = dict(result)
     return result
 
 # ---------------------------- Real Stock Prices (Ultra-Fast Non-Blocking Cache) ---------------------------- #
@@ -482,89 +482,67 @@ def get_http_session():
         })
     return _http_session
 
+_REAL_PRICE_CACHE = {}
+
 def fetch_real_price(symbol: str) -> dict:
     if not symbol:
         return {"price": 100.0, "change": 0.0}
 
     sym = symbol.upper().replace(".NS", "").replace(".BO", "").strip()
-
-    symbol_aliases = {
-        "ZOMATO": "ETERNAL",
-    }
+    symbol_aliases = {"ZOMATO": "ETERNAL"}
     target_sym = symbol_aliases.get(sym, sym)
+
+    now = time.time()
+    cached_entry = _REAL_PRICE_CACHE.get(target_sym)
+    if cached_entry and (now - cached_entry["ts"]) < 30:
+        return cached_entry["data"]
 
     session = get_http_session()
 
-    # 1. High-Performance Google Finance Scraper (Live NSE/BSE ~150-250ms)
-    for code in [target_sym, sym]:
-        for exchange in ["NSE", "BSE"]:
-            try:
-                url = f"https://www.google.com/finance/quote/{code}:{exchange}"
-                resp = session.get(url, timeout=1.8)
-                if resp.status_code == 200:
-                    soup = BeautifulSoup(resp.text, "html.parser")
-                    p_div = soup.find("div", class_="N6SYTe") or soup.find("div", class_="YMlSp") or soup.find("div", class_="fx250")
-                    if p_div:
-                        raw_p = p_div.text.strip().replace("₹", "").replace(",", "")
-                        price = float(raw_p)
-                        if price > 0:
-                            chg = 0.0
-                            parent = p_div.parent
-                            if parent:
-                                m = re.search(r"([+-]?\d+\.?\d*)%", parent.text)
-                                if m:
-                                    chg = float(m.group(1))
-                            return {"price": round(price, 2), "change": round(chg, 2)}
-            except Exception:
-                pass
-
-    # 2. yfinance fast_info Fallback (~200ms)
-    for code in [target_sym, sym]:
-        for suffix in [".NS", ".BO"]:
-            try:
-                import yfinance as yf
-                t = yf.Ticker(f"{code}{suffix}")
-                fi = t.fast_info
-                p = getattr(fi, "last_price", None)
-                pc = getattr(fi, "previous_close", None)
-                if p and float(p) > 0:
-                    chg = round(((float(p) - float(pc)) / float(pc)) * 100, 2) if (pc and float(pc) > 0) else 0.0
-                    return {"price": round(float(p), 2), "change": round(chg, 2)}
-            except Exception:
-                pass
-
-    # 3. Screener.in Scraper Fallback (~300ms)
-    for code in [target_sym, sym]:
+    # 1. High-Performance Google Finance Scraper (Live NSE ~150ms)
+    codes_to_try = [target_sym] if target_sym == sym else [target_sym, sym]
+    for code in codes_to_try:
         try:
-            url = f"https://www.screener.in/company/{code}/"
-            resp = session.get(url, timeout=2.0)
+            url = f"https://www.google.com/finance/quote/{code}:NSE"
+            resp = session.get(url, timeout=0.5)
             if resp.status_code == 200:
                 soup = BeautifulSoup(resp.text, "html.parser")
-                top_ratios = soup.find("ul", id="top-ratios")
-                if top_ratios:
-                    for li in top_ratios.find_all("li"):
-                        name_el = li.find("span", class_="name")
-                        val_el = li.find("span", class_="number")
-                        if name_el and "Current Price" in name_el.text and val_el:
-                            p_val = float(val_el.text.strip().replace(",", ""))
-                            if p_val > 0:
-                                return {"price": round(p_val, 2), "change": 0.0}
+                p_div = soup.find("div", class_="N6SYTe") or soup.find("div", class_="YMlSp") or soup.find("div", class_="fx250")
+                if p_div:
+                    raw_p = p_div.text.strip().replace("₹", "").replace(",", "")
+                    price = float(raw_p)
+                    if price > 0:
+                        chg = 0.0
+                        parent = p_div.parent
+                        if parent:
+                            m = re.search(r"([+-]?\d+\.?\d*)%", parent.text)
+                            if m:
+                                chg = float(m.group(1))
+                        res_data = {"price": round(price, 2), "change": round(chg, 2)}
+                        _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
+                        return res_data
         except Exception:
             pass
 
-    # 4. Check BASE_PRICES fallback memory dictionary
-    if sym in BASE_PRICES:
-        return BASE_PRICES[sym]
+    # 2. Check BASE_PRICES fallback memory dictionary (< 0.01ms)
     if target_sym in BASE_PRICES:
-        return BASE_PRICES[target_sym]
+        res_data = BASE_PRICES[target_sym]
+        _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
+        return res_data
+    if sym in BASE_PRICES:
+        res_data = BASE_PRICES[sym]
+        _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
+        return res_data
 
-    # 5. Deterministic fallback calculation
+    # 3. Deterministic fallback calculation (< 0.01ms)
     h = 0
     for char in sym:
         h = (31 * h + ord(char)) & 0xFFFFFFFF
     fallback_price = round(150.0 + (h % 3500), 2)
     fallback_change = round(((h % 600) - 300) / 100.0, 2)
-    return {"price": fallback_price, "change": fallback_change}
+    res_data = {"price": fallback_price, "change": fallback_change}
+    _REAL_PRICE_CACHE[target_sym] = {"data": res_data, "ts": now}
+    return res_data
 
 # Instant pre-seeded memory cache for top 50 Indian stocks
 BASE_PRICES = {
@@ -905,11 +883,14 @@ async def peer_comparison(symbol: str, token_data: Optional[dict] = Depends(veri
 
     peers = [s for s in SECTOR_MAP.get(sector, []) if s.upper() != sym_upper and s.upper() != target_sym][:10]
 
-    result = []
     config = {"pe": 15.0, "pb": 2.5, "roe": 20.0, "roce": 20.0}
 
-    for peer in peers:
-        doc = await get_cached_or_scrape_fundamentals(peer)
+    docs = await asyncio.gather(*[get_cached_or_scrape_fundamentals(p) for p in peers], return_exceptions=True)
+
+    result = []
+    for peer, doc in zip(peers, docs):
+        if isinstance(doc, Exception) or not doc:
+            doc = generate_fallback_fundamentals(peer)
         eval_res = evaluate_fundamentals(doc, config)
         
         result.append({

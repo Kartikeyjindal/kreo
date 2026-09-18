@@ -5,8 +5,11 @@ from typing import Optional
 
 def fetch_company_essentials_from_ticker(symbol: str) -> dict:
     url = f"https://ticker.finology.in/company/{symbol.upper()}?mode=C"
-    headers = {"User-Agent": "Mozilla/5.0"}
-    resp = requests.get(url, headers=headers, timeout=20)
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"}
+    try:
+        resp = requests.get(url, headers=headers, timeout=1.2)
+    except Exception:
+        return {}
     if resp.status_code != 200:
         raise HTTPException(status_code=404, detail=f"Could not fetch Ticker page for '{symbol}'")
     soup = BeautifulSoup(resp.text, "html.parser")
